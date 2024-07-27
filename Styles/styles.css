@@ -452,29 +452,55 @@ ul {
 
 
 /* FAQ Section */
-
+.FAQ-section {
+    background-color: black;
+    padding: 0 1rem 4rem 1rem;
+    position: relative;
+}
+.FAQ-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/Styles/Home-Images/Services-Images/pexels-gochrisgoxyz-1494067.jpg') fixed no-repeat;
+    background-size: cover;
+    opacity: .5;
+}
+.FAQ-title {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 2rem 2rem 0;
+    opacity: .99;
+}
+.FAQ-title h1 {
+    font-size: 2.5rem;
+    color: whitesmoke;
+}
 .FAQ-container {
     display: flex;
     gap: 1rem;
-    max-width: 1500px;
+    max-width: 1400px;
     margin: 0 auto;
+    opacity: .88;
 }
 .FAQ-half {
     width: 50%;
 }
 .single-cordion-item {
     margin-bottom: 1rem;
+    border-radius: 1rem;
+    background-color: whitesmoke;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / .1), 0 4px 6px -4px rgb(0 0 0 / .1);
 }
 .single-cordion-item-btn {
     width: 100%;
     text-align: left;
     position: relative;
     padding: 1rem 3rem 1rem 1rem;
-    border-radius: 20px;
     border: none;
-    background-color: whitesmoke;
+    background-color: transparent;
     font-size: 1.2rem;
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / .1), 0 4px 6px -4px rgb(0 0 0 / .1);
+    cursor: pointer;
 }
 .single-cordion-item-btn::after {
     content: '\002B';
@@ -485,6 +511,7 @@ ul {
     font-size: 1.5rem;
     transform: translateY(50%);
     margin-right: 1rem;
+
 }
 .single-cordion-item-btn.active::after {
     content: '\2212';
@@ -493,6 +520,169 @@ ul {
     max-height: 0;
     overflow: hidden;
     transition: max-height .3s ease-out;
-    background-color: whitesmoke;
-    border-radius: 0 0 20px 20px;
+    background-color: transparent;
 }
+.single-cordion-item-body p {
+    padding: 1rem;
+}
+
+
+/* Stylists Section */
+
+.stylist-section {
+    background-color: black;
+    padding-bottom: 10rem;
+}
+.stylist-title-container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 5rem 0;
+    text-align: center;
+}
+.stylist-title {
+    font-size: 5rem;
+    color: whitesmoke;
+}
+.stylist-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+.stylist-item {
+    border: 10px double whitesmoke;
+    margin: 1rem;
+    position: relative;
+}
+.stylist-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.stylist-desc-container {
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    width: 75%;
+    background-color: black;
+    transform: translateX(-50%);
+    border: 2px solid whitesmoke;
+    padding: 1rem 0;
+    z-index: 100;
+}
+.stylist-name, .stylist-cred {
+    color: whitesmoke;
+    text-align: center;
+    width: 100%;
+}
+.stylist-item-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .2s ease-out;
+}
+.stylist-item-bg:hover {
+    background-color: rgba(245, 245, 245, 0.274);
+    transition: all .2s ease-in;
+}
+.stylist-contact-container {
+    opacity: 0;
+    transition: opacity .2s ease-in;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.stylist-item-bg:hover > .stylist-contact-container {
+    opacity: 1;
+    transition: opacity .2s ease-out;
+}
+.border {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.horizontal {
+    width: 100px;
+    height: 1px;
+    position: absolute;
+    transform-origin: center;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+}
+.vertical {
+    height: 100px;
+    width: 1px;
+    flex-direction: column;
+    position: absolute;
+    transform-origin: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.horizontal::before {
+    margin-right: 10px;
+}
+.horizontal::after {
+    margin-left: 10px;
+}
+.vertical::before {
+    margin-bottom: 10px;
+}
+.vertical::after {
+    margin-top: 10px;
+}
+.horizontal::before, .horizontal::after {
+    content: '';
+    display: inline-block;
+    border-top: 2px solid black;
+    flex-grow: 1;
+}
+.vertical::before, .vertical::after {
+    content: '';
+  display: inline-block;
+  border-left: 2px solid black;
+  flex-grow: 1;
+}
+/* 
+relevance
+.stylist-contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border: 5px solid red;
+} */
+.top-half-container, .bottom-half-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact-svg {
+    width: 30px;
+    height: 30px;
+}
+.top-left {
+    margin-bottom: 8px;
+    margin-right: 8px;
+}
+.top-right {
+    margin-bottom: 8px;
+    margin-left: 8px;
+}
+.bottom-left {
+    margin-top: 8px;
+    margin-right: 8px;
+}
+.bottom-right {
+    margin-top: 8px;
+    margin-left: 8px;
+}
+
+/* really cool idea, have a single background image spanning across each stylist container, fixed */
