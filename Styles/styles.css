@@ -511,7 +511,7 @@ ul {
     font-size: 1.5rem;
     transform: translateY(50%);
     margin-right: 1rem;
-
+    color: #2F0147;
 }
 .single-cordion-item-btn.active::after {
     content: '\2212';
@@ -686,3 +686,53 @@ relevance
 }
 
 /* really cool idea, have a single background image spanning across each stylist container, fixed */
+
+
+
+/* Contact Section */
+.contact-section {
+    background-color: whitesmoke;
+}
+.contact-container {
+    display: flex;
+    padding: 5rem 1rem;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+.contact-left-half {
+    width: 66.6666%;
+}
+.contact-right-half {
+    width: 33.3333%;
+}
+
+.name-input-container {
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+fieldset {
+    border: none;
+}
+input {
+    border: none;
+    outline: none;
+}
+textarea {
+    border: none;
+}
+iframe {
+    width: 100%;
+}
