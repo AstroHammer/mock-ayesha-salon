@@ -3,6 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+.group:before, .group:after {
+    content: "";
+    display: table;
+}
+.group::after {
+    clear: both;
+}
+.group {
+    zoom: 1;
+}
 a {
     text-decoration: none;
     color: inherit;
@@ -103,21 +113,40 @@ header {
 
 .intro-sum h2 {
     text-transform: uppercase;
-    font-size: .9rem;
+    font-size: 1.3rem;
     margin-top: 10px;
+    font-family: "Zain", serif;
 }
 .intro-sum img {
     margin-top: 20px;
 }
 .intro-sum p {
-    margin-top: 15px;
-    font-size: .9rem;
+    margin-top: 5px;
+    font-size: 1.1rem;
+    font-family: "Zain", serif;
+    line-height: 18px;
 }
 
 
 
 
 /* HEADER */
+@font-face {
+    font-family: "Dancing-Script";
+    src: url("Fonts/DancingScript-VariableFont_wght.woff") format('woff');
+}
+@font-face {
+    font-family:"Playfair";
+    src: url(Fonts/PlayfairDisplay-VariableFont_wght.woff) format('woff');
+}
+@font-face {
+    font-family: "Zain";
+    src: url("Fonts/Zain-Regular.woff") format('woff');
+}
+@font-face {
+    font-family: "Caveat";
+    src: url('Fonts/Caveat-VariableFont_wght.woff') format('woff');
+}
 nav {
     display: flex;
     position: absolute;
@@ -135,8 +164,10 @@ ul {
     margin: 4rem;
 }
 .logo {
-    font-size: 3rem;
+    font-family: "Dancing-Script", serif;
+    font-size: 5rem;
     color: whitesmoke;
+    font-weight: 700;
 }
 .nav-list {
     position: relative;
@@ -147,7 +178,12 @@ ul {
     box-shadow: 0px 0px 10px 5px #B9929F;
     border-radius: 5px 0 0 5px;
 }
-
+.nav-list li {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    font-family: "Zain", serif;
+    padding-top: 3px;
+}
 .nav-list a {
     color: whitesmoke;
 }
@@ -164,14 +200,15 @@ ul {
 .promo-container {
     border-radius: 30px 30px 0 0;
     background-color: rgba(255, 255, 255, .2);
-    padding: 0 20px 20px 20px;
+    padding: 1rem 2rem;
     box-shadow: 0px 0px 10px 5px #B9929F;
     /* , inset 0 -1px 10px 0 #B9929F */
 }
 .promo-title {
     text-align: center;
-    font-size: 1.3rem;
-    padding: 1rem 2rem 2rem 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    font-family: "Zain", serif;
     /* border: 1px solid red; */
 }
 .promo-title h2 {
@@ -180,11 +217,12 @@ ul {
 .promo-title h2::after {
     content:'';
     position: absolute;
-    width: 70px;
-    border: 1px solid white;
+    width: 10rem;
+    border-bottom: 1px solid white;
     bottom: -50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    padding-bottom: 3.5rem;
 }
 .promo-content {
     display: flex;
@@ -192,7 +230,71 @@ ul {
     align-items: center;
     /* border: 1px solid red; */
 }
-.promo {
+
+.promo-content-socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0 1rem;
+    
+}
+
+.top-promo-socials, .bottom-promo-socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.promo-social-svg {
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+.horizontal-promo {
+    width: 110px;
+    height: 1px;
+    position: absolute;
+    transform-origin: center;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+}
+.vertical-promo {
+    height: 110px;
+    width: 1px;
+    flex-direction: column;
+    position: absolute;
+    transform-origin: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.horizontal-promo::before, .horizontal-promo::after {
+    content: '';
+    display: inline-block;
+    border-top: 1px solid whitesmoke;
+    flex-grow: 1;
+}
+.vertical-promo::before, .vertical-promo::after {
+    content: '';
+  display: inline-block;
+  border-left: 1px solid whitesmoke;
+  flex-grow: 1;
+}
+.horizontal-promo::before {
+    margin-right: 10px;
+}
+.horizontal-promo::after {
+    margin-left: 10px;
+}
+.vertical-promo::before {
+    margin-bottom: 10px;
+}
+.vertical-promo::after {
+    margin-top: 10px;
+}
+/* .promo {
     background-color: black;
     color: whitesmoke;
     border-radius: 10px;
@@ -213,7 +315,7 @@ ul {
 .small {
     font-size: 1.4rem;
     font-weight: bolder;
-}
+} */
 
 
 
@@ -230,12 +332,14 @@ ul {
 .booking-content a {
     background-color: #9C5288;
     /* #B9929F */
-    padding: 1rem 2rem;
+    padding: 1rem 2rem .8rem 2rem;
     display: inline-block;
     width: 100%;
-    font-size: 1rem;
+    font-size: 1.3rem;
     text-transform: uppercase;
     border-radius: 5px;
+    font-family: "Zain", serif;
+    font-weight: bold;
 }
 .or-border {
     display: flex;
@@ -246,6 +350,7 @@ ul {
     text-transform: uppercase;
     padding: 0 30px;
     font-size: .75rem;
+    font-family: ;
 }
 .or-border::before, .or-border::after {
     content:'';
@@ -258,7 +363,7 @@ ul {
 
 
 
-.about-us-section {
+/* .about-us-section {
     overflow:hidden;
 }
 .about-us-info > div:first-of-type {
@@ -277,61 +382,53 @@ ul {
     font-size: 5rem;
     margin-bottom: 3rem;
 }
-.image-collage-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 35%;
-    transition: transform 1s ease-in;
-    box-shadow: -30px 0 20px #2F0147;
-}
-
-.about-us-image-container {
-    aspect-ratio: 1 / 1;
-    max-width: 300px;
-    max-height: 300px;
-    flex-shrink: 0;
-}
-.about-us-image {
-    object-fit: cover;
-    object-position: center;
-    width: 100%;
-    height: 100%;
-}
 .about-us-text {
     padding: 0 2rem 2rem 2rem;
     line-height: 2rem;
+} */
+
+
+
+
+.collage {
+    width: 5000px;
+    background-color: black;
 }
-.collage-img-container {
-    flex-shrink: 0;
+.image-collage-container {
+    transition: transform 1s ease-in;
+    /* box-shadow: -30px 0 20px #2F0147; */
 }
 .image-collage-row {
-    display: flex;
-    height: 50%;
+    clear: both;
+}
+.collage-img-container {
+    float: left;
 }
 .collage-img {
-    object-fit: cover;
-    width: 200px;
-    height: 100%;
     filter: grayscale();
     transition: filter .2s ease-out;
+    width: 500px;
 }
 .collage-img:hover {
     filter: none;
     transition: filter .2s ease-in;
 }
 
-
 /* Services */
+.services-section {
+    clear: both;
+}
 .accordion-wrapper {
     background-color: black;
     padding: 60px 0;
+    font-family: "Playfair", serif;
 }
 .accordion-container {
     max-width: 960px;
     margin: 60px auto;
     padding: 20px 30px;
     box-shadow: 0px 0px 10px 5px #B9929F;
+    font-family: "Playfair", serif;
 }
 
 .accordion-title-container {
@@ -364,7 +461,6 @@ ul {
     background-image: url('/Styles/Home-Images/Services-Images/massage-5578598.jpg');
 }
 
-
 .accordion-item-btn {
     color: whitesmoke;
     background-color: inherit;
@@ -375,6 +471,7 @@ ul {
     font-size: 2rem;
     text-transform: uppercase;
     position: relative;
+    font-family: "Playfair", serif;
 }
 .accordion-item-btn::after {
     content: url('/Styles/Home-Images/Services-Images/scissors-svgrepo-com.svg');
@@ -390,16 +487,21 @@ ul {
     transition: transform .2s linear;
 }
 .accordion-item-body {
-    background-color: whitesmoke;
+    background-color: black;
     max-height: 0;
     overflow: hidden;
     transition: max-height .3s ease-out;
+    color: whitesmoke;
+    font-family: "Caveat", sans-serif;
+}
+.accordion-item { 
+    padding: .5rem 0;
 }
 .accordion-item-header {
     border-bottom: 1px solid white;
 }
 .accordion-item-body-content {
-    padding: 1rem;
+    padding: 1rem 1rem 1.5rem 1rem;
     display: flex;
     flex-direction: column;
 }
@@ -411,41 +513,64 @@ ul {
     padding: .5rem 1rem;
     text-align: center;
     position: relative;
+    font-size: 1.8rem;
 }
 .sub-title::after {
     content: '';
     position: absolute;
     width: 50%;
-    border: 1px solid black;
+    border: 1px solid whitesmoke;
     bottom: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 .stylist-skill-container {
     align-self: flex-end;
+    padding-bottom: .5rem;
+    font-size: 1.5rem;
+}
+select {
+    border: none;
+    background-color: black;
+    color: whitesmoke;
+    padding: .2rem 1rem;
+    font-family: "Caveat", sans-serif;
+    font-size: 1.5rem;
+    border-bottom: 1px solid whitesmoke;
+}
+option {
+    font-size: 1rem;
 }
 .price-option {
     display: flex;
     justify-content: flex-end;
+    padding-bottom: .5rem;
+    font-size: 1.1rem;
 }
 .service-item {
     display: flex;
     width: 100%;
     justify-content: space-between;
+    padding-bottom: 10px;
 }
 
 .flex-left {
     width: auto;
     flex-shrink: 0;
+    font-size: 1.5rem;
+    padding-right: 10px;
 }
 .flex-middle {
-    border-bottom: 2px dotted black;
+    border-bottom: 2px dotted whitesmoke;
     width: 100%;
 }
 .flex-end {
     width: auto;
     flex-shrink: 0;
     align-self: flex-end;
+    font-weight: 700;
+    font-size: 1.4rem;
+    padding-left: 10px;
 }
 
 
@@ -469,10 +594,14 @@ ul {
     margin: 0 auto;
     padding: 2rem 2rem 2rem 0;
     opacity: .99;
+    text-align: center;
+    font-family: "Playfair", sans-serif;
 }
 .FAQ-title h1 {
-    font-size: 2.5rem;
     color: whitesmoke;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 5rem;
 }
 .FAQ-container {
     display: flex;
@@ -489,6 +618,13 @@ ul {
     border-radius: 1rem;
     background-color: whitesmoke;
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / .1), 0 4px 6px -4px rgb(0 0 0 / .1);
+    outline: 1px solid transparent;
+    transition: outline .3s linear;
+}
+
+.single-cordion-item:hover {
+    outline: 6px solid #B9929F;
+    transition: outline .05s linear;
 }
 .single-cordion-item-btn {
     width: 100%;
@@ -498,6 +634,8 @@ ul {
     border: none;
     background-color: transparent;
     font-size: 1.2rem;
+    font-weight: 600;
+    font-family: "Playfair", sans-serif;
     cursor: pointer;
 }
 .single-cordion-item-btn::after {
@@ -521,7 +659,9 @@ ul {
     background-color: transparent;
 }
 .single-cordion-item-body p {
+    text-align: center;
     padding: 1rem;
+    font-family: "Playfair", sans-serif;
 }
 
 
@@ -872,7 +1012,9 @@ iframe {
     text-align: center;
 }
 .ayesha-info-wrapper > section > h1 {
-    font-size: 4rem;
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    font-family: "Dancing-Script";
 }
 .ayesha-info-wrapper > section > div > p {
     font-size: 1.2rem;
