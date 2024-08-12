@@ -295,6 +295,11 @@ ul {
 .vertical-promo::after {
     margin-top: 10px;
 }
+.promo-social-svg:hover {
+    filter: invert(0.4) sepia(1) saturate(14) hue-rotate(234deg) brightness(.7);
+    transform: scale(1.2);
+    transition: transform .2 linear;
+}
 /* .promo {
     background-color: black;
     color: whitesmoke;
@@ -341,6 +346,15 @@ ul {
     border-radius: 5px;
     font-family: "Caveat", serif;
     font-weight: bold;
+    transition: background-color .2s linear, color .2s linear, transform .2s linear;
+}
+.booking-content a:hover {
+    background-color: whitesmoke;
+    color:#9C5288;
+    transition: background-color .2s linear, color .2s linear, transform .2s linear;
+}
+.booking-content a:hover {
+    transform: scale(1.05);
 }
 .or-border {
     display: flex;
@@ -361,8 +375,190 @@ ul {
 }
 
 
+/* About Us Section */
 
 
+.contents-wrap {
+  height: 800px;
+  background-color: black;
+  padding: 4rem 0;
+}
+.contents {
+  width: 100%;
+  height: 100%;
+}
+.content {
+  height: 100%;
+}
+.flow-grid {
+  height: 100%;
+  /* overflow: hidden; */
+}
+.flow-grid-row {
+  height: 50%;
+  width: 1000%;
+}
+.flow-grid-row-inner {
+  height: 100%;
+  /* display: inline-block; */
+}
+.item {
+  float: left;
+  height: 100%;
+  /* position: relative;
+  overflow: hidden; */
+}
+.item-in {
+  background-repeat: no-repeat;
+  height: 100%;
+  background-size: 101%;
+  background-position: -0.5% -0.5%;
+}
+.item-in-img-container {
+  width: 300px;
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  background-size: 101%;
+  background-position: center;
+}
+.item-in-img-container img {
+  min-width: 0;
+  width: auto;
+  height: 100%;
+  opacity: 0;
+  vertical-align: top;
+}
+.item-in-img-container img:hover {
+    opacity: 1;
+}
+.bg1 {
+    background-image: url("Home-Images/Scrolling-Collage/alexandru-zdrobau-BGz8vO3pK8k-unsplash.webp");
+}
+.bg2 {
+    background-image: url("Home-Images/Scrolling-Collage/caique-nascimento-BOHyxqepP9Y-unsplash.webp");
+}
+.bg3 {
+    background-image: url("Home-Images/Scrolling-Collage/dmitry-vechorko-o93EI2mOZ68-unsplash.webp");
+}
+.bg4 {
+    background-image: url("Home-Images/Scrolling-Collage/engin-akyurt-XZvyT2u04i8-unsplash.webp");
+}
+.bg5 {
+    background-image: url("Home-Images/Scrolling-Collage/fineas-gavre-CE_1ZBQ__Ns-unsplash.webp");
+}
+.bg6 {
+    background-image: url("Home-Images/Scrolling-Collage/fulop-adam-Fhoto1Lallc-unsplash.webp");
+}
+.bg7 {
+    background-image: url("Home-Images/Scrolling-Collage/gabriel-silverio-HibLL8rsiwc-unsplash.webp");
+}
+.bg8 {
+    background-image: url("Home-Images/Scrolling-Collage/gabriel-silverio-K_b41GaWC5Y-unsplash.webp");
+}
+.bg9 {
+    background-image: url("Home-Images/Scrolling-Collage/jc-gellidon-mxIUF_b5XJ8-unsplash.webp");
+}
+.bg10 {
+    background-image: url("Home-Images/Scrolling-Collage/jessica-felicio-QS9ZX5UnS14-unsplash.webp");
+}
+.bg11 {
+    background-image: url("Home-Images/Scrolling-Collage/justin-essah-8bPw733XN-g-unsplash.webp");
+}
+.bg12 {
+    background-image: url("Home-Images/Scrolling-Collage/kareya-saleh-tLKOj6cNwe0-unsplash.webp");
+}
+.bg13 {
+    background-image: url("Home-Images/Scrolling-Collage/kimson-doan-HD8KlyWRYYM-unsplash.webp");
+}
+.bg14 {
+    background-image: url("Home-Images/Scrolling-Collage/kyle-winkle-8vWQD-LFXjU-unsplash.webp");
+}
+.bg15 {
+    background-image: url("Home-Images/Scrolling-Collage/rafaella-mendes-diniz-AoL-mVxprmk-unsplash.webp");
+}
+.bg16 {
+    background-image: url("Home-Images/Scrolling-Collage/sergio-kian-emzc0ziwzYs-unsplash.webp");
+}
+.bg17 {
+    background-image: url("Home-Images/Scrolling-Collage/shayan-rostami-QHSxqBx_V80-unsplash.webp");
+}
+.bg18 {
+    background-image: url("Home-Images/Scrolling-Collage/soheil-jalili-d2EajdJsw1k-unsplash.webp");
+}
+.bg19 {
+    background-image: url("Home-Images/Scrolling-Collage/vahid-kanani-EruGdZ9J8nA-unsplash.webp");
+}
+.bg20 {
+    background-image: url("Home-Images/Scrolling-Collage/valerie-elash-XUT7V_md7sc-unsplash.webp");
+}
+.bg21 {
+    background-image: url("Home-Images/Scrolling-Collage/vinicius-amnx-amano-VFZF_pzTVBA-unsplash.webp");
+}
+
+.bg1gray {
+    background-image: url("Styles/Home-Images/Scrolling-Collage/alexandru-zdrobau-BGz8vO3pK8k-unsplash-gray.webp")
+}
+.bg2gray {
+    background-image: url("Styles/Home-Images/Scrolling-Collage/caique-nascimento-BOHyxqepP9Y-unsplash-gray.webp")
+}
+.bg3gray {
+    background-image: url("Styles/Home-Images/Scrolling-Collage/dmitry-vechorko-o93EI2mOZ68-unsplash-gray.webp")
+}
+.bg4gray {
+    background-image: url("Styles/Home-Images/Scrolling-Collage/engin-akyurt-XZvyT2u04i8-unsplash-gray.webp")
+}
+.bg5gray {
+    background-image: url("Styles/Home-Images/Scrolling-Collage/fineas-gavre-CE_1ZBQ__Ns-unsplash-gray.webp")
+}
+.bg6gray {
+    background-image: url("Styles/Home-Images/Scrolling-Collage/fulop-adam-Fhoto1Lallc-unsplash-gray.webp")
+}
+.bg7gray {
+    background-image: url("Styles/Home-Images/Scrolling-Collage/gabriel-silverio-HibLL8rsiwc-unsplash-gray.webp")
+}
+.bg8gray {
+    background-image: url("Styles/Home-Images/Scrolling-Collage/gabriel-silverio-K_b41GaWC5Y-unsplash-gray.webp")
+}
+.bg9gray {
+    background-image: url("Styles/Home-Images/Scrolling-Collage/jc-gellidon-mxIUF_b5XJ8-unsplash-gray.webp")
+}
+.bg10gray {
+    background-image: url("Styles/Home-Images/Scrolling-Collage/jessica-felicio-QS9ZX5UnS14-unsplash-gray.webp")
+}
+.bg11gray {
+    background-image: url("Styles/Home-Images/Scrolling-Collage/justin-essah-8bPw733XN-g-unsplash-gray.webp")
+}
+.bg12gray {
+    background-image: url("Styles/Home-Images/Scrolling-Collage/kareya-saleh-tLKOj6cNwe0-unsplash-gray.webp")
+}
+.bg13gray {
+    background-image: url("Styles/Home-Images/Scrolling-Collage/kimson-doan-HD8KlyWRYYM-unsplash-gray.webp")
+}
+.bg14gray {
+    background-image: url("Styles/Home-Images/Scrolling-Collage/kyle-winkle-8vWQD-LFXjU-unsplash-gray.webp")
+}
+.bg15gray {
+    background-image: url("Styles/Home-Images/Scrolling-Collage/rafaella-mendes-diniz-AoL-mVxprmk-unsplash-gray.webp")
+}
+.bg16gray {
+    background-image: url("Styles/Home-Images/Scrolling-Collage/sergio-kian-emzc0ziwzYs-unsplash-gray.webp")
+}
+.bg17gray {
+    background-image: url("Styles/Home-Images/Scrolling-Collage/shayan-rostami-QHSxqBx_V80-unsplash-gray.webp")
+}
+.bg18gray {
+    background-image: url("Styles/Home-Images/Scrolling-Collage/soheil-jalili-d2EajdJsw1k-unsplash-gray.webp")
+}
+.bg19gray {
+    background-image: url("Styles/Home-Images/Scrolling-Collage/vahid-kanani-EruGdZ9J8nA-unsplash-gray.webp")
+}
+.bg20gray {
+    background-image: url("Styles/Home-Images/Scrolling-Collage/valerie-elash-XUT7V_md7sc-unsplash-gray.webp")
+}
+.bg21gray {
+    background-image: url("Styles/Home-Images/Scrolling-Collage/vinicius-amnx-amano-VFZF_pzTVBA-unsplash-gray.webp")
+}
 
 /* .about-us-section {
     overflow:hidden;
@@ -391,29 +587,9 @@ ul {
 
 
 
-.collage {
-    width: 5000px;
-    background-color: black;
-}
-.image-collage-container {
-    transition: transform 1s ease-in;
-    /* box-shadow: -30px 0 20px #2F0147; */
-}
-.image-collage-row {
-    clear: both;
-}
-.collage-img-container {
-    float: left;
-}
-.collage-img {
-    filter: grayscale();
-    transition: filter .2s ease-out;
-    width: 500px;
-}
-.collage-img:hover {
-    filter: none;
-    transition: filter .2s ease-in;
-}
+
+
+
 
 /* Services */
 .services-section {
@@ -473,6 +649,8 @@ ul {
     text-transform: uppercase;
     position: relative;
     font-family: "Playfair", serif;
+    border-bottom: 1px solid white;
+    transition: color .2s ease-out, border-color .2s ease-out;
 }
 .accordion-item-btn::after {
     content: url('/Styles/Home-Images/Services-Images/scissors-svgrepo-com.svg');
@@ -498,8 +676,11 @@ ul {
 .accordion-item { 
     padding: .5rem 0;
 }
-.accordion-item-header {
-    border-bottom: 1px solid white;
+.accordion-item-btn:hover {
+    color:#9C5288;
+    border-color: #9C5288;
+    transition: color .2s ease-out, border-color .2s ease-out;
+    cursor: pointer;
 }
 .accordion-item-body-content {
     padding: 1rem 1rem 1.5rem 1rem;

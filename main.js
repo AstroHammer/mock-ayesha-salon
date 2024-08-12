@@ -6,6 +6,10 @@ accordionButtons.forEach(accordionButton => {
         const accordionItemBody = accordionButton.parentElement.nextElementSibling;
         if (accordionButton.classList.contains('active')) {
             accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + 'px';
+            if (accordionItemBody.style.maxHeight > "500px") {
+                accordionItemBody.style.transitionDuration = ".4s";
+            }
+            
         } else {
             accordionItemBody.style.maxHeight = 0;
         }
@@ -26,7 +30,7 @@ smallAccordionButtons.forEach(accordionButton => {
     })
 })
 
-const accordionTitle =  document.querySelectorAll('.accordion-title');
+// const accordionTitle =  document.querySelectorAll('.accordion-title');
 
 
 
