@@ -16,6 +16,7 @@ accordionButtons.forEach(accordionButton => {
     })
 })
 
+
 const smallAccordionButtons = document.querySelectorAll('.single-cordion-item-btn');
 
 smallAccordionButtons.forEach(accordionButton => {
@@ -31,7 +32,6 @@ smallAccordionButtons.forEach(accordionButton => {
 })
 
 // const accordionTitle =  document.querySelectorAll('.accordion-title');
-
 
 
 
@@ -55,3 +55,22 @@ function addAnimation() {
         })
     })
 }
+
+
+let scrollingGrid = document.querySelector('.flow-grid');
+
+scrollingGrid.addEventListener('wheel', (event) => {
+    event.preventDefault();
+    scrollingGrid.scrollBy({
+      left: event.deltaY < 0 ? -80 : 80,
+    });
+
+
+  });
+  
+
+
+let imageContainer = document.querySelector('.item'); 
+let imageSlide = document.querySelector('.item-in');
+let imageContainerWidth = imageContainer.clientWidth;
+console.log(imageContainerWidth);

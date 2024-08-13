@@ -379,7 +379,7 @@ ul {
 
 
 .contents-wrap {
-  height: 800px;
+  height: 75vh;
   background-color: black;
   padding: 4rem 0;
 }
@@ -392,173 +392,267 @@ ul {
 }
 .flow-grid {
   height: 100%;
-  /* overflow: hidden; */
+  overflow-x: scroll;
+  overflow: hidden;
 }
 .flow-grid-row {
   height: 50%;
-  width: 1000%;
+  width: max-content;
 }
 .flow-grid-row-inner {
   height: 100%;
+  background-color: black;
   /* display: inline-block; */
 }
 .item {
   float: left;
   height: 100%;
-  /* position: relative;
-  overflow: hidden; */
+  overflow: hidden;
 }
 .item-in {
   background-repeat: no-repeat;
   height: 100%;
-  background-size: 101%;
+  width: auto;
+  background-size: 100%;
   background-position: -0.5% -0.5%;
+  transform: scale(1) translateX(200px);
+  transition: transform 2s linear;
+}
+/* translate this out to the right equal to the innerwidth of .item div */
+/* then translate it back in to the left equal to the innerwidth of .item div upon observer */
+/* have to figure out how to have a secondary background within .item div so serve as the precursor bg to the image container */
+
+.item-in:hover {
+    transform: scale(1.05);
+    transition: transform 2s linear;
 }
 .item-in-img-container {
-  width: 300px;
-  position: relative;
+  width: auto;
   display: inline-block;
   height: 100%;
-  background-size: 101%;
-  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: -0.5% -0.5%;
+  transition: opacity .1s linear;
+  /* transition: transform 1s .1s ease-in-out; */
 }
 .item-in-img-container img {
   min-width: 0;
   width: auto;
   height: 100%;
   opacity: 0;
-  vertical-align: top;
+  display: block;
 }
-.item-in-img-container img:hover {
-    opacity: 1;
+.item-in-img-container:hover {
+    opacity: 0;
+    /* transform: scale(1.05); */
+    transition: opacity .1s linear;
+    /* , transform 2s .05s ease-in-out; */
 }
+/* .item-in:hover {
+    transform: scale(1.05);
+    transition: transform 2s .05s ease-in-out;
+} */
 .bg1 {
     background-image: url("Home-Images/Scrolling-Collage/alexandru-zdrobau-BGz8vO3pK8k-unsplash.webp");
 }
 .bg2 {
-    background-image: url("Home-Images/Scrolling-Collage/caique-nascimento-BOHyxqepP9Y-unsplash.webp");
+    background-image: url("Home-Images/Scrolling-Collage/eye-8329347.webp");
 }
 .bg3 {
-    background-image: url("Home-Images/Scrolling-Collage/dmitry-vechorko-o93EI2mOZ68-unsplash.webp");
+    background-image: url("Home-Images/Scrolling-Collage/caique-nascimento-BOHyxqepP9Y-unsplash.webp");
 }
 .bg4 {
-    background-image: url("Home-Images/Scrolling-Collage/engin-akyurt-XZvyT2u04i8-unsplash.webp");
+    background-image: url("Home-Images/Scrolling-Collage/dmitry-vechorko-o93EI2mOZ68-unsplash.webp");
 }
 .bg5 {
-    background-image: url("Home-Images/Scrolling-Collage/fineas-gavre-CE_1ZBQ__Ns-unsplash.webp");
+    background-image: url("Home-Images/Scrolling-Collage/fingernails-8252121_1920.webp");
 }
 .bg6 {
-    background-image: url("Home-Images/Scrolling-Collage/fulop-adam-Fhoto1Lallc-unsplash.webp");
+    background-image: url("Home-Images/Scrolling-Collage/engin-akyurt-XZvyT2u04i8-unsplash.webp");
 }
 .bg7 {
-    background-image: url("Home-Images/Scrolling-Collage/gabriel-silverio-HibLL8rsiwc-unsplash.webp");
+    background-image: url("Home-Images/Scrolling-Collage/fineas-gavre-CE_1ZBQ__Ns-unsplash.webp");
 }
 .bg8 {
-    background-image: url("Home-Images/Scrolling-Collage/gabriel-silverio-K_b41GaWC5Y-unsplash.webp");
+    background-image: url("Home-Images/Scrolling-Collage/fulop-adam-Fhoto1Lallc-unsplash.webp");
 }
 .bg9 {
-    background-image: url("Home-Images/Scrolling-Collage/jc-gellidon-mxIUF_b5XJ8-unsplash.webp");
+    background-image: url("Home-Images/Scrolling-Collage/flowing-4712206.webp");
 }
 .bg10 {
-    background-image: url("Home-Images/Scrolling-Collage/jessica-felicio-QS9ZX5UnS14-unsplash.webp");
+    background-image: url("Home-Images/Scrolling-Collage/gabriel-silverio-HibLL8rsiwc-unsplash.webp");
 }
 .bg11 {
-    background-image: url("Home-Images/Scrolling-Collage/justin-essah-8bPw733XN-g-unsplash.webp");
+    background-image: url("Home-Images/Scrolling-Collage/woman-384133_1920.webp");
 }
 .bg12 {
-    background-image: url("Home-Images/Scrolling-Collage/kareya-saleh-tLKOj6cNwe0-unsplash.webp");
+    background-image: url("Home-Images/Scrolling-Collage/ai-generated-8496231.webp");
 }
 .bg13 {
-    background-image: url("Home-Images/Scrolling-Collage/kimson-doan-HD8KlyWRYYM-unsplash.webp");
+    background-image: url("Home-Images/Scrolling-Collage/gabriel-silverio-K_b41GaWC5Y-unsplash.webp");
 }
 .bg14 {
-    background-image: url("Home-Images/Scrolling-Collage/kyle-winkle-8vWQD-LFXjU-unsplash.webp");
+    background-image: url("Home-Images/Scrolling-Collage/jc-gellidon-mxIUF_b5XJ8-unsplash.webp");
 }
 .bg15 {
-    background-image: url("Home-Images/Scrolling-Collage/rafaella-mendes-diniz-AoL-mVxprmk-unsplash.webp");
+    background-image: url("Home-Images/Scrolling-Collage/jessica-felicio-QS9ZX5UnS14-unsplash.webp");
 }
 .bg16 {
-    background-image: url("Home-Images/Scrolling-Collage/sergio-kian-emzc0ziwzYs-unsplash.webp");
+    background-image: url("Home-Images/Scrolling-Collage/eyes-374920.webp");
 }
 .bg17 {
-    background-image: url("Home-Images/Scrolling-Collage/shayan-rostami-QHSxqBx_V80-unsplash.webp");
+    background-image: url("Home-Images/Scrolling-Collage/justin-essah-8bPw733XN-g-unsplash.webp");
 }
 .bg18 {
-    background-image: url("Home-Images/Scrolling-Collage/soheil-jalili-d2EajdJsw1k-unsplash.webp");
+    background-image: url("Home-Images/Scrolling-Collage/scarf-3350091_1280.webp");
 }
 .bg19 {
-    background-image: url("Home-Images/Scrolling-Collage/vahid-kanani-EruGdZ9J8nA-unsplash.webp");
+    background-image: url("Home-Images/Scrolling-Collage/kareya-saleh-tLKOj6cNwe0-unsplash.webp");
 }
 .bg20 {
-    background-image: url("Home-Images/Scrolling-Collage/valerie-elash-XUT7V_md7sc-unsplash.webp");
+    background-image: url("Home-Images/Scrolling-Collage/kimson-doan-HD8KlyWRYYM-unsplash.webp");
 }
 .bg21 {
+    background-image: url("Home-Images/Scrolling-Collage/kyle-winkle-8vWQD-LFXjU-unsplash.webp");
+}
+.bg22 {
+    background-image: url("Home-Images/Scrolling-Collage/rafaella-mendes-diniz-AoL-mVxprmk-unsplash.webp");
+}
+.bg23 {
+    background-image: url("Home-Images/Scrolling-Collage/manicure-8174106_1920.webp");
+}
+.bg24 {
+    background-image: url("Home-Images/Scrolling-Collage/blushing-2666403.webp");
+}
+.bg25 {
+    background-image: url("Home-Images/Scrolling-Collage/sergio-kian-emzc0ziwzYs-unsplash.webp");
+}
+.bg26 {
+    background-image: url("Home-Images/Scrolling-Collage/shayan-rostami-QHSxqBx_V80-unsplash.webp");
+}
+.bg27 {
+    background-image: url("Home-Images/Scrolling-Collage/beauty-5241620.webp");
+}
+.bg28 {
+    background-image: url("Home-Images/Scrolling-Collage/soheil-jalili-d2EajdJsw1k-unsplash.webp");
+}
+.bg29 {
+    background-image: url("Home-Images/Scrolling-Collage/vahid-kanani-EruGdZ9J8nA-unsplash.webp");
+}
+.bg30 {
+    background-image: url("Home-Images/Scrolling-Collage/pexels-rheza-aulia-1780651-3375210.webp");
+}
+.bg31 {
+    background-image: url("Home-Images/Scrolling-Collage/valerie-elash-XUT7V_md7sc-unsplash.webp");
+}
+.bg32 {
     background-image: url("Home-Images/Scrolling-Collage/vinicius-amnx-amano-VFZF_pzTVBA-unsplash.webp");
+}
+.bg33 {
+    background-image: url("Home-Images/Scrolling-Collage/woman-5443384.webp")
 }
 
 .bg1gray {
-    background-image: url("Styles/Home-Images/Scrolling-Collage/alexandru-zdrobau-BGz8vO3pK8k-unsplash-gray.webp")
+    background-image: url("Home-Images/Scrolling-Collage/alexandru-zdrobau-BGz8vO3pK8k-unsplash-gray.webp")
 }
 .bg2gray {
-    background-image: url("Styles/Home-Images/Scrolling-Collage/caique-nascimento-BOHyxqepP9Y-unsplash-gray.webp")
+    background-image: url("Home-Images/Scrolling-Collage/eye-8329347-gray.webp")
 }
 .bg3gray {
-    background-image: url("Styles/Home-Images/Scrolling-Collage/dmitry-vechorko-o93EI2mOZ68-unsplash-gray.webp")
+    background-image: url("Home-Images/Scrolling-Collage/caique-nascimento-BOHyxqepP9Y-unsplash-gray.webp")
 }
 .bg4gray {
-    background-image: url("Styles/Home-Images/Scrolling-Collage/engin-akyurt-XZvyT2u04i8-unsplash-gray.webp")
+    background-image: url("Home-Images/Scrolling-Collage/dmitry-vechorko-o93EI2mOZ68-unsplash-gray.webp")
 }
 .bg5gray {
-    background-image: url("Styles/Home-Images/Scrolling-Collage/fineas-gavre-CE_1ZBQ__Ns-unsplash-gray.webp")
+    background-image: url("Home-Images/Scrolling-Collage/fingernails-8252121_1920-gray.webp")
 }
 .bg6gray {
-    background-image: url("Styles/Home-Images/Scrolling-Collage/fulop-adam-Fhoto1Lallc-unsplash-gray.webp")
+    background-image: url("Home-Images/Scrolling-Collage/engin-akyurt-XZvyT2u04i8-unsplash-gray.webp")
 }
 .bg7gray {
-    background-image: url("Styles/Home-Images/Scrolling-Collage/gabriel-silverio-HibLL8rsiwc-unsplash-gray.webp")
+    background-image: url("Home-Images/Scrolling-Collage/fineas-gavre-CE_1ZBQ__Ns-unsplash-gray.webp")
 }
 .bg8gray {
-    background-image: url("Styles/Home-Images/Scrolling-Collage/gabriel-silverio-K_b41GaWC5Y-unsplash-gray.webp")
+    background-image: url("Home-Images/Scrolling-Collage/fulop-adam-Fhoto1Lallc-unsplash-gray.webp")
 }
 .bg9gray {
-    background-image: url("Styles/Home-Images/Scrolling-Collage/jc-gellidon-mxIUF_b5XJ8-unsplash-gray.webp")
+    background-image: url("Home-Images/Scrolling-Collage/flowing-4712206-gray.webp")
 }
 .bg10gray {
-    background-image: url("Styles/Home-Images/Scrolling-Collage/jessica-felicio-QS9ZX5UnS14-unsplash-gray.webp")
+    background-image: url("Home-Images/Scrolling-Collage/gabriel-silverio-HibLL8rsiwc-unsplash-gray.webp")
 }
 .bg11gray {
-    background-image: url("Styles/Home-Images/Scrolling-Collage/justin-essah-8bPw733XN-g-unsplash-gray.webp")
+    background-image: url("Home-Images/Scrolling-Collage/woman-384133_1920-gray.webp")
 }
 .bg12gray {
-    background-image: url("Styles/Home-Images/Scrolling-Collage/kareya-saleh-tLKOj6cNwe0-unsplash-gray.webp")
+    background-image: url("Home-Images/Scrolling-Collage/ai-generated-8496231-gray.webp")
 }
 .bg13gray {
-    background-image: url("Styles/Home-Images/Scrolling-Collage/kimson-doan-HD8KlyWRYYM-unsplash-gray.webp")
+    background-image: url("Home-Images/Scrolling-Collage/gabriel-silverio-K_b41GaWC5Y-unsplash-gray.webp")
 }
 .bg14gray {
-    background-image: url("Styles/Home-Images/Scrolling-Collage/kyle-winkle-8vWQD-LFXjU-unsplash-gray.webp")
+    background-image: url("Home-Images/Scrolling-Collage/jc-gellidon-mxIUF_b5XJ8-unsplash-gray.webp")
 }
 .bg15gray {
-    background-image: url("Styles/Home-Images/Scrolling-Collage/rafaella-mendes-diniz-AoL-mVxprmk-unsplash-gray.webp")
+    background-image: url("Home-Images/Scrolling-Collage/jessica-felicio-QS9ZX5UnS14-unsplash-gray.webp")
 }
 .bg16gray {
-    background-image: url("Styles/Home-Images/Scrolling-Collage/sergio-kian-emzc0ziwzYs-unsplash-gray.webp")
+    background-image: url("Home-Images/Scrolling-Collage/eyes-374920-gray.webp")
 }
 .bg17gray {
-    background-image: url("Styles/Home-Images/Scrolling-Collage/shayan-rostami-QHSxqBx_V80-unsplash-gray.webp")
+    background-image: url("Home-Images/Scrolling-Collage/justin-essah-8bPw733XN-g-unsplash-gray.webp")
 }
 .bg18gray {
-    background-image: url("Styles/Home-Images/Scrolling-Collage/soheil-jalili-d2EajdJsw1k-unsplash-gray.webp")
+    background-image: url("Home-Images/Scrolling-Collage/scarf-3350091_1280-gray.webp")
 }
 .bg19gray {
-    background-image: url("Styles/Home-Images/Scrolling-Collage/vahid-kanani-EruGdZ9J8nA-unsplash-gray.webp")
+    background-image: url("Home-Images/Scrolling-Collage/kareya-saleh-tLKOj6cNwe0-unsplash-gray.webp")
 }
 .bg20gray {
-    background-image: url("Styles/Home-Images/Scrolling-Collage/valerie-elash-XUT7V_md7sc-unsplash-gray.webp")
+    background-image: url("Home-Images/Scrolling-Collage/kimson-doan-HD8KlyWRYYM-unsplash-gray.webp")
 }
 .bg21gray {
-    background-image: url("Styles/Home-Images/Scrolling-Collage/vinicius-amnx-amano-VFZF_pzTVBA-unsplash-gray.webp")
+    background-image: url("Home-Images/Scrolling-Collage/kyle-winkle-8vWQD-LFXjU-unsplash-gray.webp")
 }
+.bg22gray {
+    background-image: url("Home-Images/Scrolling-Collage/rafaella-mendes-diniz-AoL-mVxprmk-unsplash-gray.webp")
+}
+.bg23gray {
+    background-image: url("Home-Images/Scrolling-Collage/manicure-8174106_1920-gray.webp")
+}
+.bg24gray {
+    background-image: url("Home-Images/Scrolling-Collage/blushing-2666403-gray.webp")
+}
+.bg25gray {
+    background-image: url("Home-Images/Scrolling-Collage/sergio-kian-emzc0ziwzYs-unsplash-gray.webp")
+}
+.bg26gray {
+    background-image: url("Home-Images/Scrolling-Collage/shayan-rostami-QHSxqBx_V80-unsplash-gray.webp")
+}
+.bg27gray {
+    background-image: url("Home-Images/Scrolling-Collage/beauty-5241620-gray.webp")
+}
+.bg28gray {
+    background-image: url("Home-Images/Scrolling-Collage/soheil-jalili-d2EajdJsw1k-unsplash-gray.webp")
+}
+.bg29gray {
+    background-image: url("Home-Images/Scrolling-Collage/vahid-kanani-EruGdZ9J8nA-unsplash-gray.webp")
+}
+.bg30gray {
+    background-image: url("Home-Images/Scrolling-Collage/pexels-rheza-aulia-1780651-3375210-gray.webp")
+}
+.bg31gray {
+    background-image: url("Home-Images/Scrolling-Collage/valerie-elash-XUT7V_md7sc-unsplash-gray.webp")
+}
+.bg32gray {
+    background-image: url("Home-Images/Scrolling-Collage/vinicius-amnx-amano-VFZF_pzTVBA-unsplash-gray.webp")
+}
+.bg33gray {
+    background-image: url("Home-Images/Scrolling-Collage/woman-5443384-gray.webp")
+}
+
 
 /* .about-us-section {
     overflow:hidden;
