@@ -379,7 +379,7 @@ ul {
 
 
 .contents-wrap {
-  height: 75vh;
+  height: 80vh;
   background-color: black;
   padding: 4rem 0;
 }
@@ -408,6 +408,8 @@ ul {
   float: left;
   height: 100%;
   overflow: hidden;
+  background-color: gray;
+  border: 1px solid red;
 }
 .item-in {
   background-repeat: no-repeat;
@@ -415,16 +417,16 @@ ul {
   width: auto;
   background-size: 100%;
   background-position: -0.5% -0.5%;
-  transform: scale(1) translateX(200px);
-  transition: transform 2s linear;
+  /* transform: scale(1);
+  transition: transform 2s linear; */
 }
 /* translate this out to the right equal to the innerwidth of .item div */
 /* then translate it back in to the left equal to the innerwidth of .item div upon observer */
 /* have to figure out how to have a secondary background within .item div so serve as the precursor bg to the image container */
 
 .item-in:hover {
-    transform: scale(1.05);
-    transition: transform 2s linear;
+    /* transform: scale(1.05);
+    transition: transform 2s linear; */
 }
 .item-in-img-container {
   width: auto;

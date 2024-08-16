@@ -62,15 +62,54 @@ let scrollingGrid = document.querySelector('.flow-grid');
 scrollingGrid.addEventListener('wheel', (event) => {
     event.preventDefault();
     scrollingGrid.scrollBy({
-      left: event.deltaY < 0 ? -80 : 80,
+      left: event.deltaY < 0 ? -200 : 200,
     });
 
 
-  });
+});
   
 
 
-let imageContainer = document.querySelector('.item'); 
-let imageSlide = document.querySelector('.item-in');
-let imageContainerWidth = imageContainer.clientWidth;
-console.log(imageContainerWidth);
+
+
+window.onload = function() {
+
+    
+
+
+
+
+    let flowGridRowInner = document.querySelectorAll('.flow-grid-row-inner');
+    let item = document.querySelectorAll('.item');
+
+    flowGridRowInner.forEach(child => {
+        let flowGridRowInnerChildren = child.children;
+        
+
+        for(let i = 0; i < flowGridRowInnerChildren.length; i++) {
+            let itemWidth = flowGridRowInnerChildren[i].clientWidth;
+            item.forEach(div => {
+                let itemChild = div.children;
+                
+            })
+            flowGridRowInnerChildren[i].style.width = itemWidth + 'px';
+        }
+    })
+}
+
+// let item = document.querySelectorAll('.item');
+// let itemIn = document.querySelectorAll('.item-in');
+// item.forEach(item => {
+//     item.addEventListener('mouseover', () => {
+
+//     })
+// })
+
+
+// innerNodes.forEach(innerNode => {
+//     let innerNodesChildren = innerNode.children;
+    
+//     for(let i = 0; i < innerNodesChildren.length; i++) {
+//         innerNodesChildren[0].style.transform = `translateX(${nodesWidth}px)`;
+//     }
+// })
