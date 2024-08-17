@@ -408,8 +408,8 @@ ul {
   float: left;
   height: 100%;
   overflow: hidden;
-  background-color: gray;
-  border: 1px solid red;
+  border: 2px solid red;
+  position: relative;
 }
 .item-in {
   background-repeat: no-repeat;
@@ -417,16 +417,18 @@ ul {
   width: auto;
   background-size: 100%;
   background-position: -0.5% -0.5%;
+  transform: translateX(1000px);
   /* transform: scale(1);
   transition: transform 2s linear; */
 }
-/* translate this out to the right equal to the innerwidth of .item div */
-/* then translate it back in to the left equal to the innerwidth of .item div upon observer */
-/* have to figure out how to have a secondary background within .item div so serve as the precursor bg to the image container */
-
-.item-in:hover {
-    /* transform: scale(1.05);
-    transition: transform 2s linear; */
+.pre-slide-bg {
+    height: 100%;
+    width: auto;
+    position: absolute;
+    inset: 0;
+    background-color: #c5c5c5;
+    opacity: .2;
+    transform: translateX(1000px);
 }
 .item-in-img-container {
   width: auto;

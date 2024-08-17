@@ -1,3 +1,5 @@
+//Services Accordion Boxes
+
 const accordionButtons = document.querySelectorAll('.accordion-item-btn');
 
 accordionButtons.forEach(accordionButton => {
@@ -16,6 +18,7 @@ accordionButtons.forEach(accordionButton => {
     })
 })
 
+//Single Item Accordions for FAQ
 
 const smallAccordionButtons = document.querySelectorAll('.single-cordion-item-btn');
 
@@ -31,9 +34,7 @@ smallAccordionButtons.forEach(accordionButton => {
     })
 })
 
-// const accordionTitle =  document.querySelectorAll('.accordion-title');
-
-
+//Logo carousel in Footer
 
 const scrollers = document.querySelectorAll('.carousel');
 
@@ -57,6 +58,9 @@ function addAnimation() {
 }
 
 
+//Script for Image Collage
+
+
 let scrollingGrid = document.querySelector('.flow-grid');
 
 scrollingGrid.addEventListener('wheel', (event) => {
@@ -69,47 +73,55 @@ scrollingGrid.addEventListener('wheel', (event) => {
 });
   
 
-
-
-
 window.onload = function() {
 
-    
-
-
-
-
-    let flowGridRowInner = document.querySelectorAll('.flow-grid-row-inner');
     let item = document.querySelectorAll('.item');
 
-    flowGridRowInner.forEach(child => {
-        let flowGridRowInnerChildren = child.children;
+    item.forEach(div => {
+        let itemChilds = div.children;
         
 
-        for(let i = 0; i < flowGridRowInnerChildren.length; i++) {
-            let itemWidth = flowGridRowInnerChildren[i].clientWidth;
-            item.forEach(div => {
-                let itemChild = div.children;
-                
-            })
-            flowGridRowInnerChildren[i].style.width = itemWidth + 'px';
+        for (let i = 0; i < itemChilds.length; i++) {
+
+            let ogWidth = itemChilds[i].getBoundingClientRect().width;
+            let itemWidth = Math.ceil(ogWidth);
+            
+            setSlidePosition(itemChilds[i], itemWidth);
+            activateTranslate(itemChilds[i], div, itemWidth);
         }
     })
+
+    function setSlidePosition(itemChilds, itemWidth) {
+        itemChilds.style.transform = `translateX(${itemWidth}px)`;
+    }
+
+    function activateTranslate(itemChilds, div, itemWidth) {
+        div.addEventListener('click', () => {
+            console.log('show thyself!');
+            itemChilds.style.transition = 'transform .8s .5s cubic-bezier(.6,0,.3,1)';
+            itemChilds.style.transform = `translateX(${-itemWidth + itemWidth}px)`;
+        })
+    }
+
+    function activateTranslate(itemChilds, div, itemWidth) {
+        div.addEventListener('click', () => {
+            if (itemChilds.classList.contains('pre-slide-bg')) {
+                activateFirstSlide(itemChilds, itemWidth);
+                console.log("ran IF");
+            } else {
+                activateSecondSlide(itemChilds, itemWidth);
+                console.log("then ran ELSE");
+            }
+        })
+    }
+
+    function activateFirstSlide(itemChilds, itemWidth) {
+        itemChilds.style.transition = 'transform .8s cubic-bezier(.6,0,.3,1)';
+        itemChilds.style.transform = `translateX(${-itemWidth + itemWidth}px)`;
+    }
+    function activateSecondSlide(itemChilds, itemWidth) {
+        itemChilds.style.transition = 'transform .8s .8s cubic-bezier(.6,0,.3,1)';
+        itemChilds.style.transform = `translateX(${-itemWidth + itemWidth}px)`;
+    }
+
 }
-
-// let item = document.querySelectorAll('.item');
-// let itemIn = document.querySelectorAll('.item-in');
-// item.forEach(item => {
-//     item.addEventListener('mouseover', () => {
-
-//     })
-// })
-
-
-// innerNodes.forEach(innerNode => {
-//     let innerNodesChildren = innerNode.children;
-    
-//     for(let i = 0; i < innerNodesChildren.length; i++) {
-//         innerNodesChildren[0].style.transform = `translateX(${nodesWidth}px)`;
-//     }
-// })
