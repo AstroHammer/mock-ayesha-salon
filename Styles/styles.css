@@ -408,7 +408,6 @@ ul {
   float: left;
   height: 100%;
   overflow: hidden;
-  border: 2px solid red;
   position: relative;
 }
 .item-in {
@@ -756,12 +755,12 @@ ul {
     width: 20px;
     height: 20px;
     right: 0;
-    transition: transform .2s linear;
+    transition: transform .3s linear;
     transform-origin: bottom;
 }
 .accordion-item-btn.active::after {
     transform: rotate(-120deg);
-    transition: transform .2s linear;
+    transition: transform .3s linear;
 }
 .accordion-item-body {
     background-color: black;
@@ -779,6 +778,10 @@ ul {
     border-color: #9C5288;
     transition: color .2s ease-out, border-color .2s ease-out;
     cursor: pointer;
+}
+.active {
+    color:#9C5288;
+    border-color: #9C5288;
 }
 .accordion-item-body-content {
     padding: 1rem 1rem 1.5rem 1rem;

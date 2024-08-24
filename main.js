@@ -24,9 +24,9 @@ const smallAccordionButtons = document.querySelectorAll('.single-cordion-item-bt
 
 smallAccordionButtons.forEach(accordionButton => {
     accordionButton.addEventListener('click', event => {
-        accordionButton.classList.toggle('active');
+        accordionButton.classList.toggle('active-2');
         const accordionItemBody = accordionButton.parentElement.nextElementSibling;
-        if (accordionButton.classList.contains('active')) {
+        if (accordionButton.classList.contains('active-2')) {
             accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + 'px';
         } else {
             accordionItemBody.style.maxHeight = 0;
@@ -66,7 +66,7 @@ let scrollingGrid = document.querySelector('.flow-grid');
 scrollingGrid.addEventListener('wheel', (event) => {
     event.preventDefault();
     scrollingGrid.scrollBy({
-      left: event.deltaY < 0 ? -200 : 200,
+      left: event.deltaY < 0 ? -80 : 80,
     });
 
 
@@ -76,7 +76,6 @@ scrollingGrid.addEventListener('wheel', (event) => {
 window.onload = function() {
 
     let item = document.querySelectorAll('.item');
-
     item.forEach(div => {
         let itemChilds = div.children;
         
@@ -96,23 +95,32 @@ window.onload = function() {
     }
 
     function activateTranslate(itemChilds, div, itemWidth) {
-        div.addEventListener('click', () => {
-            console.log('show thyself!');
-            itemChilds.style.transition = 'transform .8s .5s cubic-bezier(.6,0,.3,1)';
-            itemChilds.style.transform = `translateX(${-itemWidth + itemWidth}px)`;
-        })
-    }
-
-    function activateTranslate(itemChilds, div, itemWidth) {
-        div.addEventListener('click', () => {
-            if (itemChilds.classList.contains('pre-slide-bg')) {
-                activateFirstSlide(itemChilds, itemWidth);
-                console.log("ran IF");
-            } else {
-                activateSecondSlide(itemChilds, itemWidth);
-                console.log("then ran ELSE");
-            }
-        })
+        createObserver();
+        function createObserver() {
+            let observer;
+            let options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: .1,
+            };
+            observer = new IntersectionObserver(handleTranslate, options);
+            observer.observe(div);
+        }
+        function handleTranslate(entries, observer) {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    if (itemChilds.classList.contains('pre-slide-bg')) {
+                        activateFirstSlide(itemChilds, itemWidth);
+                        observer.unobserve(div);
+                        console.log("ran IF");
+                    } else {
+                        activateSecondSlide(itemChilds, itemWidth);
+                        observer.unobserve(div);
+                        console.log("then ran ELSE");
+                    }
+                }
+            })
+        }
     }
 
     function activateFirstSlide(itemChilds, itemWidth) {
@@ -125,3 +133,49 @@ window.onload = function() {
     }
 
 }
+
+
+//Script for Service Cost Alterator
+
+const selectEl_Highlights = document.querySelector('.highlights');
+const selectValue_Highlights = selectEl_Highlights.options;
+
+const selectEl_TouchUp = document.querySelector('.touch-up');
+const selectValue_TouchUp = selectEl_TouchUp.options;
+
+const selectEl_Funky = document.querySelector('.funky');
+const selectValue_Funky = selectEl_Funky.options;
+
+const selectEl_ClipIns = document.querySelector('.clip-ins');
+const selectValue_ClipIns = selectEl_ClipIns.options;
+
+const selectEl_Wigs = document.querySelector('.wigs');
+const selectValue_Wigs = selectEl_Wigs.options;
+
+const selectEl_Weave = document.querySelector('.weave');
+const selectValue_Weave = selectEl_Weave.options;
+
+const selectEl_Cuts = document.querySelector('.cuts');
+const selectValue_Cuts = selectEl_Cuts.options;
+
+const selectEl_Styling = document.querySelector('.styling');
+const selectValue_Styling = selectEl_Styling.options;
+
+const selectEl_MakeUp = document.querySelector('.make-up');
+const selectValue_MakeUp = selectEl_MakeUp.options;
+
+const insertTotalHere = document.querySelector('.flex-end');
+
+
+
+function selectedSkillLevel() {
+    //will apply "selected" attribute to element chosen
+    //will clear "selected" attribute from all other options
+}
+
+function changePrices() {
+    //register which element has "selected" attribute
+    //calculate a total price based off the element selected (skill level)
+    //Total price for Full and divide by 2 for partial
+}
+
