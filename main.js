@@ -203,27 +203,28 @@ const insertTotal_MakeUp = document.querySelectorAll('.make-up-services .flex-en
 
 // function changeColor(selectValue_HighLights) {
 //     insertTotal_HighLights.forEach(total => {
-//         if (selectValue_HighLights == "Level 1") {
-//             total.style.color = 'red';
-//         } else if (selectValue_HighLights == "Level 2") {
-//             total.style.color = 'blue';
-//         } else if (selectValue_HighLights == "Level 3") {
-//             total.style.color = 'green';
-//         } else if (selectValue_HighLights == "Level 4") {
-//             total.style.color = 'yellow';
-//         } else if (selectValue_HighLights == "Level 5") {
-//             total.style.color = 'orange';
-//         } else if (selectValue_HighLights == "Level 6") {
-//             total.style.color = 'teal';
-//         } else if (selectValue_HighLights == "Level 7") {
-//             total.style.color = 'purple';
-//         } else if (selectValue_HighLights == "Level 8") {
-//             total.style.color = 'silver';
-//         }
+        // if (selectValue_HighLights == "Level 1") {
+        //     total.style.color = 'red';
+        // } else if (selectValue_HighLights == "Level 2") {
+        //     total.style.color = 'blue';
+        // } else if (selectValue_HighLights == "Level 3") {
+        //     total.style.color = 'green';
+        // } else if (selectValue_HighLights == "Level 4") {
+        //     total.style.color = 'yellow';
+        // } else if (selectValue_HighLights == "Level 5") {
+        //     total.style.color = 'orange';
+        // } else if (selectValue_HighLights == "Level 6") {
+        //     total.style.color = 'teal';
+        // } else if (selectValue_HighLights == "Level 7") {
+        //     total.style.color = 'purple';
+        // } else if (selectValue_HighLights == "Level 8") {
+        //     total.style.color = 'silver';
+        // }
 //     })
 // }
 
-
+let insertTotal = document.querySelectorAll('.flex-end');
+let insertTotalParent = document.querySelectorAll('.services')
 let testing = document.querySelectorAll('.skill-level-menu');
 
 testing.forEach(menu => {
@@ -232,12 +233,12 @@ testing.forEach(menu => {
             testing[i].classList.remove('menu-entered');
         }
         menu.classList.add('menu-entered');
-        let testEl = menu.children;
-        for (i = 0; i < testEl.length; i++) {
-            testOption = testEl[i];
-            doSomething(testOption, testEl, menu);
-        }
     })
+    let testEl = menu.children;
+    for (i = 0; i < testEl.length; i++) {
+        testOption = testEl[i];
+        doSomething(testOption, testEl, menu);
+    }
 })
 
 function doSomething(testOption, testEl, menu) {
@@ -247,14 +248,21 @@ function doSomething(testOption, testEl, menu) {
                 testEl[i].removeAttribute('selected');
             }
             testOption.setAttribute('selected', '');
-            console.log(testOption);
+            selectedOptionValue = menu.options[menu.selectedIndex].text;
+            changeColor(selectedOptionValue, menu);
             //i want to find the selectedIndex in the menu that contains the class menu-entered
             //and store that value into a variable
         }
     })
 }
 
-
+function changeColor(selectedOptionValue, menu) {
+    let boopie = menu.parentElement.nextElementSibling.children;
+    for (i = 0; i < boopie.length; i++) {
+        let flexEnd = boopie[i].children;
+        
+    }
+}
 // console.log(insertTotal_Highlights);
 // console.log(insertTotal_TouchUp);
 // console.log(insertTotal_Funky);
