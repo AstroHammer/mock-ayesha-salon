@@ -137,96 +137,10 @@ window.onload = function() {
 
 
 
-const selectEl_HighLights = document.querySelector('.highlights');
-let selectValue_HighLights = selectEl_HighLights.options[selectEl_HighLights.selectedIndex].value;
-//[selectEl_HighLights.selectedIndex].value (gets attribute value of selected element);
-const insertTotal_HighLights = document.querySelectorAll('.highlight-services .flex-end');
-
-const selectEl_TouchUp = document.querySelector('.touch-up');
-const selectValue_TouchUp = selectEl_TouchUp.options;
-const insertTotal_TouchUp = document.querySelectorAll('.touch-up-services .flex-end');
-
-const selectEl_Funky = document.querySelector('.funky');
-const selectValue_Funky = selectEl_Funky.options;
-const insertTotal_Funky = document.querySelectorAll('.funky-services .flex-end');
-
-const selectEl_ClipIns = document.querySelector('.clip-ins');
-const selectValue_ClipIns = selectEl_ClipIns.options;
-const insertTotal_ClipIns = document.querySelectorAll('.clip-in-services .flex-end');
-
-const selectEl_Wigs = document.querySelector('.wigs');
-const selectValue_Wigs = selectEl_Wigs.options;
-const insertTotal_Wigs = document.querySelectorAll('.wig-services .flex-end');
-
-const selectEl_Weave = document.querySelector('.weave');
-const selectValue_Weave = selectEl_Weave.options;
-const insertTotal_Weave = document.querySelectorAll('.weave-services .flex-end');
-
-const selectEl_Cuts = document.querySelector('.cuts');
-const selectValue_Cuts = selectEl_Cuts.options;
-const insertTotal_Cuts = document.querySelectorAll('.cuts-services .flex-end');
-
-const selectEl_Styling = document.querySelector('.styling');
-const selectValue_Styling = selectEl_Styling.options;
-const insertTotal_Styling = document.querySelectorAll('.styling-services .flex-end');
-
-const selectEl_MakeUp = document.querySelector('.make-up');
-const selectValue_MakeUp = selectEl_MakeUp.options;
-const insertTotal_MakeUp = document.querySelectorAll('.make-up-services .flex-end');
-
-//going thru options, calling function to apply eventlistener to all
-
-// let testing = selectEl_HighLights.children;
-// for(i = 0; i < testing.length; i++) {
-//     testOption = testing[i];
-//     doSomething(testOption);
-// }
-
-
-//function applying event listeners and 
-//waiting for a click to remove and apply "selected" attribute and 
-//state which option has been selected and it's value
-
-// function doSomething(testOption) {
-//     testOption.addEventListener('click', () => {
-//         for (i = 0; i < testing.length; i++) {
-//             testing[i].removeAttribute('selected');
-//         }
-//         console.log(testOption);
-//         testOption.setAttribute('selected', '');
-//         selectValue_HighLights = selectEl_HighLights.options[selectEl_HighLights.selectedIndex].text;
-//         console.log(selectValue_HighLights);
-//         console.log(testOption);
-//         changeColor(selectValue_HighLights);
-//     })
-// }
-
-// function changeColor(selectValue_HighLights) {
-//     insertTotal_HighLights.forEach(total => {
-        // if (selectValue_HighLights == "Level 1") {
-        //     total.style.color = 'red';
-        // } else if (selectValue_HighLights == "Level 2") {
-        //     total.style.color = 'blue';
-        // } else if (selectValue_HighLights == "Level 3") {
-        //     total.style.color = 'green';
-        // } else if (selectValue_HighLights == "Level 4") {
-        //     total.style.color = 'yellow';
-        // } else if (selectValue_HighLights == "Level 5") {
-        //     total.style.color = 'orange';
-        // } else if (selectValue_HighLights == "Level 6") {
-        //     total.style.color = 'teal';
-        // } else if (selectValue_HighLights == "Level 7") {
-        //     total.style.color = 'purple';
-        // } else if (selectValue_HighLights == "Level 8") {
-        //     total.style.color = 'silver';
-        // }
-//     })
-// }
-
-let insertTotal = document.querySelectorAll('.flex-end');
-let insertTotalParent = document.querySelectorAll('.services')
 let testing = document.querySelectorAll('.skill-level-menu');
-
+// add eventlisteners to all select elements
+// when clicked remove class from all and then add class to element clicked
+// then identify all the options from that menu clicked
 testing.forEach(menu => {
     menu.addEventListener('click', () => {
         for (i = 0; i < testing.length; i++) {
@@ -237,11 +151,14 @@ testing.forEach(menu => {
     let testEl = menu.children;
     for (i = 0; i < testEl.length; i++) {
         testOption = testEl[i];
-        doSomething(testOption, testEl, menu);
+        identifyMenuOptionSelected(testOption, testEl, menu);
     }
 })
-
-function doSomething(testOption, testEl, menu) {
+//add event listeners to all option elements that were inside the previously clicked menu
+//remove class from all other options elements within that menu
+//add class to option selected within that menu
+//store which option in that menu is selected and it's text value
+function identifyMenuOptionSelected(testOption, testEl, menu) {
     testOption.addEventListener('click', () => {
         if (testOption.parentElement.classList.contains('menu-entered')) {
             for (i = 0; i < testEl.length; i++) {
@@ -249,39 +166,180 @@ function doSomething(testOption, testEl, menu) {
             }
             testOption.setAttribute('selected', '');
             selectedOptionValue = menu.options[menu.selectedIndex].text;
-            changeColor(selectedOptionValue, menu);
-            //i want to find the selectedIndex in the menu that contains the class menu-entered
-            //and store that value into a variable
+            targetTotalDivs(selectedOptionValue, menu);
         }
     })
 }
-
-function changeColor(selectedOptionValue, menu) {
+//use previously clicked menu's parent to traverse to another container within the same parent
+//store the children of that container
+//iterate through each of those childrens' children and store each one
+//iterate through each of those children looking for the children that contain the class 'flex-end'
+//store each element with that class in a variable
+//send that variable out to run a function with it
+function targetTotalDivs(selectedOptionValue, menu) {
     let boopie = menu.parentElement.nextElementSibling.children;
+
     for (i = 0; i < boopie.length; i++) {
         let flexEnd = boopie[i].children;
-        
+        for (j = 0; j < flexEnd.length; j++) {
+            if (flexEnd[j].classList.contains('flex-end')) {
+                targetFlexEnd = flexEnd[j];
+                changeTotal(targetFlexEnd, selectedOptionValue);
+            }
+        }
     }
 }
-// console.log(insertTotal_Highlights);
-// console.log(insertTotal_TouchUp);
-// console.log(insertTotal_Funky);
-// console.log(insertTotal_ClipIns);
-// console.log(insertTotal_Wigs);
-// console.log(insertTotal_Weave);
-// console.log(insertTotal_Cuts);
-// console.log(insertTotal_Styling);
-// console.log(insertTotal_MakeUp);
+//apply styling to the element with class 'flex-end' if
+//the clicked option within the previously clicked menu value is X
+function changeTotal(targetFlexEnd, selectedOptionValue) {
+    
+
+    // let price = ;
+    // let partialPrice = ;
+    // let fullPrice = ;
+    if (selectedOptionValue == "Level 1") {
 
 
-function selectedSkillLevel() {
-    //will apply "selected" attribute to element chosen
-    //will clear "selected" attribute from all other options
+        // targetFlexEnd.style.color = 'red';
+    } else if (selectedOptionValue == "Level 2") {
+
+
+        // targetFlexEnd.style.color = 'blue';
+    } else if (selectedOptionValue == "Level 3") {
+
+
+        // targetFlexEnd.style.color = 'green';
+    } else if (selectedOptionValue == "Level 4") {
+
+
+        // targetFlexEnd.style.color = 'yellow';
+    } else if (selectedOptionValue == "Level 5") {
+
+
+        // targetFlexEnd.style.color = 'orange';
+    } else if (selectedOptionValue == "Level 6") {
+
+
+        // targetFlexEnd.style.color = 'teal';
+    } else if (selectedOptionValue == "Level 7") {
+
+
+        // targetFlexEnd.style.color = 'purple';
+    } else if (selectedOptionValue == "Level 8") {
+
+
+        // targetFlexEnd.style.color = 'pink';
+    }
 }
 
-function changePrices() {
-    //register which element has "selected" attribute
-    //calculate a total price based off the element selected (skill level)
-    //Total price for Full and divide by 2 for partial
-}
+// if selectedOptionValue of the previously click menu is Level 1
+// AND if that targetFlexEnd[i] contains an ID of X
+// go to specific function
+// else, do next iteration
 
+
+function highLight_Prices() {
+
+}
+function balayage_Prices() {
+
+}
+function foil_Prices() {
+
+}
+function roots_Prices() {
+
+}
+function grayCoverage_Prices() {
+
+}
+function unicord_Prices() {
+
+}
+function mermaid_Prices() {
+
+}
+function custom_Prices() {
+
+}
+function lace_Clip_Prices() {
+
+}
+function seamless_Clip_Prices() {
+
+}
+function halos_Clip_Prices() {
+
+}
+function ponytails_Clip_Prices() {
+
+}
+function bangs_Clip_Prices() {
+
+}
+function lace_Wig_Prices() {
+
+}
+function mono_Wig_Prices() {
+
+}
+function combo_Wig_Prices() {
+
+}
+function capless_Wig_Prices() {
+
+}
+function traditional_Sew_Prices() {
+
+}
+function full_Sew_Prices() {
+
+}
+function partial_Sew_Prices() {
+
+}
+function vixen_Sew_Prices() {
+
+}
+function versatile_Sew_Prices() {
+
+}
+function deg_0() {
+
+}
+function deg_45() {
+
+}
+function deg_90() {
+
+}
+function deg_180() {
+
+}
+function trim() {
+
+}
+function volume_Style() {
+
+}
+function straight_Style() {
+
+}
+function curls_Style() {
+
+}
+function braid_Style() {
+
+}
+function educate_Style() {
+
+}
+function bridal_MakeUp() {
+
+}
+function bach_MakeUp() {
+
+}
+function fx_MakeUp() {
+    
+}
