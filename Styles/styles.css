@@ -1542,7 +1542,7 @@ input[type="button"] {
     border-bottom: 1px solid white;
 }
 .product-logo-section {
-    padding: 1rem;
+    padding: auto 1rem;
     -webkit-mask: linear-gradient(90deg, transparent, white 50%, white 50%, transparent);
     mask: linear-gradient(90deg, transparent, white 50% , white 50%, transparent);
 }
@@ -1552,7 +1552,7 @@ input[type="button"] {
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
-    
+    gap: 1rem;
     padding-block: 1rem;
 }
 .support-org-name-container {
@@ -1566,7 +1566,7 @@ input[type="button"] {
     align-items: stretch;
     justify-content: flex-start;
     width: fit-content;
-    animation: scroll 50s linear infinite;
+    animation: scroll 40s linear infinite;
 }
 .carousel-item {
     width: 200px;

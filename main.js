@@ -41,7 +41,6 @@ const scrollers = document.querySelectorAll('.carousel');
 if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     addAnimation();
 }
-
 function addAnimation() {
     scrollers.forEach(scroller => {
         scroller.setAttribute('data-animated', true);
@@ -57,9 +56,7 @@ function addAnimation() {
     })
 }
 
-
 //Script for Image Collage
-
 
 let scrollingGrid = document.querySelector('.flow-grid');
 
@@ -71,8 +68,6 @@ scrollingGrid.addEventListener('wheel', (event) => {
 
 
 });
-  
-
 window.onload = function() {
 
     let item = document.querySelectorAll('.item');
@@ -89,11 +84,9 @@ window.onload = function() {
             activateTranslate(itemChilds[i], div, itemWidth);
         }
     })
-
     function setSlidePosition(itemChilds, itemWidth) {
         itemChilds.style.transform = `translateX(${itemWidth}px)`;
     }
-
     function activateTranslate(itemChilds, div, itemWidth) {
         createObserver();
         function createObserver() {
@@ -132,10 +125,7 @@ window.onload = function() {
 
 }
 
-
 //Script for Service Cost Alterator
-
-
 
 let testing = document.querySelectorAll('.skill-level-menu');
 // add eventlisteners to all select elements
@@ -183,163 +173,340 @@ function targetTotalDivs(selectedOptionValue, menu) {
         let flexEnd = boopie[i].children;
         for (j = 0; j < flexEnd.length; j++) {
             if (flexEnd[j].classList.contains('flex-end')) {
-                targetFlexEnd = flexEnd[j];
-                changeTotal(targetFlexEnd, selectedOptionValue);
+                let targetFlexEnd = flexEnd[j];
+                determinePrice(targetFlexEnd, selectedOptionValue);
             }
         }
     }
 }
-//apply styling to the element with class 'flex-end' if
+
+
+//apply html to the element with class 'flex-end' if
 //the clicked option within the previously clicked menu value is X
-function changeTotal(targetFlexEnd, selectedOptionValue) {
-    
-
-    // let price = ;
-    // let partialPrice = ;
-    // let fullPrice = ;
+//determining the increase of the price based on level here
+function determinePrice(targetFlexEnd, selectedOptionValue) {
     if (selectedOptionValue == "Level 1") {
+        determineOptionPrices(targetFlexEnd);
 
+        let returnValue = determineOptionPrices(targetFlexEnd);
 
-        // targetFlexEnd.style.color = 'red';
+        if (targetFlexEnd.classList.contains('two-price')) {
+            let fullPrice = returnValue[0] * 1;
+            let partialPrice = returnValue[1] * 1;
+            if (targetFlexEnd.classList.contains('minimum-price')) {
+                let price = '$' + `${fullPrice}` + '+' + ' ' + '/' + ' ' + '$' + `${partialPrice}` + '+';
+                applyPrices(price, targetFlexEnd);
+            } else {
+                let price = '$' + `${fullPrice}` + ' ' + '/' + ' ' + '$' + `${partialPrice}`;
+                applyPrices(price, targetFlexEnd);
+            }
+        } else {
+            if (targetFlexEnd.classList.contains('minimum-price')) {
+                returnValue = '$' + `${returnValue * 1}` + '+';
+                applyPrices(returnValue, targetFlexEnd);
+            } else {
+                returnValue = '$' + `${returnValue * 1}`;
+                applyPrices(returnValue, targetFlexEnd);
+            }
+        }
     } else if (selectedOptionValue == "Level 2") {
+        determineOptionPrices(targetFlexEnd);
 
+        let returnValue = determineOptionPrices(targetFlexEnd);
 
-        // targetFlexEnd.style.color = 'blue';
+        if (targetFlexEnd.classList.contains('two-price')) {
+            let fullPrice = returnValue[0] * 2;
+            let partialPrice = returnValue[1] * 2;
+            if (targetFlexEnd.classList.contains('minimum-price')) {
+                let price = '$' + `${fullPrice}` + '+' + ' ' + '/' + ' ' + '$' + `${partialPrice}` + '+';
+                applyPrices(price, targetFlexEnd);
+            } else {
+                let price = '$' + `${fullPrice}` + ' ' + '/' + ' ' + '$' + `${partialPrice}`;
+                applyPrices(price, targetFlexEnd);
+            }
+        } else {
+            if (targetFlexEnd.classList.contains('minimum-price')) {
+                returnValue = '$' + `${returnValue * 2}` + '+';
+                applyPrices(returnValue, targetFlexEnd);
+            } else {
+                returnValue = '$' + `${returnValue * 2}`;
+                applyPrices(returnValue, targetFlexEnd);
+            }
+        }
     } else if (selectedOptionValue == "Level 3") {
+        determineOptionPrices(targetFlexEnd);
 
+        let returnValue = determineOptionPrices(targetFlexEnd);
 
-        // targetFlexEnd.style.color = 'green';
+        if (targetFlexEnd.classList.contains('two-price')) {
+            let fullPrice = returnValue[0] * 3;
+            let partialPrice = returnValue[1] * 3;
+            if (targetFlexEnd.classList.contains('minimum-price')) {
+                let price = '$' + `${fullPrice}` + '+' + ' ' + '/' + ' ' + '$' + `${partialPrice}` + '+';
+                applyPrices(price, targetFlexEnd);
+            } else {
+                let price = '$' + `${fullPrice}` + ' ' + '/' + ' ' + '$' + `${partialPrice}`;
+                applyPrices(price, targetFlexEnd);
+            }
+        } else {
+            if (targetFlexEnd.classList.contains('minimum-price')) {
+                returnValue = '$' + `${returnValue * 3}` + '+';
+                applyPrices(returnValue, targetFlexEnd);
+            } else {
+                returnValue = '$' + `${returnValue * 3}`;
+                applyPrices(returnValue, targetFlexEnd);
+            }
+        }
     } else if (selectedOptionValue == "Level 4") {
+        determineOptionPrices(targetFlexEnd);
 
+        let returnValue = determineOptionPrices(targetFlexEnd);
 
-        // targetFlexEnd.style.color = 'yellow';
+        if (targetFlexEnd.classList.contains('two-price')) {
+            let fullPrice = returnValue[0] * 4;
+            let partialPrice = returnValue[1] * 4;
+            if (targetFlexEnd.classList.contains('minimum-price')) {
+                let price = '$' + `${fullPrice}` + '+' + ' ' + '/' + ' ' + '$' + `${partialPrice}` + '+';
+                applyPrices(price, targetFlexEnd);
+            } else {
+                let price = '$' + `${fullPrice}` + ' ' + '/' + ' ' + '$' + `${partialPrice}`;
+                applyPrices(price, targetFlexEnd);
+            }
+        } else {
+            if (targetFlexEnd.classList.contains('minimum-price')) {
+                returnValue = '$' + `${returnValue * 4}` + '+';
+                applyPrices(returnValue, targetFlexEnd);
+            } else {
+                returnValue = '$' + `${returnValue * 4}`;
+                applyPrices(returnValue, targetFlexEnd);
+            }
+        }
     } else if (selectedOptionValue == "Level 5") {
+        determineOptionPrices(targetFlexEnd);
 
+        let returnValue = determineOptionPrices(targetFlexEnd);
 
-        // targetFlexEnd.style.color = 'orange';
+        if (targetFlexEnd.classList.contains('two-price')) {
+            let fullPrice = returnValue[0] * 5;
+            let partialPrice = returnValue[1] * 5;
+            if (targetFlexEnd.classList.contains('minimum-price')) {
+                let price = '$' + `${fullPrice}` + '+' + ' ' + '/' + ' ' + '$' + `${partialPrice}` + '+';
+                applyPrices(price, targetFlexEnd);
+            } else {
+                let price = '$' + `${fullPrice}` + ' ' + '/' + ' ' + '$' + `${partialPrice}`;
+                applyPrices(price, targetFlexEnd);
+            }
+        } else {
+            if (targetFlexEnd.classList.contains('minimum-price')) {
+                returnValue = '$' + `${returnValue * 5}` + '+';
+                applyPrices(returnValue, targetFlexEnd);
+            } else {
+                returnValue = '$' + `${returnValue * 5}`;
+                applyPrices(returnValue, targetFlexEnd);
+            }
+        }
     } else if (selectedOptionValue == "Level 6") {
+        determineOptionPrices(targetFlexEnd);
 
+        let returnValue = determineOptionPrices(targetFlexEnd);
 
-        // targetFlexEnd.style.color = 'teal';
+        if (targetFlexEnd.classList.contains('two-price')) {
+            let fullPrice = returnValue[0] * 6;
+            let partialPrice = returnValue[1] * 6;
+            if (targetFlexEnd.classList.contains('minimum-price')) {
+                let price = '$' + `${fullPrice}` + '+' + ' ' + '/' + ' ' + '$' + `${partialPrice}` + '+';
+                applyPrices(price, targetFlexEnd);
+            } else {
+                let price = '$' + `${fullPrice}` + ' ' + '/' + ' ' + '$' + `${partialPrice}`;
+                applyPrices(price, targetFlexEnd);
+            }
+        } else {
+            if (targetFlexEnd.classList.contains('minimum-price')) {
+                returnValue = '$' + `${returnValue * 6}` + '+';
+                applyPrices(returnValue, targetFlexEnd);
+            } else {
+                returnValue = '$' + `${returnValue * 6}`;
+                applyPrices(returnValue, targetFlexEnd);
+            }
+        }
     } else if (selectedOptionValue == "Level 7") {
+        determineOptionPrices(targetFlexEnd);
 
+        let returnValue = determineOptionPrices(targetFlexEnd);
 
-        // targetFlexEnd.style.color = 'purple';
+        if (targetFlexEnd.classList.contains('two-price')) {
+            let fullPrice = returnValue[0] * 7;
+            let partialPrice = returnValue[1] * 7;
+            if (targetFlexEnd.classList.contains('minimum-price')) {
+                let price = '$' + `${fullPrice}` + '+' + ' ' + '/' + ' ' + '$' + `${partialPrice}` + '+';
+                applyPrices(price, targetFlexEnd);
+            } else {
+                let price = '$' + `${fullPrice}` + ' ' + '/' + ' ' + '$' + `${partialPrice}`;
+                applyPrices(price, targetFlexEnd);
+            }
+        } else {
+            if (targetFlexEnd.classList.contains('minimum-price')) {
+                returnValue = '$' + `${returnValue * 7}` + '+';
+                applyPrices(returnValue, targetFlexEnd);
+            } else {
+                returnValue = '$' + `${returnValue * 7}`;
+                applyPrices(returnValue, targetFlexEnd);
+            }
+        }
     } else if (selectedOptionValue == "Level 8") {
+        determineOptionPrices(targetFlexEnd);
 
+        let returnValue = determineOptionPrices(targetFlexEnd);
 
-        // targetFlexEnd.style.color = 'pink';
+        if (targetFlexEnd.classList.contains('two-price')) {
+            let fullPrice = returnValue[0] * 8;
+            let partialPrice = returnValue[1] * 8;
+            if (targetFlexEnd.classList.contains('minimum-price')) {
+                let price = '$' + `${fullPrice}` + '+' + ' ' + '/' + ' ' + '$' + `${partialPrice}` + '+';
+                applyPrices(price, targetFlexEnd);
+            } else {
+                let price = '$' + `${fullPrice}` + ' ' + '/' + ' ' + '$' + `${partialPrice}`;
+                applyPrices(price, targetFlexEnd);
+            }
+        } else {
+            if (targetFlexEnd.classList.contains('minimum-price')) {
+                returnValue = '$' + `${returnValue * 8}` + '+';
+                applyPrices(returnValue, targetFlexEnd);
+            } else {
+                returnValue = '$' + `${returnValue * 8}`;
+                applyPrices(returnValue, targetFlexEnd);
+            }
+        }
     }
 }
 
-// if selectedOptionValue of the previously click menu is Level 1
-// AND if that targetFlexEnd[i] contains an ID of X
-// go to specific function
-// else, do next iteration
-
-
-function highLight_Prices() {
-
+//determining base price here
+function determineOptionPrices(targetFlexEnd) {
+    if (targetFlexEnd.classList.contains('highlight-price')) {
+        let fullPrice = 4;
+        let partialPrice = 2;
+        return allPrices = new Array(fullPrice, partialPrice);
+    } else if (targetFlexEnd.classList.contains('balayage-price')) {
+        let fullPrice = 2;
+        let partialPrice = 1;
+        return allPrices = new Array(fullPrice, partialPrice);
+    } else if (targetFlexEnd.classList.contains('foil-price')) {
+        let fullPrice = 3;
+        let partialPrice = 1.50;
+        return allPrices = new Array(fullPrice, partialPrice);
+    } else if (targetFlexEnd.classList.contains('roots-price')) {
+        let fullPrice = 5;
+        let partialPrice = 2.5;
+        return allPrices = new Array(fullPrice, partialPrice);
+    } else if (targetFlexEnd.classList.contains('gray-price')) {
+        let price = 1;
+        return price;
+    } else if (targetFlexEnd.classList.contains('unicorn-price')) {
+        let fullPrice = 3;
+        let partialPrice = 1.5;
+        return allPrices = new Array(fullPrice, partialPrice);
+    } else if (targetFlexEnd.classList.contains('mermaid-price')) {
+        let fullPrice = 7;
+        let partialPrice = 3.5;
+        return allPrices = new Array(fullPrice, partialPrice);
+    } else if (targetFlexEnd.classList.contains('custom-price')) {
+        let fullPrice = 5;
+        let partialPrice = 2.5;
+        return allPrices = new Array(fullPrice, partialPrice);
+    } else if (targetFlexEnd.classList.contains('lace-price')) {
+        let fullPrice = 9;
+        let partialPrice = 4.5;
+        return allPrices = new Array(fullPrice, partialPrice);
+    } else if (targetFlexEnd.classList.contains('seamless-price')) {
+        let fullPrice = 8;
+        let partialPrice = 4;
+        return allPrices = new Array(fullPrice, partialPrice);
+    } else if (targetFlexEnd.classList.contains('halos-price')) {
+        let fullPrice = 4;
+        let partialPrice = 2;
+        return allPrices = new Array(fullPrice, partialPrice);
+    } else if (targetFlexEnd.classList.contains('pony-price')) {
+        let fullPrice = 11;
+        let partialPrice = 5.5;
+        return allPrices = new Array(fullPrice, partialPrice);
+    } else if (targetFlexEnd.classList.contains('bangs-price')) {
+        let fullPrice = 3;
+        let partialPrice = 1.5;
+        return allPrices = new Array(fullPrice, partialPrice);
+    } else if (targetFlexEnd.classList.contains('lace-wig-price')) {
+        let price = 10;
+        return price;
+    } else if (targetFlexEnd.classList.contains('mono-wig-price')) {
+        let price = 8;
+        return price;
+    } else if (targetFlexEnd.classList.contains('combo-wig-price')) {
+        let price = 11;
+        return price;
+    } else if (targetFlexEnd.classList.contains('capless-wig-price')) {
+        let price = 12;
+        return price;
+    } else if (targetFlexEnd.classList.contains('trad-weave-price')) {
+        let fullPrice = 9;
+        let partialPrice = 4.5;
+        return allPrices = new Array(fullPrice, partialPrice);
+    } else if (targetFlexEnd.classList.contains('full-weave-price')) {
+        let price = 13;
+        return price;
+    } else if (targetFlexEnd.classList.contains('part-weave-price')) {
+        let price = 7;
+        return price;
+    } else if (targetFlexEnd.classList.contains('vixen-weave-price')) {
+        let fullPrice = 9;
+        let partialPrice = 4.5;
+        return allPrices = new Array(fullPrice, partialPrice);
+    } else if (targetFlexEnd.classList.contains('versa-weave-price')) {
+        let fullPrice = 2;
+        let partialPrice = 1;
+        return allPrices = new Array(fullPrice, partialPrice);
+    } else if (targetFlexEnd.classList.contains('0-deg-price')) {
+        let price = 3;
+        return price;
+    } else if (targetFlexEnd.classList.contains('45-deg-price')) {
+        let price = 3;
+        return price;
+    } else if (targetFlexEnd.classList.contains('90-deg-price')) {
+        let price = 3;
+        return price;
+    } else if (targetFlexEnd.classList.contains('180-deg-price')) {
+        let price = 3;
+        return price;
+    } else if (targetFlexEnd.classList.contains('trim-price')) {
+        let price = 1;
+        return price;
+    } else if (targetFlexEnd.classList.contains('volume-price')) {
+        let price = 7;
+        return price;
+    } else if (targetFlexEnd.classList.contains('straight-price')) {
+        let price = 4;
+        return price;
+    } else if (targetFlexEnd.classList.contains('curls-price')) {
+        let price = 6;
+        return price;
+    } else if (targetFlexEnd.classList.contains('braid-price')) {
+        let price = 11;
+        return price;
+    } else if (targetFlexEnd.classList.contains('education-price')) {
+        let price = 7;
+        return price;
+    } else if (targetFlexEnd.classList.contains('bridal-price')) {
+        let price = 14;
+        return price;
+    } else if (targetFlexEnd.classList.contains('bach-price')) {
+        let price = 11;
+        return price;
+    } else if (targetFlexEnd.classList.contains('fx-price')) {
+        let price = 16;
+        return price;
+    }
 }
-function balayage_Prices() {
 
-}
-function foil_Prices() {
 
-}
-function roots_Prices() {
-
-}
-function grayCoverage_Prices() {
-
-}
-function unicord_Prices() {
-
-}
-function mermaid_Prices() {
-
-}
-function custom_Prices() {
-
-}
-function lace_Clip_Prices() {
-
-}
-function seamless_Clip_Prices() {
-
-}
-function halos_Clip_Prices() {
-
-}
-function ponytails_Clip_Prices() {
-
-}
-function bangs_Clip_Prices() {
-
-}
-function lace_Wig_Prices() {
-
-}
-function mono_Wig_Prices() {
-
-}
-function combo_Wig_Prices() {
-
-}
-function capless_Wig_Prices() {
-
-}
-function traditional_Sew_Prices() {
-
-}
-function full_Sew_Prices() {
-
-}
-function partial_Sew_Prices() {
-
-}
-function vixen_Sew_Prices() {
-
-}
-function versatile_Sew_Prices() {
-
-}
-function deg_0() {
-
-}
-function deg_45() {
-
-}
-function deg_90() {
-
-}
-function deg_180() {
-
-}
-function trim() {
-
-}
-function volume_Style() {
-
-}
-function straight_Style() {
-
-}
-function curls_Style() {
-
-}
-function braid_Style() {
-
-}
-function educate_Style() {
-
-}
-function bridal_MakeUp() {
-
-}
-function bach_MakeUp() {
-
-}
-function fx_MakeUp() {
-    
+// actually implementing the pricing innerHTML here
+function applyPrices(returnValue, targetFlexEnd) {
+    targetFlexEnd.innerHTML = returnValue;
 }
