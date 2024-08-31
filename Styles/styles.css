@@ -13,6 +13,9 @@
 .group {
     zoom: 1;
 }
+body {
+    overflow-x: hidden;
+}
 a {
     text-decoration: none;
     color: inherit;
@@ -1148,12 +1151,51 @@ relevance
 
 
 /* Contact Section */
+.wavy-bg-rel {
+    position: relative;
+}
+.wavy-bg {
+    width: 200%;
+    position: absolute;
+    top: -100px;
+    left: 0;
+    right: 0;
+    bottom: 95%;
+    animation: wavy 20s linear infinite;
+}
+.wavy-bg2 {
+    width: 200%;
+    position: absolute;
+    top: 95%;
+    left: 0;
+    right: 0;
+    bottom: -100px;
+    animation: wavy 20s linear infinite reverse;
+    transform: rotate(10deg);
+}
+.svg {
+    width: 100%;
+    height: 100%;
+}
+.svg2 {
+    width: 100%;
+    height: 100%;
+    transform: rotate(180deg);
+}
+@keyframes wavy {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
 .contact-section {
     background-color: #e2c2c6;
 }
 .contact-container {
     display: flex;
-    padding: 5rem 1rem;
+    padding: 0 1rem;
     max-width: 1500px;
     margin: 0 auto;
     gap: 5rem;
@@ -1164,7 +1206,9 @@ relevance
 .contact-right-half {
     width: 33.3333%;
 }
-
+.overflow {
+    overflow: hidden;
+}
 .contact-right-half > div:not(:last-of-type) {
     margin-bottom: 1rem;
 }
@@ -1361,6 +1405,7 @@ iframe {
     margin: 0 auto;
     color: whitesmoke;
     padding-bottom: 2rem;
+    padding-top: 10rem;
 }
 
 .org-info-container {
