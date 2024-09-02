@@ -97,6 +97,7 @@ header {
 .bubbles {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     padding: 100px 0;
     box-shadow: inset 0 0 15px 5px #B9929F;
@@ -162,6 +163,8 @@ nav {
 }
 ul {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .logo-container {
     margin: 4rem;
@@ -904,6 +907,14 @@ option {
 .FAQ-half {
     width: 50%;
 }
+@media screen and (max-width:1050px) {
+    .FAQ-container {
+        display: block;
+    }
+    .FAQ-half {
+        width: 100%;
+    }
+}
 .single-cordion-item {
     margin-bottom: 1rem;
     border-radius: 1rem;
@@ -940,7 +951,7 @@ option {
     margin-right: 1rem;
     color: #2F0147;
 }
-.single-cordion-item-btn.active::after {
+.single-cordion-item-btn.active-2::after {
     content: '\2212';
 }
 .single-cordion-item-body {
@@ -960,9 +971,9 @@ option {
 
 .stylist-section {
     background-color: black;
-    padding-bottom: 10rem;
+    padding: 5rem 0 10rem 0;
 }
-.stylist-title-container {
+/* .stylist-title-container {
     max-width: 1500px;
     margin: 0 auto;
     padding: 5rem 0;
@@ -971,14 +982,13 @@ option {
 .stylist-title {
     font-size: 5rem;
     color: whitesmoke;
-}
+} */
 .stylist-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     max-width: 1500px;
     margin: 0 auto;
-}
-.stylist-container {
+    flex-wrap: wrap;
     
 }
 .stylist-comment-container {
@@ -1157,45 +1167,56 @@ relevance
 .wavy-bg {
     width: 200%;
     position: absolute;
-    top: -100px;
     left: 0;
     right: 0;
-    bottom: 95%;
     animation: wavy 20s linear infinite;
+    opacity: .5;
 }
-.wavy-bg2 {
-    width: 200%;
-    position: absolute;
+.top-wave {
+    height: 100px;
+    bottom: 0;
+}
+.btm-wave {
     top: 95%;
-    left: 0;
-    right: 0;
     bottom: -100px;
-    animation: wavy 20s linear infinite reverse;
-    transform: rotate(10deg);
+    animation-play-state: reverse;
 }
-.svg {
+.wave-svg {
     width: 100%;
     height: 100%;
 }
-.svg2 {
-    width: 100%;
-    height: 100%;
+.rotate-svg {
     transform: rotate(180deg);
+}
+.long-wave {
+    z-index: 1000;
+}
+.short-wave {
+    animation: wavy 20s linear infinite reverse;
 }
 @keyframes wavy {
     0% {
-        transform: translateX(0);
+        transform: translateX(0) skewX(0deg);
+    }
+    25% {
+        transform: translateX(-12.5%) skewX(15deg);
+    }
+    50% {
+        transform: translateX(-25%) skewX(30deg);
+    }
+    75% {
+        transform: translateX(-37.5%) skewX(15deg);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translateX(-50%) skewX(0deg);
     }
 }
 .contact-section {
-    background-color: #e2c2c6;
+    background-color: #D0ADB1;
 }
 .contact-container {
     display: flex;
-    padding: 0 1rem;
+    padding: 2rem 1rem;
     max-width: 1500px;
     margin: 0 auto;
     gap: 5rem;
@@ -1206,10 +1227,7 @@ relevance
 .contact-right-half {
     width: 33.3333%;
 }
-.overflow {
-    overflow: hidden;
-}
-.contact-right-half > div:not(:last-of-type) {
+.contact-right-half > div:first-child {
     margin-bottom: 1rem;
 }
 .contact-left-half .contact-title {
@@ -1378,7 +1396,6 @@ relevance
 .salon-info-details-container:not(:last-of-type) > div {
     margin-bottom: 1rem;
 }
-
 fieldset {
     border: none;
 }
@@ -1393,7 +1410,45 @@ iframe {
     width: 100%;
     border: none !important;
 }
-
+@media screen and (max-width:1050px) {
+    .contact-container {
+        display: block;
+    }
+    .contact-left-half {
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+    .contact-right-half {
+        width: 100%;
+    }
+    .info-hours-container {
+        display: flex;
+    }
+    .store-info-container {
+        flex-basis: 50%;
+    }
+    .salon-info-container {
+        margin-right: 1rem;
+    }
+    .salon-hours-container {
+        margin-left: 1rem;
+    }
+}
+@media screen and (max-width: 500px) {
+    .side-by-side-input {
+        display: block;
+    }
+    .side-by-side-input > div {
+        width: 100%;
+    }
+    /* need to fix the phone/email fieldsets (seperate them) */
+    .phone-input-container {
+        display: block;
+    }
+    .phone-input-container > fieldset {
+        width: 100%;
+    }
+}
 
 
 /* Footer */
@@ -1417,7 +1472,7 @@ iframe {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 70px;
+    margin: 0 1rem 70px 1rem;
 }
 .ayesha-info-wrapper > section {
     padding-top: 2rem;
@@ -1637,8 +1692,45 @@ input[type="button"] {
     align-self: center;
 }
 .we-support-info {
+    position: relative;
     width: 48%;
 }
 .our-partners-info {
+    position: relative;
     width: 48%;
+}
+
+
+.we-support-info::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    bottom: 50%;
+    transform: translateY(-50%);
+    height: 50%;
+    width: 1px;
+    background-color: white;
+}
+@media screen and (max-width: 800px) {
+    .org-info-container {
+        flex-direction: column;
+    }
+    .we-support-info {
+        width: 100%;
+    }
+    .our-partners-info {
+        width: 100%;
+    }
+    .we-support-info::after {
+        width: 0;
+    }
+}
+@media screen and (max-width: 600px) {
+    .sub-email-input {
+        width: 80%;
+    }
+    .sub-btn-input {
+        width: 70%;
+    }
 }
