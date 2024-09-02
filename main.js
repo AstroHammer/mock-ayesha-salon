@@ -127,6 +127,12 @@ window.onload = function() {
 
 //Script for Service Cost Alterator
 
+//click events on option elements don't work on mobile
+//take click events off option elements first
+//use onchange event for select element, that when there is change in option selection, to re-evaluate what the selected option was
+//apply attribue to that selected option, store that option, and send it out
+
+
 let testing = document.querySelectorAll('.skill-level-menu');
 // add eventlisteners to all select elements
 // when clicked remove class from all and then add class to element clicked
@@ -137,8 +143,10 @@ testing.forEach(menu => {
             testing[i].classList.remove('menu-entered');
         }
         menu.classList.add('menu-entered');
+
     })
     let testEl = menu.children;
+    console.log(testEl);
     for (i = 0; i < testEl.length; i++) {
         testOption = testEl[i];
         identifyMenuOptionSelected(testOption, testEl, menu);
@@ -189,7 +197,7 @@ function determinePrice(targetFlexEnd, selectedOptionValue) {
         determineOptionPrices(targetFlexEnd);
 
         let returnValue = determineOptionPrices(targetFlexEnd);
-
+        
         if (targetFlexEnd.classList.contains('two-price')) {
             let fullPrice = returnValue[0] * 1;
             let partialPrice = returnValue[1] * 1;
@@ -385,54 +393,54 @@ function determineOptionPrices(targetFlexEnd) {
     if (targetFlexEnd.classList.contains('highlight-price')) {
         let fullPrice = 4;
         let partialPrice = 2;
-        return allPrices = new Array(fullPrice, partialPrice);
+        return new Array(fullPrice, partialPrice);
     } else if (targetFlexEnd.classList.contains('balayage-price')) {
         let fullPrice = 2;
         let partialPrice = 1;
-        return allPrices = new Array(fullPrice, partialPrice);
+        return new Array(fullPrice, partialPrice);
     } else if (targetFlexEnd.classList.contains('foil-price')) {
         let fullPrice = 3;
         let partialPrice = 1.50;
-        return allPrices = new Array(fullPrice, partialPrice);
+        return new Array(fullPrice, partialPrice);
     } else if (targetFlexEnd.classList.contains('roots-price')) {
         let fullPrice = 5;
         let partialPrice = 2.5;
-        return allPrices = new Array(fullPrice, partialPrice);
+        return new Array(fullPrice, partialPrice);
     } else if (targetFlexEnd.classList.contains('gray-price')) {
         let price = 1;
         return price;
     } else if (targetFlexEnd.classList.contains('unicorn-price')) {
         let fullPrice = 3;
         let partialPrice = 1.5;
-        return allPrices = new Array(fullPrice, partialPrice);
+        return new Array(fullPrice, partialPrice);
     } else if (targetFlexEnd.classList.contains('mermaid-price')) {
         let fullPrice = 7;
         let partialPrice = 3.5;
-        return allPrices = new Array(fullPrice, partialPrice);
+        return new Array(fullPrice, partialPrice);
     } else if (targetFlexEnd.classList.contains('custom-price')) {
         let fullPrice = 5;
         let partialPrice = 2.5;
-        return allPrices = new Array(fullPrice, partialPrice);
+        return new Array(fullPrice, partialPrice);
     } else if (targetFlexEnd.classList.contains('lace-price')) {
         let fullPrice = 9;
         let partialPrice = 4.5;
-        return allPrices = new Array(fullPrice, partialPrice);
+        return new Array(fullPrice, partialPrice);
     } else if (targetFlexEnd.classList.contains('seamless-price')) {
         let fullPrice = 8;
         let partialPrice = 4;
-        return allPrices = new Array(fullPrice, partialPrice);
+        return new Array(fullPrice, partialPrice);
     } else if (targetFlexEnd.classList.contains('halos-price')) {
         let fullPrice = 4;
         let partialPrice = 2;
-        return allPrices = new Array(fullPrice, partialPrice);
+        return new Array(fullPrice, partialPrice);
     } else if (targetFlexEnd.classList.contains('pony-price')) {
         let fullPrice = 11;
         let partialPrice = 5.5;
-        return allPrices = new Array(fullPrice, partialPrice);
+        return new Array(fullPrice, partialPrice);
     } else if (targetFlexEnd.classList.contains('bangs-price')) {
         let fullPrice = 3;
         let partialPrice = 1.5;
-        return allPrices = new Array(fullPrice, partialPrice);
+        return new Array(fullPrice, partialPrice);
     } else if (targetFlexEnd.classList.contains('lace-wig-price')) {
         let price = 10;
         return price;
@@ -448,7 +456,7 @@ function determineOptionPrices(targetFlexEnd) {
     } else if (targetFlexEnd.classList.contains('trad-weave-price')) {
         let fullPrice = 9;
         let partialPrice = 4.5;
-        return allPrices = new Array(fullPrice, partialPrice);
+        return new Array(fullPrice, partialPrice);
     } else if (targetFlexEnd.classList.contains('full-weave-price')) {
         let price = 13;
         return price;
@@ -458,11 +466,11 @@ function determineOptionPrices(targetFlexEnd) {
     } else if (targetFlexEnd.classList.contains('vixen-weave-price')) {
         let fullPrice = 9;
         let partialPrice = 4.5;
-        return allPrices = new Array(fullPrice, partialPrice);
+        return new Array(fullPrice, partialPrice);
     } else if (targetFlexEnd.classList.contains('versa-weave-price')) {
         let fullPrice = 2;
         let partialPrice = 1;
-        return allPrices = new Array(fullPrice, partialPrice);
+        return new Array(fullPrice, partialPrice);
     } else if (targetFlexEnd.classList.contains('0-deg-price')) {
         let price = 3;
         return price;
