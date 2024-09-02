@@ -133,6 +133,10 @@ window.onload = function() {
 //apply attribue to that selected option, store that option, and send it out
 
 
+//on change of select element, if the changed selected option's parent element contains class menu entered....
+// then iterate through options to remove selected, then add selected to the selected option
+// i need to find out what the select option has been on change event from selected element
+
 let testing = document.querySelectorAll('.skill-level-menu');
 // add eventlisteners to all select elements
 // when clicked remove class from all and then add class to element clicked
