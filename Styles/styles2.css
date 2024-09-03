@@ -13,6 +13,9 @@
 .group {
     zoom: 1;
 }
+body {
+    background-color: black;
+}
 body, html {
     overflow-x: hidden;
 }
@@ -1163,6 +1166,14 @@ relevance
 /* Contact Section */
 .wavy-bg-rel {
     position: relative;
+    height: 100px;
+    background-color: black;
+}
+.wave-container-top {
+    transform: translateY(20%);
+}
+.wave-container-btm {
+    transform:translateY(-20%);
 }
 .wavy-bg-rel img {
     display: block;
@@ -1176,12 +1187,10 @@ relevance
     opacity: .5;
 }
 .top-wave {
-    height: 100px;
-    bottom: 0;
+    height: 100%;
 }
 .btm-wave {
-    top: 95%;
-    bottom: -100px;
+    height:100%;
     animation-play-state: reverse;
 }
 .wave-svg {
