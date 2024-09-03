@@ -147,31 +147,46 @@ testing.forEach(menu => {
             testing[i].classList.remove('menu-entered');
         }
         menu.classList.add('menu-entered');
-
+        let testEl = menu.children;
+        identifyMenuOptionsSelected(testEl, menu);
     })
-    let testEl = menu.children;
-    console.log(testEl);
-    for (i = 0; i < testEl.length; i++) {
-        testOption = testEl[i];
-        identifyMenuOptionSelected(testOption, testEl, menu);
-    }
+    // let testEl = menu.children;
+    // for (i = 0; i < testEl.length; i++) {
+    //     testOption = testEl[i];
+    //     identifyMenuOptionSelected(testOption, testEl, menu);
+    // }
 })
-//add event listeners to all option elements that were inside the previously clicked menu
-//remove class from all other options elements within that menu
-//add class to option selected within that menu
-//store which option in that menu is selected and it's text value
-function identifyMenuOptionSelected(testOption, testEl, menu) {
-    testOption.addEventListener('click', () => {
-        if (testOption.parentElement.classList.contains('menu-entered')) {
+
+function identifyMenuOptionsSelected(testEl, menu) {
+    menu.addEventListener('change', () => {
+        selectedOption = menu.options[menu.selectedIndex];
+        if (selectedOption.parentElement.classList.contains('menu-entered')) {
             for (i = 0; i < testEl.length; i++) {
                 testEl[i].removeAttribute('selected');
             }
-            testOption.setAttribute('selected', '');
+            selectedOption.setAttribute('selected', '');
             selectedOptionValue = menu.options[menu.selectedIndex].text;
             targetTotalDivs(selectedOptionValue, menu);
         }
     })
 }
+
+//add event listeners to all option elements that were inside the previously clicked menu
+//remove class from all other options elements within that menu
+//add class to option selected within that menu
+//store which option in that menu is selected and it's text value
+// function identifyMenuOptionSelected(testOption, testEl, menu) {
+//     testOption.addEventListener('click', () => {
+//         if (testOption.parentElement.classList.contains('menu-entered')) {
+//             for (i = 0; i < testEl.length; i++) {
+//                 testEl[i].removeAttribute('selected');
+//             }
+//             testOption.setAttribute('selected', '');
+//             selectedOptionValue = menu.options[menu.selectedIndex].text;
+//             targetTotalDivs(selectedOptionValue, menu);
+//         }
+//     })
+// }
 //use previously clicked menu's parent to traverse to another container within the same parent
 //store the children of that container
 //iterate through each of those childrens' children and store each one
