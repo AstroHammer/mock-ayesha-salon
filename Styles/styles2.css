@@ -168,7 +168,7 @@ header {
 .mobile-nav {
     display: flex;
     position: absolute;
-    top: 0;
+    top: 3vh;
     z-index: 2;
     background-color: transparent;
     justify-content: center;
@@ -187,7 +187,7 @@ header {
     right: 2rem;
     top: 50%;
     transform: translateY(-50%);
-    width: 2rem;
+    width: clamp(1.6rem, 5vw, 2rem);
     aspect-ratio: 1;
 }
 .hamburger-list {
@@ -205,7 +205,7 @@ ul {
 }
 .logo {
     font-family: "Dancing-Script", serif;
-    font-size: 5rem;
+    font-size: clamp(2rem, 10vw, 5rem);
     color: whitesmoke;
     font-weight: 700;
 }
@@ -281,7 +281,7 @@ ul {
     margin: 0 1rem;
     
 }
-@media screen and (max-width:1000px) {
+@media screen and (max-width: 1000px) {
     .wide-nav {
         display: block;
         width: 90%;
@@ -295,6 +295,16 @@ ul {
     .nav-list {
         border-radius: 0; 
         justify-content: space-between
+    }
+}
+@media screen and (width < 650px) {
+    .wide-nav {
+        display: none;
+    }
+}
+@media screen and (width > 650px) {
+    .mobile-nav {
+        display: none;
     }
 }
 @media screen and (max-width: 650px) {
