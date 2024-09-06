@@ -1866,9 +1866,19 @@ input[type="button"] {
     }
     .promo-content-socials {
         margin: 1rem 0 0 0;
+        width: 100%;
     }
     .promo-content-socials > div {
         display: flex;
+        width: 100%;
+    }
+    .top-promo-socials {
+        width: 50%;
+        justify-content: space-around;
+    }
+    .bottom-promo-socials {
+        width: 50%;
+        justify-content: space-around;
     }
     .top-left {
         margin: 0;
