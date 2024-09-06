@@ -155,7 +155,7 @@ header {
     font-family: "Caveat";
     src: url('Fonts/Caveat-VariableFont_wght.woff') format('woff');
 }
-nav {
+.wide-nav {
     display: flex;
     position: absolute;
     top: 0;
@@ -165,6 +165,36 @@ nav {
     align-items: center;
     width: 100%;
 }
+.mobile-nav {
+    display: flex;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.mobile-nav .logo-container {
+    margin: 0;
+}
+.mobile-nav-toggle {
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    background-image: url('icons8-menu.svg');
+    background-repeat: no-repeat;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2rem;
+    aspect-ratio: 1;
+}
+.hamburger-list {
+    display: none;
+}
+
+
 ul {
     display: flex;
     flex-wrap: wrap;
@@ -252,7 +282,7 @@ ul {
     
 }
 @media screen and (max-width:1000px) {
-    nav {
+    .wide-nav {
         display: block;
         width: 90%;
         left: 50%;
@@ -264,8 +294,13 @@ ul {
     }
     .nav-list {
         border-radius: 0; 
+        justify-content: space-between
     }
-
+}
+@media screen and (max-width: 650px) {
+    .wide-nav {
+        display: none;
+    }
 }
 .top-promo-socials, .bottom-promo-socials {
     display: flex;
