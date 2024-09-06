@@ -184,7 +184,7 @@ ul {
     padding-block: 2rem;
     padding-inline: clamp(2rem, 5vw , 10rem);
     gap: clamp(2rem, 5vw, 10rem);
-    background-color: rgba(255, 255, 255, .2);
+    background-color: rgba(0, 0, 0, .5);
     box-shadow: 0px 0px 10px 5px #B9929F;
     border-radius: 5px 0 0 5px;
 }
@@ -210,7 +210,7 @@ ul {
 }
 .promo-container {
     border-radius: 30px 30px 0 0;
-    background-color: rgba(255, 255, 255, .2);
+    background-color: rgba(0, 0, 0, .5);
     padding: 1rem 2rem;
     box-shadow: 0px 0px 10px 5px #B9929F;
     /* , inset 0 -1px 10px 0 #B9929F */
@@ -251,7 +251,22 @@ ul {
     margin: 0 1rem;
     
 }
+@media screen and (max-width:1000px) {
+    nav {
+        display: block;
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .logo-container {
+        text-align: center;
+        margin: 0 0 1.5rem 0;
+    }
+    .nav-list {
+        border-radius: 0; 
+    }
 
+}
 .top-promo-socials, .bottom-promo-socials {
     display: flex;
     align-items: center;
