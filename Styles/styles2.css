@@ -281,7 +281,7 @@ ul {
     margin: 0 1rem;
     
 }
-@media screen and (max-width: 1000px) and (orientation: portrait) {
+@media screen and (max-width: 1000px) and (orientation: landscape) {
     .wide-nav {
         display: block;
         width: 90%;
