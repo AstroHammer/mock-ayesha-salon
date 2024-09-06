@@ -247,7 +247,7 @@ ul {
 }
 .promo-title {
     text-align: center;
-    font-size: 1.3rem;
+    font-size: clamp(.7rem, 3vw, 1.3rem);
     margin-bottom: 2.5rem;
     font-family: "Playfair", serif;
     /* border: 1px solid red; */
@@ -258,12 +258,12 @@ ul {
 .promo-title h2::after {
     content:'';
     position: absolute;
-    width: 10rem;
+    width: clamp(5rem, 30vw, 10rem);
     border-bottom: 1px solid white;
     bottom: -50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding-bottom: 1.8rem;
+    padding-bottom: clamp(.7rem, 3vw, 1.3rem);
 }
 .promo-content {
     display: flex;
@@ -443,7 +443,33 @@ ul {
     border-top: 1px solid white;
     flex-grow: 1;
 }
-
+@media screen and (max-width:650px) {
+    .promo-content {
+        flex-direction: column-reverse;
+    }
+    .booking {
+        display: flex;
+        align-items: center;
+    }
+    .border::before, .border::after {
+        display: none;
+    }
+    .promo-content-socials > div {
+        display: flex;
+    }
+    .top-left {
+        margin: 0;
+    }
+    .top-right {
+        margin: 0;
+    }
+    .bottom-left {
+        margin: 0;
+    }
+    .bottom-right {
+        margin: 0;        
+    }
+}
 
 /* About Us Section */
 
@@ -1819,5 +1845,46 @@ input[type="button"] {
     }
     .sub-btn-input {
         width: 70%;
+    }
+}
+
+/* socials svgs mq */
+@media screen and (max-width:650px) {
+    .promo-content {
+        flex-direction: column-reverse;
+    }
+    .booking {
+        display: flex;
+        align-items: center;
+        margin: 0;
+    }
+    .border::before, .border::after {
+        display: none;
+    }
+    .promo-title {
+        margin-bottom: 1rem;
+    }
+    .promo-content-socials {
+        margin: 1rem 0 0 0;
+    }
+    .promo-content-socials > div {
+        display: flex;
+    }
+    .top-left {
+        margin: 0;
+    }
+    .top-right {
+        margin: 0;
+    }
+    .bottom-left {
+        margin: 0;
+    }
+    .bottom-right {
+        margin: 0;        
+    }
+    .promo-social-svg {
+        width: clamp(20px, 10vw, 50px);
+        height: clamp(20px, 10vw, 50px);
+        /* used to be 50px / 50px */
     }
 }
