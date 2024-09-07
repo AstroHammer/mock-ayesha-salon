@@ -307,7 +307,10 @@ ul {
         display: none;
     }
 }
-@media screen and (max-width: 650px) {
+@media screen and (height < 500px) {
+    .mobile-nav {
+        display: flex;
+    }
     .wide-nav {
         display: none;
     }
@@ -405,13 +408,13 @@ ul {
     width: 100%;   
     text-align: center;
 }
-.booking-content a {
+.booking-link {
     background-color: #9C5288;
     /* #B9929F */
     padding: 1rem 2rem 1rem 2rem;
     display: inline-block;
     width: 100%;
-    font-size: 1.1rem;
+    font-size: clamp(.7rem, 3vw, 1.1rem);
     text-transform: uppercase;
     border-radius: 5px;
     font-family: "Caveat", serif;
@@ -1849,14 +1852,36 @@ input[type="button"] {
 }
 
 /* socials svgs mq */
-@media screen and (max-width:650px) {
+@media screen and (max-width: 650px), (height < 500px) {
     .promo-content {
         flex-direction: column-reverse;
+    }
+    .promo-container {
+        width: 100%;
     }
     .booking {
         display: flex;
         align-items: center;
         margin: 0;
+        width: 100%;
+        height: clamp(45px, 10vw, 150px);
+    }
+    .booking-content {
+        height: 100%;
+        width: 50%;
+    }
+    .book-online {
+        padding-right: 10px;
+    }
+    .call-us {
+        padding-left: 10px;
+    }
+    .booking-link {
+        display:flex;
+        align-items:center;
+        justify-content: center;
+        white-space: nowrap;
+        height: 100%;
     }
     .border::before, .border::after {
         display: none;
@@ -1896,5 +1921,35 @@ input[type="button"] {
         width: clamp(20px, 10vw, 50px);
         height: clamp(20px, 10vw, 50px);
         /* used to be 50px / 50px */
+    }
+    .or-border {
+        display: none;
+    }
+}
+@media screen and (width > 650px) and (height < 500px) {
+    .booking-content {
+        width: 40%;
+    }
+    .booking {
+        height: 50px;
+        justify-content: space-around;
+    }
+    .promo-container {
+        width: 80%;
+    }
+    .promo-title {
+        font-size: .8rem;
+    }
+    .promo-social-svg {
+        height: 40px;
+        width: 40px;
+    }
+    .booking-link {
+        font-size: .8rem;
+    }
+}
+@media screen and (height < 360px) {
+    header {
+        height: 360px;
     }
 }
