@@ -757,7 +757,7 @@ ul {
 
 
 /* .about-us-section {
-    overflow:hidden;
+    display: flex;
 }
 .about-us-info > div:first-of-type {
     display: flex;
@@ -1064,7 +1064,7 @@ option {
 
 .stylist-section {
     background-color: black;
-    padding: 5rem 0 10rem 0;
+    padding: 5rem 0 5rem 0;
 }
 /* .stylist-title-container {
     max-width: 1500px;
@@ -1275,6 +1275,25 @@ relevance
     animation: wavy 20s linear infinite;
     opacity: .5;
 }
+@media screen and (max-width:1500px) {
+    .wavy-bg {
+        width: 400%;
+    }
+}
+@media screen and (max-width:800px) {
+    .wavy-bg {
+        width: 800%;
+    }
+}
+@media screen and (max-width:400px) {
+    .wavy-bg {
+        width: 1000%;
+        animation-duration: 30s;
+    }
+    .short-wave {
+        animation-duration: 30s;
+    }
+}
 .top-wave {
     height: 100%;
 }
@@ -1328,7 +1347,7 @@ svg {
 }
 .contact-left-half .contact-title {
     font-family: "Caveat", sans-serif;
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 10vw, 4rem);
     margin-bottom: 1rem;
 }
 .name-input-container {
@@ -1442,7 +1461,7 @@ svg {
     padding-bottom: 4rem;
 }
 .contact-paragraph-info p {
-    font-size: 1.8rem;
+    font-size: clamp(1rem, 5vw, 1.8rem);
     font-family: "Caveat", sans-serif;
 }
 .contact-paragraph-info p:first-of-type {
@@ -1576,9 +1595,7 @@ iframe {
     margin: 0 auto;
     color: whitesmoke;
     padding-bottom: 2rem;
-    padding-top: 10rem;
 }
-
 .org-info-container {
     display: flex;
     justify-content: center;
@@ -1588,11 +1605,13 @@ iframe {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 1rem 70px 1rem;
+    margin: 0 1rem 0 1rem;
 }
-.ayesha-info-wrapper > section {
+.ayesha-info-container {
     padding-top: 2rem;
+    padding-bottom: 2rem;
     text-align: center;
+    border-bottom: 2px solid white;
 }
 .ayesha-info-wrapper > section > h1 {
     font-size: 5rem;
@@ -1646,12 +1665,15 @@ iframe {
     text-align: center;
     width: 50%;
     height: 100%;
+    padding-top: 2rem;
 }
 .support-org-details-container {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    padding: 1rem;
+    font-family: "Playfair", sans-serif;
 }
 .support-org-details-name {
     display: block;
@@ -1661,7 +1683,6 @@ iframe {
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    margin-bottom: 2rem;
 }
 .partners-details-name {
     display: block;
@@ -1685,13 +1706,11 @@ iframe {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid white;
 }
 .subscribe-footer-svg-container > div {
     height: 60px;
     width: 60px;
-    padding: .7rem;
+    padding: .7rem .7rem 0 .7rem;
     border-radius: 50%;
 }
 
@@ -1740,11 +1759,6 @@ input[type="button"] {
 }
 .support-org-details-link {
     display: block;
-}
-.support-org-details-container {
-    padding: 1rem;
-    margin-bottom: 2rem;
-    font-family: "Playfair", sans-serif;
 }
 .org-info h2 {
     font-size: 2.5rem;
