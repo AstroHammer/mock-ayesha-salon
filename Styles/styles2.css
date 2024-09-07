@@ -1095,12 +1095,12 @@ option {
 }
 .stylist-comment p {
     text-align: center;
-    font-size: 1.4rem;
+    font-size: clamp(1.2rem, 3vw, 1.4rem);
 }
 .stylist-comment small {
     display: block;
     text-align: right;
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 3vw, 1.7rem);
     padding-top: 1rem;
 }
 .stylist-item {
@@ -1128,11 +1128,11 @@ option {
 .stylist-name {
     font-family: "Playfair", sans-serif;
     font-variant: small-caps;
-    font-size: .9rem;
+    font-size: clamp(.7rem, 3vw, .9rem);
 }
 .stylist-cred {
     font-family: "Caveat", sans-serif;
-    font-size: 1.4rem;
+    font-size: clamp(1.2rem, 3vw, 1.4rem);
 }
 .stylist-name, .stylist-cred {
     color: whitesmoke;
@@ -1349,6 +1349,15 @@ svg {
     font-family: "Caveat", sans-serif;
     font-size: clamp(2.5rem, 10vw, 4rem);
     margin-bottom: 1rem;
+    display: inline-block;
+    line-height: 1.7rem;
+    white-space: nowrap;
+}
+.contact-legend-title {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+}
+.contact-left-half .contact-title:first-of-type {
+    margin-right: 10px;
 }
 .name-input-container {
     display: flex;
@@ -1363,23 +1372,32 @@ svg {
 .name-input-container > fieldset {
     width: 100%
 }
-.phone-input-container {
+.phone-email-input-container {
     display: flex;
     width: 100%;
     gap: 1rem;
 }
-.phone-input-container > fieldset {
+.phone-input-container {
+    width: 50%;
+}
+.email-input-container {
+    width: 50%;
+}
+.phone-input-container > div {
     width: 50%;
 }
 .side-by-side-input > div {
     width: 50%;
 }
+.side-by-side-input > div:first-of-type {
+    margin-bottom: 5px;
+}
 .contact-input {
-    padding: 1rem 1rem 1rem 1rem;
+    padding: clamp(.6rem, 3vw, 1rem);
     background-color: black;
     border: none;
     width: 100%;
-    font-size: 1.2rem;
+    font-size: clamp(.9rem, 3vw, 1.2rem);
     font-family: "Playfair", sans-serif;
     color: #E2C2C6;
     font-weight: 700;
@@ -1393,7 +1411,6 @@ svg {
     outline: 3px solid #4b0272;
 }
 .first-name-label, .last-name-label {
-    font-size: 1.1rem;
     font-family: "Playfair", sans-serif;
 }
 .name-input-first-last {
@@ -1401,13 +1418,15 @@ svg {
 }
 .name-input-title, .phone-input-title, .email-input-title, .message-input-title {
     margin-bottom: 1rem;
-    font-size: 1.2rem;
     font-weight: bold;
     font-family: "Playfair", sans-serif;
 }
 .required-italic {
     font-style: italic;
-    font-size: .9rem;
+    font-size: clamp(.7rem, 3vw, .9rem);
+}
+.name-label {
+    font-size: clamp(.8rem, 3vw, 1.1rem);
 }
 .contact-legend-title div > span:not(:first-of-type) {
     font-weight: normal;
@@ -1415,7 +1434,7 @@ svg {
 .message-input {
     min-width: 50%;
     min-height: 100px;
-    max-width: 50%;
+    max-width: 100%;
     max-height: 400px;
     background-color: black;
     color: #E2C2C6;
@@ -1442,7 +1461,7 @@ svg {
     border-radius: 10px;
     font-weight: 700;
     font-variant: small-caps;
-    font-size: 1.7rem;
+    font-size: clamp(1.4rem, 5vw, 1.7rem);
     background-color: black;
     color: whitesmoke;
     font-family: "Caveat", sans-serif;
@@ -1461,7 +1480,7 @@ svg {
     padding-bottom: 4rem;
 }
 .contact-paragraph-info p {
-    font-size: clamp(1rem, 5vw, 1.8rem);
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
     font-family: "Caveat", sans-serif;
 }
 .contact-paragraph-info p:first-of-type {
@@ -1577,10 +1596,10 @@ iframe {
         width: 100%;
     }
     /* need to fix the phone/email fieldsets (seperate them) */
-    .phone-input-container {
+    .phone-email-input-container {
         display: block;
     }
-    .phone-input-container > fieldset {
+    .phone-email-input-container > div {
         width: 100%;
     }
 }
