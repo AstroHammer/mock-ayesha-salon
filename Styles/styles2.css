@@ -1620,6 +1620,7 @@ iframe {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    margin: 0 auto;
 }
 .ayesha-info-wrapper {
     display: flex;
@@ -1695,6 +1696,9 @@ iframe {
     padding: 1rem;
     font-family: "Playfair", sans-serif;
 }
+.support-org-details {
+    flex-basis: 45%;
+}
 .support-org-details-name {
     display: block;
 }
@@ -1703,6 +1707,9 @@ iframe {
     justify-content: center;
     align-items: center;
     padding: 1rem;
+}
+.partners-details {
+    flex-basis: 30%;
 }
 .partners-details-name {
     display: block;
@@ -1752,7 +1759,7 @@ input[type="button"] {
 .separation-border {
     width: 2px;
     flex-shrink: 0;
-    margin: 0 20px;
+    margin: 0 2.5%;
     background-color: white;
     height: 40px;
 }
@@ -1865,6 +1872,7 @@ input[type="button"] {
 @media screen and (max-width: 800px) {
     .org-info-container {
         flex-direction: column;
+        max-width: 600px;
     }
     .we-support-info {
         width: 100%;
