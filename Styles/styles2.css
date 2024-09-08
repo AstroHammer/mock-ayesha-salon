@@ -812,7 +812,8 @@ ul {
 .accordion-title {
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: fixed;
+    background-attachment: fixed;
+    background-position: center;
     height: 100%;
     width: 100%;
     display: flex;
