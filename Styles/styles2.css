@@ -909,7 +909,7 @@ ul {
 .stylist-skill-container {
     align-self: flex-end;
     padding-bottom: .5rem;
-    font-size: 1.5rem;
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
 }
 select {
     border: none;
@@ -917,9 +917,10 @@ select {
     color: whitesmoke;
     padding: .2rem 1rem;
     font-family: "Caveat", sans-serif;
-    font-size: 1.5rem;
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
     border-bottom: 1px solid whitesmoke;
     transition: border-color .2s linear;
+    box-sizing: content-box;
 }
 select:hover {
     border-color: #9C5288;
@@ -959,7 +960,11 @@ option {
     font-size: 1.4rem;
     padding-left: 10px;
 }
-
+@media screen and (max-width: 980px) {
+    .accordion-container {
+        margin: 60px 1rem;
+    }
+}
 
 /* FAQ Section */
 .FAQ-section {
@@ -1640,7 +1645,7 @@ iframe {
     font-family: "Dancing-Script";
 }
 .ayesha-info-wrapper > section > div > p {
-    font-size: 1.2rem;
+    font-size: clamp(.9rem, 3vw, 1.2rem);
     font-family: "Playfair", sans-serif;
 }
 .ayesha-info-wrapper > section > div > p:last-of-type {
