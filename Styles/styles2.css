@@ -808,14 +808,15 @@ ul {
     max-width: 1400px;
     margin: 0 auto;
     height: 300px;
-    overflow:hidden;
+    position: relative;
+    
 }
 .accordion-title {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    height: 100svh;
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
