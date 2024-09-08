@@ -106,8 +106,8 @@ header {
     box-shadow: inset 0 0 15px 5px #B9929F;
 }
 .intro-sum {
-    width: 250px;
-    height: 250px;
+    width: clamp(12rem, 45vw, 16rem);
+    height: clamp(12rem, 45vw, 16rem);
     text-align: center;
     border-radius: 50%;
     padding: 1rem;
@@ -116,21 +116,26 @@ header {
     color: white;
     background-color: black;
     margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 
 .intro-sum h2 {
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: clamp(.7rem, 2vw, 1rem);
     margin-top: 10px;
     font-family: "Playfair", serif;
 }
-.intro-sum img {
-    margin-top: 20px;
+.intro-sum-icon {
+    width: clamp(2rem, 6vw, 2.5rem);
+    height: clamp(2rem, 6vw, 2.5rem);
 }
 .intro-sum p {
     margin-top: 5px;
-    font-size: .9rem;
+    font-size: clamp(.7rem, 2vw, 1rem);
     font-family: "PlayFair", serif;
     line-height: 18px;
 }
@@ -478,9 +483,9 @@ ul {
 
 
 .contents-wrap {
-  height: 80vh;
+  height: 90svh;
   background-color: black;
-  padding: 4rem 0;
+  margin: 10rem 0;
 }
 .contents {
   width: 100%;
@@ -493,6 +498,7 @@ ul {
   height: 100%;
   overflow-x: scroll;
   overflow: hidden;
+  scroll-behavior: smooth;
 }
 .flow-grid-row {
   height: 50%;
@@ -1970,8 +1976,8 @@ input[type="button"] {
         margin: 0;        
     }
     .promo-social-svg {
-        width: clamp(20px, 10vw, 50px);
-        height: clamp(20px, 10vw, 50px);
+        width: clamp(20px, 8vw, 40px);
+        height: clamp(20px, 8vw, 40px);
         /* used to be 50px / 50px */
     }
     .or-border {
