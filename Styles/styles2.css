@@ -13,7 +13,7 @@
 .group {
     zoom: 1;
 }
-html {
+html, body {
     height: 100%;
 }
 body {
