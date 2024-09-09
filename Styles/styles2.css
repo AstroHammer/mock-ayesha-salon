@@ -184,22 +184,44 @@ header {
     margin: 0;
 }
 .mobile-nav {
-    display: hidden;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    inset: 0 0 0 30%;
+    padding: min(15vh, 5rem) 1rem min(5vh, 3rem) 1rem;
+    justify-content: space-around;
+    align-items: center;
     color : white;
-    background-color: pink;
+    background-color: rgba(185, 146, 159, .8);
+    background-color: rgba(156, 82, 136, .6);
+    backdrop-filter: blur(.5rem);
+    z-index: 999;
+    transform: translateX(100%);
+    
+}
+.mobile-nav[data-visible="true"] {
+    transform: translateX(0%);
+    transition: transform .3s ease-in;
+}
+.mobile-nav li {
+    font-size: 2rem;
+    font-family: "Playfair", sarif;
+    font-variant: small-caps;
 }
 .mobile-nav-toggle {
     z-index: 9999;
-    position: absolute;
+    position: fixed;
     border: none;
     background-color: transparent;
     background-image: url('icons8-menu.svg');
     background-repeat: no-repeat;
     right: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
     width: clamp(1.6rem, 5vw, 2rem);
     aspect-ratio: 1;
+    cursor: pointer;
+}
+.mobile-nav-toggle[aria-expanded="true"] {
+    background-image: url('icons8-close.svg');
 }
 .hamburger-list {
     display: none;
@@ -311,22 +333,6 @@ ul {
 @media screen and (width < 650px) {
     .wide-nav {
         display: none;
-    }
-    .mobile-nav {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        inset: 0 0 0 30%;
-        padding: 5rem 1rem;
-        border: 1px solid red;
-        justify-content: space-around;
-        align-items: center;
-    }
-    .mobile-nav li {
-        border: 1px solid green;
-        font-size: 2rem;
-        font-family: "Playfair", sarif;
-        font-variant: small-caps;
     }
 }
 @media screen and (width > 650px) {
@@ -1162,7 +1168,7 @@ option {
     transform: translateX(-50%);
     border: 2px solid whitesmoke;
     padding: 1rem 0;
-    z-index: 100;
+    z-index: 1;
 }
 .stylist-name {
     font-family: "Playfair", sans-serif;
