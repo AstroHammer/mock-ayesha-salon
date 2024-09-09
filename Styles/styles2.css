@@ -16,9 +16,6 @@
 body {
     background-color: black;
 }
-html {
-    overflow-x: hidden;
-}
 a {
     text-decoration: none;
     color: inherit;
@@ -539,7 +536,7 @@ ul {
 /* About Us Section */
 
 .testing {
-    height: 1700vh;
+    height: 2300vh;
     margin: 10rem 0;
 }
 .contents-wrap {
@@ -547,10 +544,11 @@ ul {
     background-color: black;
     position: sticky;
     top: 0;
+    overflow: hidden;
 }
 .contents {
     position: absolute;
-    width: 1700vw;
+    width: 2300vw;
     height: 100%;
     will-change: transform;
 }
@@ -1337,6 +1335,7 @@ relevance
     position: relative;
     height: 100px;
     background-color: black;
+    overflow: hidden;
 }
 .wave-container-top {
     transform: translateY(20%);
