@@ -188,6 +188,7 @@ header {
     
     top: 3rem;
     right: 0;
+    bottom: 0;
     width: 75%;
     height: 100svh;
     padding: min(15vh, 5rem) 1rem min(5vh, 3rem) 1rem;
