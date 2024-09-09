@@ -13,6 +13,9 @@
 .group {
     zoom: 1;
 }
+html {
+    height: 100%;
+}
 body {
     background-color: black;
 }
