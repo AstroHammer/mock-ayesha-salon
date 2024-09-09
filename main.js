@@ -80,16 +80,34 @@ function addAnimation() {
 
 //Script for Image Collage
 
+const stickySection = document.querySelector('.contents-wrap');
+
+window.addEventListener('scroll', () => {
+    transform(stickySection);
+})
+
+function transform(stickySection) {
+    const offsetTop = stickySection.parentElement.offsetTop;
+    const scrollSection = stickySection.querySelector('.contents');
+    let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
+    percentage = percentage < 0 ? 0 : percentage;
+    scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`;
+}
+
+
+
+
 let scrollingGrid = document.querySelector('.flow-grid');
 
-scrollingGrid.addEventListener('wheel', (event) => {
-    event.preventDefault();
-    scrollingGrid.scrollBy({
-      left: event.deltaY < 0 ? -150 : 150,
-    });
+// scrollingGrid.addEventListener('wheel', (event) => {
+//     event.preventDefault();
+//     scrollingGrid.scrollBy({
+//       left: event.deltaY < 0 ? -150 : 150,
+//     });
 
 
-});
+// });
+
 window.onload = function() {
     let item = document.querySelectorAll('.item');
     

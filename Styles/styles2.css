@@ -16,7 +16,7 @@
 body {
     background-color: black;
 }
-body, html {
+html {
     overflow-x: hidden;
 }
 a {
@@ -192,12 +192,10 @@ header {
     justify-content: space-around;
     align-items: center;
     color : white;
-    background-color: rgba(185, 146, 159, .8);
     background-color: rgba(156, 82, 136, .6);
     backdrop-filter: blur(.5rem);
     z-index: 999;
     transform: translateX(100%);
-    
 }
 .mobile-nav[data-visible="true"] {
     transform: translateX(0%);
@@ -208,16 +206,47 @@ header {
     font-family: "Playfair", sarif;
     font-variant: small-caps;
 }
-.mobile-nav-toggle {
+nav li a {
+    position: relative;
+}
+nav li a:hover::before, nav li a:hover::after {
+    position: absolute;
+    content: '';
+    height: 1px;
+    border-bottom: solid 1px white;
+    width: 0;
+    bottom: 0;
+    animation: underlineAnimate .2s linear forwards
+}
+nav li a:hover::before {
+    left: 50%;
+}
+nav li a:hover::after {
+    right: 50%;
+}
+@keyframes underlineAnimate {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 60%;
+    }
+}
+.mobile-nav-toggle-bg {
     z-index: 9999;
-    position: fixed;
+    position: absolute;
+    right: 2rem;
+    width: clamp(1.6rem, 5vw, 2rem);
+    aspect-ratio: 1;
+}
+.mobile-nav-toggle {
+    display: block;
     border: none;
     background-color: transparent;
     background-image: url('icons8-menu.svg');
     background-repeat: no-repeat;
-    right: 2rem;
-    width: clamp(1.6rem, 5vw, 2rem);
-    aspect-ratio: 1;
+    width: 100%;
+    height: 100%;
     cursor: pointer;
 }
 .mobile-nav-toggle[aria-expanded="true"] {
@@ -509,49 +538,55 @@ ul {
 
 /* About Us Section */
 
-
+.testing {
+    height: 1700vh;
+    margin: 10rem 0;
+}
 .contents-wrap {
-  height: 90svh;
-  background-color: black;
-  margin: 10rem 0;
+    height: 100vh;
+    background-color: black;
+    position: sticky;
+    top: 0;
 }
 .contents {
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    width: 1700vw;
+    height: 100%;
+    will-change: transform;
 }
 .content {
-  height: 100%;
+    height: 100%;
 }
 .flow-grid {
-  height: 100%;
-  overflow-x: scroll;
-  overflow: hidden;
-  scroll-behavior: smooth;
+    height: 100%;
+    overflow-x: scroll;
+    overflow: hidden;
+    scroll-behavior: smooth;
 }
 .flow-grid-row {
-  height: 50%;
-  width: max-content;
+    height: 50%;
+    width: max-content;
 }
 .flow-grid-row-inner {
-  height: 100%;
-  background-color: black;
-  /* display: inline-block; */
+    height: 100%;
+    background-color: black;
+    /* display: inline-block; */
 }
 .item {
-  float: left;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
+    float: left;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
 }
 .item-in {
-  background-repeat: no-repeat;
-  height: 100%;
-  width: auto;
-  background-size: 100%;
-  background-position: -0.5% -0.5%;
-  transform: translateX(1000px);
-  /* transform: scale(1);
-  transition: transform 2s linear; */
+    background-repeat: no-repeat;
+    height: 100%;
+    width: auto;
+    background-size: 100%;
+    background-position: -0.5% -0.5%;
+    transform: translateX(1000px);
+    /* transform: scale(1);
+    transition: transform 2s linear; */
 }
 .pre-slide-bg {
     height: 100%;
@@ -563,21 +598,21 @@ ul {
     transform: translateX(1000px);
 }
 .item-in-img-container {
-  width: auto;
-  display: inline-block;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: -0.5% -0.5%;
-  transition: opacity .1s linear;
+    width: auto;
+    display: inline-block;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: -0.5% -0.5%;
+    transition: opacity .1s linear;
   /* transition: transform 1s .1s ease-in-out; */
 }
 .item-in-img-container img {
-  min-width: 0;
-  width: auto;
-  height: 100%;
-  opacity: 0;
-  display: block;
+    min-width: 0;
+    width: auto;
+    height: 100%;
+    opacity: 0;
+    display: block;
 }
 .item-in-img-container:hover {
     opacity: 0;
