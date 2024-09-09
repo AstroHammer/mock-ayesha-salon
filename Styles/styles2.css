@@ -185,7 +185,6 @@ header {
     flex-direction: column;
     position: fixed;
     inset: 0 0 0 30%;
-    height: 100svh;
     padding: min(15vh, 5rem) 1rem min(5vh, 3rem) 1rem;
     justify-content: space-around;
     align-items: center;
@@ -232,7 +231,7 @@ nav li a:hover::after {
 }
 .mobile-nav-toggle-bg {
     z-index: 9999;
-    position: absolute;
+    position: fixed;
     right: 2rem;
     width: clamp(1.6rem, 5vw, 2rem);
     aspect-ratio: 1;
