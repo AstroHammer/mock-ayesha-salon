@@ -186,7 +186,8 @@ header {
     display: flex;
     flex-direction: column;
     position: fixed;
-    inset: 0 0 0 30%;
+    width: 70%;
+    right: 0;
     height: var(--nav-height);
     padding: min(15vh, 5rem) 1rem min(5vh, 3rem) 1rem;
     justify-content: space-around;
