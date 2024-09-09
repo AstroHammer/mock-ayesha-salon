@@ -16,6 +16,10 @@ navToggle.addEventListener('click', () => {
 });
 
 
+const navHeight = () => primaryNav.style.setProperty('--nav-height', `${window.innerHeight}px`);
+window.addEventListener('resize', navHeight);
+navHeight();
+
 
 
 

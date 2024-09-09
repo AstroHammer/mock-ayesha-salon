@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 .group:before, .group:after {
     content: "";
     display: table;
@@ -185,12 +186,8 @@ header {
     display: flex;
     flex-direction: column;
     position: fixed;
-    
-    top: 3rem;
-    right: 0;
-    bottom: 0;
-    width: 75%;
-    height: 100svh;
+    inset: 0 0 0 30%;
+    height: var(--nav-height);
     padding: min(15vh, 5rem) 1rem min(5vh, 3rem) 1rem;
     justify-content: space-around;
     align-items: center;
