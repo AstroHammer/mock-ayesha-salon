@@ -13,9 +13,7 @@
 .group {
     zoom: 1;
 }
-html, body {
-    height: 100%;
-}
+
 body {
     background-color: black;
 }
@@ -183,15 +181,13 @@ header {
 .mobile-nav-container .logo-container {
     margin: 0;
 }
-nav {
-    height: 100%;
-}
 .mobile-nav {
     display: flex;
     flex-direction: column;
     position: fixed;
-    height: 100%;
+    
     inset: 0 0 0 30%;
+    height: 100svh;
     padding: min(15vh, 5rem) 1rem min(5vh, 3rem) 1rem;
     justify-content: space-around;
     align-items: center;
