@@ -29,7 +29,7 @@ li {
 header {
     position: relative;
     height: 100svh;
-    animation: fader 5s linear infinite;
+    
     overflow: hidden;
 }
 .fading-img {
