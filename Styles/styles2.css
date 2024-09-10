@@ -48,25 +48,25 @@ header {
     opacity: 0;
     animation: fade-zoom 36s infinite;
 }
-.slide:nth-child(3) {
+.slide:nth-child(4) {
     animation-delay: 0s;
 }
-.slide:nth-child(3) img {
+.slide:nth-child(4) img {
     object-position: right top;
 }
-.slide:nth-child(4) {
+.slide:nth-child(5) {
     animation-delay: 6s;
 }
-.slide:nth-child(5) {
+.slide:nth-child(6) {
     animation-delay: 12s;
 }
-.slide:nth-child(6) {
+.slide:nth-child(7) {
     animation-delay: 18s;
 }
-.slide:nth-child(7) {
+.slide:nth-child(8) {
     animation-delay: 24s;
 }
-.slide:nth-child(8) {
+.slide:nth-child(9) {
     animation-delay: 30s;
 }
 @keyframes fade-zoom {
