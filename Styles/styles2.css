@@ -51,9 +51,9 @@ header {
 .slide:nth-child(4) {
     animation-delay: 0s;
 }
-.slide:nth-child(4) img {
+/* .slide:nth-child(4) img {
     object-position: right top;
-}
+} */
 .slide:nth-child(5) {
     animation-delay: 6s;
 }
