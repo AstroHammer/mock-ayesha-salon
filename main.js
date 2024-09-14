@@ -77,13 +77,19 @@ function addAnimation() {
 const stickySection = document.querySelector('.contents-wrap');
 const scrollSection = stickySection.querySelector('.contents');
 const scrollParent = document.querySelector('.testing');
+const collageGrid = document.querySelector('.size-determiner');
 
 // seting responsive height and width for horizontal scroller
+// resize event to make sizes of all things responsive upon resizing the window
 
+window.addEventListener('resize', resizeCollage);
 
+function resizeCollage() {
+    let sizeOfCollage = collageGrid.clientWidth;
 
-
-
+    scrollParent.style.height = sizeOfCollage / 9 + 'vh';
+    scrollSection.style.width = sizeOfCollage / 9 + 'vw';
+}
 
 // getting container to translate left once we've hit a certain point
 window.addEventListener('scroll', () => {
@@ -99,6 +105,7 @@ function transform(stickySection) {
 
 //Creating observers and handling translate slides
 window.onload = function() {
+    resizeCollage();
     let item = document.querySelectorAll('.item');
     let slideContainer = document.querySelector('.contents-wrap');
 
@@ -173,7 +180,6 @@ window.onload = function() {
     }
 
 }
-
 //Script for Service Cost Alterator
 let testing = document.querySelectorAll('.skill-level-menu');
 
