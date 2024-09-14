@@ -74,38 +74,32 @@ function addAnimation() {
 }
 
 //Script for Image Collage
-
 const stickySection = document.querySelector('.contents-wrap');
+const scrollSection = stickySection.querySelector('.contents');
+const scrollParent = document.querySelector('.testing');
 
+// seting responsive height and width for horizontal scroller
+
+
+
+
+
+
+// getting container to translate left once we've hit a certain point
 window.addEventListener('scroll', () => {
     transform(stickySection);
 })
 
 function transform(stickySection) {
     const offsetTop = stickySection.parentElement.offsetTop;
-    const scrollSection = stickySection.querySelector('.contents');
     let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
     percentage = percentage < 0 ? 0 : percentage;
     scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`;
 }
 
-
-
-
-let scrollingGrid = document.querySelector('.flow-grid');
-
-// scrollingGrid.addEventListener('wheel', (event) => {
-//     event.preventDefault();
-//     scrollingGrid.scrollBy({
-//       left: event.deltaY < 0 ? -150 : 150,
-//     });
-
-
-// });
-
+//Creating observers and handling translate slides
 window.onload = function() {
     let item = document.querySelectorAll('.item');
-    
     let slideContainer = document.querySelector('.contents-wrap');
 
     createSlideObserver();
@@ -114,7 +108,7 @@ window.onload = function() {
         let optionsOne = {
             root: null,
             rootMargin: '0px',
-            threshold: 1
+            threshold: .6
         };
         observerOne = new IntersectionObserver(primeCollage, optionsOne);
         observerOne.observe(slideContainer);
@@ -127,9 +121,6 @@ window.onload = function() {
             }
         })
     }
-
-
-    
     function activateCollage() {
         item.forEach(div => {
             let itemChilds = div.children;
@@ -184,21 +175,8 @@ window.onload = function() {
 }
 
 //Script for Service Cost Alterator
-
-//click events on option elements don't work on mobile
-//take click events off option elements first
-//use onchange event for select element, that when there is change in option selection, to re-evaluate what the selected option was
-//apply attribue to that selected option, store that option, and send it out
-
-
-//on change of select element, if the changed selected option's parent element contains class menu entered....
-// then iterate through options to remove selected, then add selected to the selected option
-// i need to find out what the select option has been on change event from selected element
-
 let testing = document.querySelectorAll('.skill-level-menu');
-// add eventlisteners to all select elements
-// when clicked remove class from all and then add class to element clicked
-// then identify all the options from that menu clicked
+
 testing.forEach(menu => {
     menu.addEventListener('click', () => {
         for (i = 0; i < testing.length; i++) {
@@ -208,13 +186,7 @@ testing.forEach(menu => {
         let testEl = menu.children;
         identifyMenuOptionsSelected(testEl, menu);
     })
-    // let testEl = menu.children;
-    // for (i = 0; i < testEl.length; i++) {
-    //     testOption = testEl[i];
-    //     identifyMenuOptionSelected(testOption, testEl, menu);
-    // }
 })
-
 function identifyMenuOptionsSelected(testEl, menu) {
     menu.addEventListener('change', () => {
         selectedOption = menu.options[menu.selectedIndex];
@@ -228,29 +200,6 @@ function identifyMenuOptionsSelected(testEl, menu) {
         }
     })
 }
-
-//add event listeners to all option elements that were inside the previously clicked menu
-//remove class from all other options elements within that menu
-//add class to option selected within that menu
-//store which option in that menu is selected and it's text value
-// function identifyMenuOptionSelected(testOption, testEl, menu) {
-//     testOption.addEventListener('click', () => {
-//         if (testOption.parentElement.classList.contains('menu-entered')) {
-//             for (i = 0; i < testEl.length; i++) {
-//                 testEl[i].removeAttribute('selected');
-//             }
-//             testOption.setAttribute('selected', '');
-//             selectedOptionValue = menu.options[menu.selectedIndex].text;
-//             targetTotalDivs(selectedOptionValue, menu);
-//         }
-//     })
-// }
-//use previously clicked menu's parent to traverse to another container within the same parent
-//store the children of that container
-//iterate through each of those childrens' children and store each one
-//iterate through each of those children looking for the children that contain the class 'flex-end'
-//store each element with that class in a variable
-//send that variable out to run a function with it
 function targetTotalDivs(selectedOptionValue, menu) {
     let boopie = menu.parentElement.nextElementSibling.children;
 
@@ -264,10 +213,6 @@ function targetTotalDivs(selectedOptionValue, menu) {
         }
     }
 }
-
-
-//apply html to the element with class 'flex-end' if
-//the clicked option within the previously clicked menu value is X
 //determining the increase of the price based on level here
 function determinePrice(targetFlexEnd, selectedOptionValue) {
     if (selectedOptionValue == "Level 1") {
@@ -464,7 +409,6 @@ function determinePrice(targetFlexEnd, selectedOptionValue) {
         }
     }
 }
-
 //determining base price here
 function determineOptionPrices(targetFlexEnd) {
     if (targetFlexEnd.classList.contains('highlight-price')) {
@@ -589,8 +533,6 @@ function determineOptionPrices(targetFlexEnd) {
         return price;
     }
 }
-
-
 // actually implementing the pricing innerHTML here
 function applyPrices(returnValue, targetFlexEnd) {
     targetFlexEnd.innerHTML = returnValue;
