@@ -621,14 +621,15 @@ ul {
     min-width: 0;
     width: auto;
     height: 100%;
-    opacity: 0;
+    opacity: 1;
     display: block;
+    filter: grayscale();
 }
 .item-in-img-container:hover {
-    opacity: 0;
+    filter: none;
     transition: opacity .1s linear;
 }
-.bg1 {
+/* .bg1 {
     background-image: url("Home-Images/Scrolling-Collage/alexandru-zdrobau-BGz8vO3pK8k-unsplash.webp");
 }
 .bg2 {
@@ -726,9 +727,9 @@ ul {
 }
 .bg33 {
     background-image: url("Home-Images/Scrolling-Collage/woman-5443384.webp")
-}
+} */
 
-.bg1gray {
+/* .bg1gray {
     background-image: url("Home-Images/Scrolling-Collage/alexandru-zdrobau-BGz8vO3pK8k-unsplash-gray.webp")
 }
 .bg2gray {
@@ -826,7 +827,7 @@ ul {
 }
 .bg33gray {
     background-image: url("Home-Images/Scrolling-Collage/woman-5443384-gray.webp")
-}
+} */
 
 
 /* .about-us-section {
@@ -925,16 +926,19 @@ ul {
     border-bottom: 1px solid white;
     transition: color .2s ease-out, border-color .2s ease-out;
 }
-.accordion-item-btn::after {
-    content: url('/Styles/Home-Images/Services-Images/scissors-svgrepo-com.svg');
+.accordion-item-header {
+    position: relative;
+}
+.accordion-item-btn-svg {
     position: absolute;
     width: 20px;
     height: 20px;
+    top: 25%;
     right: 0;
     transition: transform .3s linear;
-    transform-origin: bottom;
+    transform-origin: center;
 }
-.accordion-item-btn.active::after {
+.accordion-item-btn.active > .accordion-item-btn-svg {
     transform: rotate(-120deg);
     transition: transform .3s linear;
 }
