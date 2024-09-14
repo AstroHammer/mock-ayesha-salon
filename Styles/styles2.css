@@ -1915,14 +1915,13 @@ input[type="button"] {
 }
 .carousel-item {
     width: 200px;
-    height: 100px;
+    height: 75px;
     filter: invert();
 }
 .carousel-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center center;
 }
 .product-logo-section {
     overflow: hidden;
