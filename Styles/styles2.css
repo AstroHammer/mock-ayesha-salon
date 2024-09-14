@@ -584,7 +584,6 @@ ul {
 .flow-grid-row-inner {
     height: 100%;
     background-color: black;
-    /* display: inline-block; */
 }
 .item {
     float: left;
@@ -599,8 +598,6 @@ ul {
     background-size: 100%;
     background-position: -0.5% -0.5%;
     transform: translateX(1000px);
-    /* transform: scale(1);
-    transition: transform 2s linear; */
 }
 .pre-slide-bg {
     height: 100%;
@@ -619,7 +616,6 @@ ul {
     background-size: 100%;
     background-position: -0.5% -0.5%;
     transition: opacity .1s linear;
-  /* transition: transform 1s .1s ease-in-out; */
 }
 .item-in-img-container img {
     min-width: 0;
@@ -630,14 +626,8 @@ ul {
 }
 .item-in-img-container:hover {
     opacity: 0;
-    /* transform: scale(1.05); */
     transition: opacity .1s linear;
-    /* , transform 2s .05s ease-in-out; */
 }
-/* .item-in:hover {
-    transform: scale(1.05);
-    transition: transform 2s .05s ease-in-out;
-} */
 .bg1 {
     background-image: url("Home-Images/Scrolling-Collage/alexandru-zdrobau-BGz8vO3pK8k-unsplash.webp");
 }
