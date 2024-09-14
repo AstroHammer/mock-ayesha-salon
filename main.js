@@ -80,8 +80,6 @@ const scrollParent = document.querySelector('.testing');
 const collageGrid = document.querySelector('.size-determiner');
 
 // seting responsive height and width for horizontal scroller
-// resize event to make sizes of all things responsive upon resizing the window
-
 window.addEventListener('resize', resizeCollage);
 
 function resizeCollage() {

@@ -149,19 +149,21 @@ picture {
 /* HEADER */
 @font-face {
     font-family: "Dancing-Script";
-    src: url("Fonts/DancingScript-VariableFont_wght.woff") format('woff');
+    src: 
+    local("Dancing-Script"),
+    url("Fonts/DancingScript-VariableFont_wght.woff") format('woff');
 }
 @font-face {
     font-family:"Playfair";
-    src: url(Fonts/PlayfairDisplay-VariableFont_wght.woff) format('woff');
-}
-@font-face {
-    font-family: "Zain";
-    src: url("Fonts/Zain-Regular.woff") format('woff');
+    src: 
+    local("Playfair"), 
+    url(Fonts/PlayfairDisplay-VariableFont_wght.woff) format('woff');
 }
 @font-face {
     font-family: "Caveat";
-    src: url('Fonts/Caveat-VariableFont_wght.woff') format('woff');
+    src: 
+    local("Caveat"),
+    url('Fonts/Caveat-VariableFont_wght.woff') format('woff');
 }
 .wide-nav {
     display: flex;
