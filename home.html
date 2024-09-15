@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Ayesha is a high-end salon for all, providing professional services from expert beauticians, Coloring starting at only $4, Extensions starting at only $9, Styling starting at only $7, Book an appointment online or call us, We're excited to meet you">
         <link rel="preload" as="font" href="Styles/Fonts/Caveat-VariableFont_wght-subset.woff" type="font/woff2" crossorigin="anonymous">
         <link rel="preload" as="font" href="Styles/Fonts/DancingScript-VariableFont_wght-subset.woff" type="font/woff2" crossorigin="anonymous">
         <link rel="preload" as="font" href="Styles/Fonts/PlayfairDisplay-VariableFont_wght-subset.woff" type="font/woff2" crossorigin="anonymous">
@@ -41,7 +42,7 @@
                     <h1 class="logo">Ayesha.</h1>
                 </div>
                 <div class="mobile-nav-toggle-bg">
-                    <button class="mobile-nav-toggle" aria-expanded="false">
+                    <button class="mobile-nav-toggle" role="button" aria-expanded="false" aria-label="menu">
                         <svg class="mobile-nav-svg menu-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff"><path d="M4 4a1 1 0 1 0 0 2h16a1 1 0 1 0 0-2H4zm0 7a1 1 0 1 0 0 2h16a1 1 0 1 0 0-2H4zm0 7a1 1 0 1 0 0 2h16a1 1 0 1 0 0-2H4z"/></svg>
                         <svg class="mobile-nav-svg close-menu-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" fill="#fff"><path d="M7 4a.993.993 0 0 0-.707.293l-2 2a1 1 0 0 0 0 1.414L11.586 15l-7.293 7.293a1 1 0 0 0 0 1.414l2 2a1 1 0 0 0 1.414 0L15 18.414l7.293 7.293a1 1 0 0 0 1.414 0l2-2a1 1 0 0 0 0-1.414L18.414 15l7.293-7.293a1 1 0 0 0 0-1.414l-2-2a1 1 0 0 0-1.414 0L15 11.586 7.707 4.293A.993.993 0 0 0 7 4z"/></svg>
                     </button>
@@ -792,8 +793,8 @@
                                             <h3 class="sub-title">Highlights</h3>
                                         </div>
                                         <div class="stylist-skill-container">
-                                            <span>Stylist:</span>
-                                            <select class="skill-level-menu highlights" name="level" autocomplete="off">
+                                            <label for="skill-level">Stylist:</label>
+                                            <select id="skill-level" class="skill-level-menu highlights" name="level" autocomplete="off">
                                                 <option value="Select Skill" selected disabled>Select Skill</option>
                                                 <option class="skill-level-option" value="Level-1">Level 1</option>
                                                 <option class="skill-level-option" value="Level-2">Level 2</option>
@@ -827,8 +828,8 @@
                                             <h3 class="sub-title">Touch-up</h3>
                                         </div>
                                         <div class="stylist-skill-container">
-                                            <span>Stylist:</span>
-                                            <select class="skill-level-menu touch-up" name="level" autocomplete="off">
+                                            <label for="skill-level">Stylist:</label>
+                                            <select id="skill-level" class="skill-level-menu touch-up" name="level" autocomplete="off">
                                                 <option value="Select Skill" selected disabled>Select Skill</option>
                                                 <option class="skill-level-option" value="Level-1">Level 1</option>
                                                 <option class="skill-level-option" value="Level-2">Level 2</option>
@@ -857,8 +858,8 @@
                                             <h3 class="sub-title">Funky</h3>
                                         </div>
                                         <div class="stylist-skill-container">
-                                            <span>Stylist:</span>
-                                            <select class="skill-level-menu funky" name="level" autocomplete="off">
+                                            <label for="skill-level">Stylist:</label>
+                                            <select id="skill-level" class="skill-level-menu funky" name="level" autocomplete="off">
                                                 <option value="Select Skill" selected disabled>Select Skill</option>
                                                 <option class="skill-level-option" value="Level-1">Level 1</option>
                                                 <option class="skill-level-option" value="Level-2">Level 2</option>
@@ -904,8 +905,8 @@
                                             <h3 class="sub-title">Clip-Ins</h3>
                                         </div>
                                         <div class="stylist-skill-container">
-                                            <span>Stylist:</span>
-                                            <select class="skill-level-menu clip-ins" name="level" autocomplete="off">
+                                            <label for="skill-level">Stylist:</label>
+                                            <select id="skill-level" class="skill-level-menu clip-ins" name="level" autocomplete="off">
                                                 <option value="Select Skill" selected disabled>Select Skill</option>
                                                 <option class="skill-level-option" value="Level-1">Level 1</option>
                                                 <option class="skill-level-option" value="Level-2">Level 2</option>
@@ -951,8 +952,8 @@
                                             <h3 class="sub-title">Wigs</h3>
                                         </div>
                                         <div class="stylist-skill-container">
-                                            <span>Stylist:</span>
-                                            <select class="skill-level-menu wigs" name="level" autocomplete="off">
+                                            <label for="skill-level">Stylist:</label>
+                                            <select id="skill-level" class="skill-level-menu wigs" name="level" autocomplete="off">
                                                 <option value="Select Skill" selected disabled>Select Skill</option>
                                                 <option class="skill-level-option" value="Level-1">Level 1</option>
                                                 <option class="skill-level-option" value="Level-2">Level 2</option>
@@ -990,8 +991,8 @@
                                             <h3 class="sub-title">Sew-in / Weave</h3>
                                         </div>
                                         <div class="stylist-skill-container">
-                                            <span>Stylist:</span>
-                                            <select class="skill-level-menu weave" name="level" autocomplete="off">
+                                            <label for="skill-level">Stylist:</label>
+                                            <select id="skill-level" class="skill-level-menu weave" name="level" autocomplete="off">
                                                 <option value="Select Skill" selected disabled>Select Skill</option>
                                                 <option class="skill-level-option" value="Level-1">Level 1</option>
                                                 <option class="skill-level-option" value="Level-2">Level 2</option>
@@ -1049,8 +1050,8 @@
                                             <h3 class="sub-title">Cuts</h3>
                                         </div>
                                         <div class="stylist-skill-container">
-                                            <span>Stylist:</span>
-                                            <select class="skill-level-menu cuts" name="level" autocomplete="off">
+                                            <label for="skill-level">Stylist:</label>
+                                            <select id="skill-level" class="skill-level-menu cuts" name="level" autocomplete="off">
                                                 <option value="Select Skill" selected disabled>Select Skill</option>
                                                 <option class="skill-level-option" value="Level-1">Level 1</option>
                                                 <option class="skill-level-option" value="Level-2">Level 2</option>
@@ -1093,8 +1094,8 @@
                                             <h3 class="sub-title">Styling</h3>
                                         </div>
                                         <div class="stylist-skill-container">
-                                            <span>Stylist:</span>
-                                            <select class="skill-level-menu styling" name="level" autocomplete="off">
+                                            <label for="skill-level">Stylist:</label>
+                                            <select id="skill-level" class="skill-level-menu styling" name="level" autocomplete="off">
                                                 <option value="Select Skill" selected disabled>Select Skill</option>
                                                 <option class="skill-level-option" value="Level-1">Level 1</option>
                                                 <option class="skill-level-option" value="Level-2">Level 2</option>
@@ -1223,8 +1224,8 @@
                                 <div class="accordion-item-body">
                                     <div class="accordion-item-body-content">
                                         <div class="stylist-skill-container">
-                                            <span>Artist:</span>
-                                            <select class="skill-level-menu make-up" name="level" autocomplete="off">
+                                            <label for="skill-level">Artist:</label>
+                                            <select id="skill-level" class="skill-level-menu make-up" name="level" autocomplete="off">
                                                 <option value="Select Skill" selected disabled>Select Skill</option>
                                                 <option class="skill-level-option" value="Level-1">Level 1</option>
                                                 <option class="skill-level-option" value="Level-2">Level 2</option>
@@ -1810,7 +1811,7 @@
                                                 </div>
                                             </legend>
                                             <div>
-                                                <input class="contact-input" type="tel">
+                                                <input aria-label="input phone number" class="contact-input" type="tel">
                                             </div>
                                         </fieldset>
                                     </div>
@@ -1823,7 +1824,7 @@
                                                 </div>
                                             </legend>
                                             <div>
-                                                <input class="contact-input" type="email">
+                                                <input aria-label="input email" class="contact-input" type="email">
                                             </div>
                                         </fieldset>
                                     </div>
@@ -1837,7 +1838,7 @@
                                             </div>
                                         </legend>
                                         <div>
-                                            <textarea class="message-input" name="" id=""></textarea>
+                                            <textarea aria-label="input message" class="message-input" name="message"></textarea>
                                         </div>
                                     </fieldset>
                                 </div>
@@ -1849,7 +1850,7 @@
                     </div>
                     <div class="contact-right-half">
                         <div>
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3315.0085756437693!2d-117.92154912276054!3d33.81209177324839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcd7d12b3b5e6b%3A0x2ef62f8418225cfa!2sDisneyland%20Park!5e0!3m2!1sen!2sus!4v1722195235237!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe title="google-maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3315.0085756437693!2d-117.92154912276054!3d33.81209177324839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcd7d12b3b5e6b%3A0x2ef62f8418225cfa!2sDisneyland%20Park!5e0!3m2!1sen!2sus!4v1722195235237!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                         <div class="info-hours-container">
                             <div class="salon-info-container store-info-container">
@@ -1947,22 +1948,22 @@
                         <div class="subscribe-footer-svg-container">
                             <div>
                                 <a href="https://www.facebook.com/">
-                                    <img src="Styles/Home-Images/SVG/Footer-SVGs/icons8-facebook.svg" class="footer-svg" width="20" height="20">
+                                    <img src="Styles/Home-Images/SVG/Footer-SVGs/icons8-facebook.svg" alt="facebook-logo" class="footer-svg" width="20" height="20">
                                 </a>
                             </div>
                             <div>
                                 <a href="https://www.instagram.com/">
-                                    <img src="Styles/Home-Images/SVG/Footer-SVGs/icons8-instagram.svg" class="footer-svg" width="20" height="20">
+                                    <img src="Styles/Home-Images/SVG/Footer-SVGs/icons8-instagram.svg" alt="instagram-logo" class="footer-svg" width="20" height="20">
                                 </a>
                             </div>
                             <div>
                                 <a href="https://www.linkedin.com/">
-                                    <img src="Styles/Home-Images/SVG/Footer-SVGs/icons8-linkedin.svg" class="footer-svg" width="20" height="20">
+                                    <img src="Styles/Home-Images/SVG/Footer-SVGs/icons8-linkedin.svg" alt="linkedin logo" class="footer-svg" width="20" height="20">
                                 </a>
                             </div>
                             <div>
                                 <a href="https://x.com/?lang=en">
-                                    <img src="Styles/Home-Images/SVG/Footer-SVGs/icons8-twitter.svg" class="footer-svg" width="20" height="20">
+                                    <img src="Styles/Home-Images/SVG/Footer-SVGs/icons8-twitter.svg" alt="twitter logo" class="footer-svg" width="20" height="20">
                                 </a>
                             </div>
                         </div>
@@ -2025,11 +2026,11 @@
                                         </span>
                                         <div class="partners-details-socials">
                                             <a href="https://www.facebook.com/SamVillaPros">
-                                                <img src="Styles/Home-Images/SVG/Footer-SVGs/facebook-3-2.svg" class="footer-svg" width="25" height="25">
+                                                <img src="Styles/Home-Images/SVG/Footer-SVGs/facebook-3-2.svg" alt="facebook-logo" class="footer-svg" width="25" height="25">
                                             </a>
                                             <div class="separation-border blog-social-border"></div>
-                                            <a href="www.youtube.com/@samvillahair">
-                                                <img src="Styles/Home-Images/SVG/Footer-SVGs/youtube-svgrepo-com.svg" class="footer-svg" width="25" height="25">
+                                            <a href="www.youtube.com/samvillahair">
+                                                <img src="Styles/Home-Images/SVG/Footer-SVGs/youtube-svgrepo-com.svg" alt="youtube-logo" class="footer-svg" width="25" height="25">
                                             </a>
                                         </div>
                                     </div>
@@ -2040,11 +2041,11 @@
                                         </span>
                                         <div class="partners-details-socials">
                                             <a href="https://facebook.com/diviofficialllc">
-                                                <img src="Styles/Home-Images/SVG/Footer-SVGs/facebook-3-2.svg" class="footer-svg" width="25" height="25">
+                                                <img src="Styles/Home-Images/SVG/Footer-SVGs/facebook-3-2.svg" alt="facebook-logo" class="footer-svg" width="25" height="25">
                                             </a>
                                             <div class="separation-border blog-social-border"></div>
                                             <a href="www.youtube.com/diviofficial">
-                                                <img src="Styles/Home-Images/SVG/Footer-SVGs/youtube-svgrepo-com.svg" class="footer-svg" width="25" height="25">
+                                                <img src="Styles/Home-Images/SVG/Footer-SVGs/youtube-svgrepo-com.svg" alt="youtube-logo" class="footer-svg" width="25" height="25">
                                             </a>
                                         </div>
                                     </div>
@@ -2055,11 +2056,11 @@
                                         </span>
                                         <div class="partners-details-socials">
                                             <a href="https://www.facebook.com/RizosCurlsHair">
-                                                <img src="Styles/Home-Images/SVG/Footer-SVGs/facebook-3-2.svg" class="footer-svg" width="25" height="25">
+                                                <img src="Styles/Home-Images/SVG/Footer-SVGs/facebook-3-2.svg" alt="facebook logo" class="footer-svg" width="25" height="25">
                                             </a>
                                             <div class="separation-border blog-social-border"></div>
-                                            <a href="www.youtube.com/@RizosCurls">
-                                                <img src="Styles/Home-Images/SVG/Footer-SVGs/youtube-svgrepo-com.svg" class="footer-svg" width="25" height="25">
+                                            <a href="www.youtube.com/RizosCurls">
+                                                <img src="Styles/Home-Images/SVG/Footer-SVGs/youtube-svgrepo-com.svg" alt="youtube logo" class="footer-svg" width="25" height="25">
                                             </a>
                                         </div>
                                     </div>
