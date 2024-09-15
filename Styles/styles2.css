@@ -1364,13 +1364,14 @@ relevance
     transform: translateY(20%);
 }
 .wave-container-btm {
-    transform:translateY(-20%);
+    transform:translateY(-20%) rotate(180deg);
 }
 .wavy-bg-rel img {
     display: block;
 }
 .wavy-bg {
     width: 200%;
+    height: 100%;
     position: absolute;
     left: 0;
     right: 0;
@@ -1401,20 +1402,31 @@ relevance
 }
 .btm-wave {
     height:100%;
-    animation-play-state: reverse;
+    animation-direction:;
 }
 .wave-svg {
     width: 100%;
     height: 100%;
 }
-.rotate-svg {
-    transform: rotate(180deg);
-}
 .long-wave {
+    background-image: url('/Styles/svg-wave.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: left;
     z-index: 1000;
 }
 .short-wave {
+    background-image: url('/Styles/svg-wave-test.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: left;
     animation: wavy 20s linear infinite reverse;
+}
+.inverse-long-wave {
+    background-image: url('/Styles/svg-wave-test-2.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: left;
 }
 @keyframes wavy {
     0% {
@@ -1424,6 +1436,8 @@ relevance
         transform: translateX(-50%);
     }
 }
+
+
 .contact-section {
     background-color: #D0ADB1;
     /* background-color: #e4c1c5; */
