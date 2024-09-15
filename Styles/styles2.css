@@ -441,9 +441,9 @@ ul {
 }
 .vertical-promo::before, .vertical-promo::after {
     content: '';
-  display: inline-block;
-  border-left: 1px solid whitesmoke;
-  flex-grow: 1;
+    display: inline-block;
+    border-left: 1px solid whitesmoke;
+    flex-grow: 1;
 }
 .horizontal-promo::before {
     margin-right: 10px;
@@ -1375,6 +1375,7 @@ relevance
     position: absolute;
     left: 0;
     right: 0;
+    bottom: 0;
     animation: wavy 20s linear infinite;
     opacity: .5;
 }
@@ -1402,7 +1403,6 @@ relevance
 }
 .btm-wave {
     height:100%;
-    animation-direction:;
 }
 .wave-svg {
     width: 100%;
@@ -1427,6 +1427,7 @@ relevance
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: left;
+    height: 90%;
 }
 @keyframes wavy {
     0% {
@@ -1436,8 +1437,6 @@ relevance
         transform: translateX(-50%);
     }
 }
-
-
 .contact-section {
     background-color: #D0ADB1;
     /* background-color: #e4c1c5; */
