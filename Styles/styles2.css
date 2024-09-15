@@ -1333,6 +1333,8 @@ relevance
 .contact-svg {
     width: 30px;
     height: 30px;
+    display: inline-block;
+    line-height: 0;
 }
 .top-left {
     margin-bottom: 8px;
@@ -2125,9 +2127,5 @@ input[type="button"] {
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-    .social-bar-svg {
-        width: 30px;
-        height: 30px;
     }
 }
