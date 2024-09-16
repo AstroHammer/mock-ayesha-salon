@@ -462,36 +462,8 @@ ul {
     transform: scale(1.2);
     transition: transform .2 linear;
 }
-/* .promo {
-    background-color: black;
-    color: whitesmoke;
-    border-radius: 10px;
-    padding: 20px 20px 10px 0;
-    margin: 0 20px;
-}
-.promo > span {
-    font-size: 1.5rem;
-    padding: 10px;
-    border-left: 5px solid whitesmoke;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-}
-.promo p {
-    padding: 5px;
-    padding-top: 15px;
-}
-.small {
-    font-size: 1.4rem;
-    font-weight: bolder;
-} */
-
-
-
-
 .booking {
-    /* border: 1px solid red; */
     margin: 0 20px;
-
 }
 .booking-content {
     width: 100%;   
@@ -535,33 +507,6 @@ ul {
     border-top: 1px solid white;
     flex-grow: 1;
 }
-/* @media screen and (max-width:650px) {
-    .promo-content {
-        flex-direction: column-reverse;
-    }
-    .booking {
-        display: flex;
-        align-items: center;
-    }
-    .or-border::before, .or-border::after {
-        display: none;
-    }
-    .promo-content-socials > div {
-        display: flex;
-    }
-    .top-promo-socials .top-left {
-        margin: 0;
-    }
-    .top-promo-socials .top-right {
-        margin: 0;
-    }
-    .bottom-promo-socials .bottom-left {
-        margin: 0;
-    }
-    .bottom-promo-socials .bottom-right {
-        margin: 0;        
-    }
-} */
 
 /* About Us Section */
 
