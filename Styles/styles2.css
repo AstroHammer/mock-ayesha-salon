@@ -50,7 +50,7 @@ picture {
     height: 100%;
     width: 100%;
     opacity: 0;
-    /* animation: fade-zoom 36s infinite; */
+    animation: fade-zoom 36s infinite;
 }
 .slide:nth-child(4) {
     animation-delay: 0s;
@@ -233,7 +233,7 @@ nav li a:hover::before, nav li a:hover::after {
     border-bottom: solid 1px white;
     width: 0;
     bottom: 0;
-    /* animation: underlineAnimate .2s linear forwards */
+    animation: underlineAnimate .2s linear forwards
 }
 nav li a:hover::before {
     left: 50%;
@@ -1376,7 +1376,7 @@ relevance
     left: 0;
     right: 0;
     bottom: 0;
-    /* animation: wavy 20s linear infinite; */
+    animation: wavy 20s linear infinite;
     opacity: .5;
 }
 @media screen and (max-width:1500px) {
@@ -1420,7 +1420,7 @@ relevance
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: left;
-    /* animation: wavy 20s linear infinite reverse; */
+    animation: wavy 20s linear infinite reverse;
 }
 .inverse-long-wave {
     background-image: url('/Styles/svg-wave-test-2.svg');
@@ -1937,7 +1937,7 @@ input[type="button"] {
     align-items: stretch;
     justify-content: flex-start;
     width: fit-content;
-    /* animation: scroll 40s linear infinite; */
+    animation: scroll 40s linear infinite;
 }
 .carousel-item {
     width: 200px;
@@ -2142,6 +2142,3 @@ input[type="button"] {
         justify-content: center;
     }
 }
- body {
-    animation:;
- }
