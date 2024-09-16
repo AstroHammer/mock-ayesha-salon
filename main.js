@@ -219,196 +219,30 @@ function targetTotalDivs(selectedOptionValue, menu) {
 }
 //determining the increase of the price based on level here
 function determinePrice(targetFlexEnd, selectedOptionValue) {
-    if (selectedOptionValue == "Level 1") {
-        determineOptionPrices(targetFlexEnd);
+    for (k = 1; k < 8; k++) {
+        if (selectedOptionValue == 'Level' + ' ' + `${k}`) {
+            determineOptionPrices(targetFlexEnd);
 
-        let returnValue = determineOptionPrices(targetFlexEnd);
-        
-        if (targetFlexEnd.classList.contains('two-price')) {
-            let fullPrice = returnValue[0] * 1;
-            let partialPrice = returnValue[1] * 1;
-            if (targetFlexEnd.classList.contains('minimum-price')) {
-                let price = '$' + `${fullPrice}` + '+' + ' ' + '/' + ' ' + '$' + `${partialPrice}` + '+';
-                applyPrices(price, targetFlexEnd);
-            } else {
-                let price = '$' + `${fullPrice}` + ' ' + '/' + ' ' + '$' + `${partialPrice}`;
-                applyPrices(price, targetFlexEnd);
-            }
-        } else {
-            if (targetFlexEnd.classList.contains('minimum-price')) {
-                returnValue = '$' + `${returnValue * 1}` + '+';
-                applyPrices(returnValue, targetFlexEnd);
-            } else {
-                returnValue = '$' + `${returnValue * 1}`;
-                applyPrices(returnValue, targetFlexEnd);
-            }
-        }
-    } else if (selectedOptionValue == "Level 2") {
-        determineOptionPrices(targetFlexEnd);
+            let returnValue = determineOptionPrices(targetFlexEnd);
 
-        let returnValue = determineOptionPrices(targetFlexEnd);
-
-        if (targetFlexEnd.classList.contains('two-price')) {
-            let fullPrice = returnValue[0] * 2;
-            let partialPrice = returnValue[1] * 2;
-            if (targetFlexEnd.classList.contains('minimum-price')) {
-                let price = '$' + `${fullPrice}` + '+' + ' ' + '/' + ' ' + '$' + `${partialPrice}` + '+';
-                applyPrices(price, targetFlexEnd);
+            if (targetFlexEnd.classList.contains('two-price')) {
+                let fullPrice = returnValue[0] * k;
+                let partialPrice = returnValue[1] * k;
+                if (targetFlexEnd.classList.contains('minimum-price')) {
+                    let price = '$' + `${fullPrice}` + '+' + ' ' + '/' + ' ' + '$' + `${partialPrice}` + '+';
+                    applyPrices(price, targetFlexEnd);
+                } else {
+                    let price = '$' + `${fullPrice}` + ' ' + '/' + ' ' + '$' + `${partialPrice}`;
+                    applyPrices(price, targetFlexEnd);
+                }
             } else {
-                let price = '$' + `${fullPrice}` + ' ' + '/' + ' ' + '$' + `${partialPrice}`;
-                applyPrices(price, targetFlexEnd);
-            }
-        } else {
-            if (targetFlexEnd.classList.contains('minimum-price')) {
-                returnValue = '$' + `${returnValue * 2}` + '+';
-                applyPrices(returnValue, targetFlexEnd);
-            } else {
-                returnValue = '$' + `${returnValue * 2}`;
-                applyPrices(returnValue, targetFlexEnd);
-            }
-        }
-    } else if (selectedOptionValue == "Level 3") {
-        determineOptionPrices(targetFlexEnd);
-
-        let returnValue = determineOptionPrices(targetFlexEnd);
-
-        if (targetFlexEnd.classList.contains('two-price')) {
-            let fullPrice = returnValue[0] * 3;
-            let partialPrice = returnValue[1] * 3;
-            if (targetFlexEnd.classList.contains('minimum-price')) {
-                let price = '$' + `${fullPrice}` + '+' + ' ' + '/' + ' ' + '$' + `${partialPrice}` + '+';
-                applyPrices(price, targetFlexEnd);
-            } else {
-                let price = '$' + `${fullPrice}` + ' ' + '/' + ' ' + '$' + `${partialPrice}`;
-                applyPrices(price, targetFlexEnd);
-            }
-        } else {
-            if (targetFlexEnd.classList.contains('minimum-price')) {
-                returnValue = '$' + `${returnValue * 3}` + '+';
-                applyPrices(returnValue, targetFlexEnd);
-            } else {
-                returnValue = '$' + `${returnValue * 3}`;
-                applyPrices(returnValue, targetFlexEnd);
-            }
-        }
-    } else if (selectedOptionValue == "Level 4") {
-        determineOptionPrices(targetFlexEnd);
-
-        let returnValue = determineOptionPrices(targetFlexEnd);
-
-        if (targetFlexEnd.classList.contains('two-price')) {
-            let fullPrice = returnValue[0] * 4;
-            let partialPrice = returnValue[1] * 4;
-            if (targetFlexEnd.classList.contains('minimum-price')) {
-                let price = '$' + `${fullPrice}` + '+' + ' ' + '/' + ' ' + '$' + `${partialPrice}` + '+';
-                applyPrices(price, targetFlexEnd);
-            } else {
-                let price = '$' + `${fullPrice}` + ' ' + '/' + ' ' + '$' + `${partialPrice}`;
-                applyPrices(price, targetFlexEnd);
-            }
-        } else {
-            if (targetFlexEnd.classList.contains('minimum-price')) {
-                returnValue = '$' + `${returnValue * 4}` + '+';
-                applyPrices(returnValue, targetFlexEnd);
-            } else {
-                returnValue = '$' + `${returnValue * 4}`;
-                applyPrices(returnValue, targetFlexEnd);
-            }
-        }
-    } else if (selectedOptionValue == "Level 5") {
-        determineOptionPrices(targetFlexEnd);
-
-        let returnValue = determineOptionPrices(targetFlexEnd);
-
-        if (targetFlexEnd.classList.contains('two-price')) {
-            let fullPrice = returnValue[0] * 5;
-            let partialPrice = returnValue[1] * 5;
-            if (targetFlexEnd.classList.contains('minimum-price')) {
-                let price = '$' + `${fullPrice}` + '+' + ' ' + '/' + ' ' + '$' + `${partialPrice}` + '+';
-                applyPrices(price, targetFlexEnd);
-            } else {
-                let price = '$' + `${fullPrice}` + ' ' + '/' + ' ' + '$' + `${partialPrice}`;
-                applyPrices(price, targetFlexEnd);
-            }
-        } else {
-            if (targetFlexEnd.classList.contains('minimum-price')) {
-                returnValue = '$' + `${returnValue * 5}` + '+';
-                applyPrices(returnValue, targetFlexEnd);
-            } else {
-                returnValue = '$' + `${returnValue * 5}`;
-                applyPrices(returnValue, targetFlexEnd);
-            }
-        }
-    } else if (selectedOptionValue == "Level 6") {
-        determineOptionPrices(targetFlexEnd);
-
-        let returnValue = determineOptionPrices(targetFlexEnd);
-
-        if (targetFlexEnd.classList.contains('two-price')) {
-            let fullPrice = returnValue[0] * 6;
-            let partialPrice = returnValue[1] * 6;
-            if (targetFlexEnd.classList.contains('minimum-price')) {
-                let price = '$' + `${fullPrice}` + '+' + ' ' + '/' + ' ' + '$' + `${partialPrice}` + '+';
-                applyPrices(price, targetFlexEnd);
-            } else {
-                let price = '$' + `${fullPrice}` + ' ' + '/' + ' ' + '$' + `${partialPrice}`;
-                applyPrices(price, targetFlexEnd);
-            }
-        } else {
-            if (targetFlexEnd.classList.contains('minimum-price')) {
-                returnValue = '$' + `${returnValue * 6}` + '+';
-                applyPrices(returnValue, targetFlexEnd);
-            } else {
-                returnValue = '$' + `${returnValue * 6}`;
-                applyPrices(returnValue, targetFlexEnd);
-            }
-        }
-    } else if (selectedOptionValue == "Level 7") {
-        determineOptionPrices(targetFlexEnd);
-
-        let returnValue = determineOptionPrices(targetFlexEnd);
-
-        if (targetFlexEnd.classList.contains('two-price')) {
-            let fullPrice = returnValue[0] * 7;
-            let partialPrice = returnValue[1] * 7;
-            if (targetFlexEnd.classList.contains('minimum-price')) {
-                let price = '$' + `${fullPrice}` + '+' + ' ' + '/' + ' ' + '$' + `${partialPrice}` + '+';
-                applyPrices(price, targetFlexEnd);
-            } else {
-                let price = '$' + `${fullPrice}` + ' ' + '/' + ' ' + '$' + `${partialPrice}`;
-                applyPrices(price, targetFlexEnd);
-            }
-        } else {
-            if (targetFlexEnd.classList.contains('minimum-price')) {
-                returnValue = '$' + `${returnValue * 7}` + '+';
-                applyPrices(returnValue, targetFlexEnd);
-            } else {
-                returnValue = '$' + `${returnValue * 7}`;
-                applyPrices(returnValue, targetFlexEnd);
-            }
-        }
-    } else if (selectedOptionValue == "Level 8") {
-        determineOptionPrices(targetFlexEnd);
-
-        let returnValue = determineOptionPrices(targetFlexEnd);
-
-        if (targetFlexEnd.classList.contains('two-price')) {
-            let fullPrice = returnValue[0] * 8;
-            let partialPrice = returnValue[1] * 8;
-            if (targetFlexEnd.classList.contains('minimum-price')) {
-                let price = '$' + `${fullPrice}` + '+' + ' ' + '/' + ' ' + '$' + `${partialPrice}` + '+';
-                applyPrices(price, targetFlexEnd);
-            } else {
-                let price = '$' + `${fullPrice}` + ' ' + '/' + ' ' + '$' + `${partialPrice}`;
-                applyPrices(price, targetFlexEnd);
-            }
-        } else {
-            if (targetFlexEnd.classList.contains('minimum-price')) {
-                returnValue = '$' + `${returnValue * 8}` + '+';
-                applyPrices(returnValue, targetFlexEnd);
-            } else {
-                returnValue = '$' + `${returnValue * 8}`;
-                applyPrices(returnValue, targetFlexEnd);
+                if (targetFlexEnd.classList.contains('minimum-price')) {
+                    returnValue = '$' + `${returnValue * k}` + '+';
+                    applyPrices(returnValue, targetFlexEnd);
+                } else {
+                    returnValue = '$' + `${returnValue * k}`;
+                    applyPrices(returnValue, targetFlexEnd);
+                }
             }
         }
     }
