@@ -566,7 +566,7 @@ ul {
 /* About Us Section */
 
 .testing {
-
+    height: calc(800vh - 10%);
     margin: 10rem 0;
 }
 .contents-wrap {
@@ -579,7 +579,7 @@ ul {
 }
 .contents {
     position: absolute;
-
+    width: ;
     height: 100%;
     will-change: transform;
 }
