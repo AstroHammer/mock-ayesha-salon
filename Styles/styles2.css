@@ -218,14 +218,13 @@ picture {
     content: '';
     position: absolute;
     height: 50px;
-    background-color: white;
     left: 0;
     right: 0;
-    bottom: -8vh;
+    bottom: -50px;
     background-color: rgba(156, 82, 136, .6);
     backdrop-filter: blur(.5rem);
     z-index: 999;
-
+    background-color: white;
 }
 .mobile-nav[data-visible="true"] {
     transform: translateX(0%);
