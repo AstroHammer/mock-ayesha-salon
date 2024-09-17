@@ -102,7 +102,7 @@ const scrollSection = stickySection.querySelector('.contents');
 const scrollParent = document.querySelector('.testing');
 const collageGrid = document.querySelector('.size-determiner');
 
-// seting responsive height and width for horizontal scroller
+// seting responsive for horizontal scroller
 window.addEventListener('resize', resizeCollage);
 
 function resizeCollage() {
@@ -241,7 +241,7 @@ function targetTotalDivs(selectedOptionValue, menu) {
 }
 //determining the increase of the price based on level here
 function determinePrice(targetFlexEnd, selectedOptionValue) {
-    for (k = 1; k < 8; k++) {
+    for (k = 1; k <= 8; k++) {
         if (selectedOptionValue == 'Level' + ' ' + `${k}`) {
             determineOptionPrices(targetFlexEnd);
 
@@ -268,6 +268,7 @@ function determinePrice(targetFlexEnd, selectedOptionValue) {
             }
         }
     }
+    
 }
 //determining base price here
 function determineOptionPrices(targetFlexEnd) {
