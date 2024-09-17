@@ -224,7 +224,6 @@ picture {
     background-color: rgba(156, 82, 136, .6);
     backdrop-filter: blur(.5rem);
     z-index: 999;
-    background-color: white;
 }
 .mobile-nav[data-visible="true"] {
     transform: translateX(0%);
