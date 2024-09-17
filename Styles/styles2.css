@@ -214,6 +214,19 @@ picture {
     z-index: 999;
     transform: translateX(100%);
 }
+.mobile-nav::after {
+    content: '';
+    position: absolute;
+    height: 50px;
+    background-color: white;
+    left: 0;
+    right: 0;
+    bottom: -8vh;
+    background-color: rgba(156, 82, 136, .6);
+    backdrop-filter: blur(.5rem);
+    z-index: 999;
+
+}
 .mobile-nav[data-visible="true"] {
     transform: translateX(0%);
     transition: transform .3s ease-in;
@@ -251,18 +264,28 @@ nav li a:hover::after {
 }
 .mobile-nav-toggle-bg {
     z-index: 9999;
-    position: fixed;
+    position: absolute;
     right: 2rem;
-    width: clamp(1.6rem, 5vw, 2rem);
+    width: clamp(2rem, 5vw, 2.4rem);
     aspect-ratio: 1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .5s linear;
+}
+.follow-nav {
+    position: fixed;
+    width: clamp(2.4rem, 5vw, 2.8rem);
+    background-color: #9C5288;
+    transition: all .5s linear;
 }
 .mobile-nav-toggle {
-    display: block;
     position: relative;
     border: none;
     background-color: transparent;
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     cursor: pointer;
 }
 .mobile-nav-toggle[aria-expanded="true"] > .close-menu-svg {
@@ -511,7 +534,6 @@ ul {
 /* About Us Section */
 
 .testing {
-    height: calc(800vh - 10%);
     margin: 10rem 0;
 }
 .contents-wrap {
@@ -524,7 +546,6 @@ ul {
 }
 .contents {
     position: absolute;
-    width: ;
     height: 100%;
     will-change: transform;
 }
@@ -557,7 +578,7 @@ ul {
     width: auto;
     background-size: 100%;
     background-position: -0.5% -0.5%;
-    transform: translateX(1000px);
+    opacity: 0;
 }
 .pre-slide-bg {
     height: 100%;
@@ -565,8 +586,7 @@ ul {
     position: absolute;
     inset: 0;
     background-color: #c5c5c5;
-    opacity: .2;
-    transform: translateX(1000px);
+    opacity: 0;
 }
 .item-in-img-container {
     width: auto;
