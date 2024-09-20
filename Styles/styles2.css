@@ -34,14 +34,11 @@ header {
 }
 .fading-img {
     object-fit: cover;
+    position: absolute;
     display: block;
     width: 100%;
     height: 100%;
     object-position: center;
-}
-picture {
-    width: 100%;
-    height: 100%;
 }
 .slide {
     content: '';
@@ -55,11 +52,14 @@ picture {
 .slide:nth-child(4) {
     animation-delay: 0s;
 }
-/* .slide:nth-child(4) img {
+.slide:nth-child(4) img {
     object-position: right top;
-} */
+}
 .slide:nth-child(5) {
     animation-delay: 6s;
+}
+.slide:nth-child(5) img {
+    object-position: left top;
 }
 .slide:nth-child(6) {
     animation-delay: 12s;
@@ -72,6 +72,9 @@ picture {
 }
 .slide:nth-child(9) {
     animation-delay: 30s;
+}
+.slide:nth-child(9) img {
+    object-position: left top;
 }
 @keyframes fade-zoom {
     0% {
@@ -607,238 +610,6 @@ ul {
     filter: none;
     transition: opacity .1s linear;
 }
-/* .bg1 {
-    background-image: url("Home-Images/Scrolling-Collage/alexandru-zdrobau-BGz8vO3pK8k-unsplash.webp");
-}
-.bg2 {
-    background-image: url("Home-Images/Scrolling-Collage/eye-8329347.webp");
-}
-.bg3 {
-    background-image: url("Home-Images/Scrolling-Collage/caique-nascimento-BOHyxqepP9Y-unsplash.webp");
-}
-.bg4 {
-    background-image: url("Home-Images/Scrolling-Collage/dmitry-vechorko-o93EI2mOZ68-unsplash.webp");
-}
-.bg5 {
-    background-image: url("Home-Images/Scrolling-Collage/fingernails-8252121_1920.webp");
-}
-.bg6 {
-    background-image: url("Home-Images/Scrolling-Collage/engin-akyurt-XZvyT2u04i8-unsplash.webp");
-}
-.bg7 {
-    background-image: url("Home-Images/Scrolling-Collage/fineas-gavre-CE_1ZBQ__Ns-unsplash.webp");
-}
-.bg8 {
-    background-image: url("Home-Images/Scrolling-Collage/fulop-adam-Fhoto1Lallc-unsplash.webp");
-}
-.bg9 {
-    background-image: url("Home-Images/Scrolling-Collage/flowing-4712206.webp");
-}
-.bg10 {
-    background-image: url("Home-Images/Scrolling-Collage/gabriel-silverio-HibLL8rsiwc-unsplash.webp");
-}
-.bg11 {
-    background-image: url("Home-Images/Scrolling-Collage/woman-384133_1920.webp");
-}
-.bg12 {
-    background-image: url("Home-Images/Scrolling-Collage/ai-generated-8496231.webp");
-}
-.bg13 {
-    background-image: url("Home-Images/Scrolling-Collage/gabriel-silverio-K_b41GaWC5Y-unsplash.webp");
-}
-.bg14 {
-    background-image: url("Home-Images/Scrolling-Collage/jc-gellidon-mxIUF_b5XJ8-unsplash.webp");
-}
-.bg15 {
-    background-image: url("Home-Images/Scrolling-Collage/jessica-felicio-QS9ZX5UnS14-unsplash.webp");
-}
-.bg16 {
-    background-image: url("Home-Images/Scrolling-Collage/eyes-374920.webp");
-}
-.bg17 {
-    background-image: url("Home-Images/Scrolling-Collage/justin-essah-8bPw733XN-g-unsplash.webp");
-}
-.bg18 {
-    background-image: url("Home-Images/Scrolling-Collage/scarf-3350091_1280.webp");
-}
-.bg19 {
-    background-image: url("Home-Images/Scrolling-Collage/kareya-saleh-tLKOj6cNwe0-unsplash.webp");
-}
-.bg20 {
-    background-image: url("Home-Images/Scrolling-Collage/kimson-doan-HD8KlyWRYYM-unsplash.webp");
-}
-.bg21 {
-    background-image: url("Home-Images/Scrolling-Collage/kyle-winkle-8vWQD-LFXjU-unsplash.webp");
-}
-.bg22 {
-    background-image: url("Home-Images/Scrolling-Collage/rafaella-mendes-diniz-AoL-mVxprmk-unsplash.webp");
-}
-.bg23 {
-    background-image: url("Home-Images/Scrolling-Collage/manicure-8174106_1920.webp");
-}
-.bg24 {
-    background-image: url("Home-Images/Scrolling-Collage/blushing-2666403.webp");
-}
-.bg25 {
-    background-image: url("Home-Images/Scrolling-Collage/sergio-kian-emzc0ziwzYs-unsplash.webp");
-}
-.bg26 {
-    background-image: url("Home-Images/Scrolling-Collage/shayan-rostami-QHSxqBx_V80-unsplash.webp");
-}
-.bg27 {
-    background-image: url("Home-Images/Scrolling-Collage/beauty-5241620.webp");
-}
-.bg28 {
-    background-image: url("Home-Images/Scrolling-Collage/soheil-jalili-d2EajdJsw1k-unsplash.webp");
-}
-.bg29 {
-    background-image: url("Home-Images/Scrolling-Collage/vahid-kanani-EruGdZ9J8nA-unsplash.webp");
-}
-.bg30 {
-    background-image: url("Home-Images/Scrolling-Collage/pexels-rheza-aulia-1780651-3375210.webp");
-}
-.bg31 {
-    background-image: url("Home-Images/Scrolling-Collage/valerie-elash-XUT7V_md7sc-unsplash.webp");
-}
-.bg32 {
-    background-image: url("Home-Images/Scrolling-Collage/vinicius-amnx-amano-VFZF_pzTVBA-unsplash.webp");
-}
-.bg33 {
-    background-image: url("Home-Images/Scrolling-Collage/woman-5443384.webp")
-} */
-
-/* .bg1gray {
-    background-image: url("Home-Images/Scrolling-Collage/alexandru-zdrobau-BGz8vO3pK8k-unsplash-gray.webp")
-}
-.bg2gray {
-    background-image: url("Home-Images/Scrolling-Collage/eye-8329347-gray.webp")
-}
-.bg3gray {
-    background-image: url("Home-Images/Scrolling-Collage/caique-nascimento-BOHyxqepP9Y-unsplash-gray.webp")
-}
-.bg4gray {
-    background-image: url("Home-Images/Scrolling-Collage/dmitry-vechorko-o93EI2mOZ68-unsplash-gray.webp")
-}
-.bg5gray {
-    background-image: url("Home-Images/Scrolling-Collage/fingernails-8252121_1920-gray.webp")
-}
-.bg6gray {
-    background-image: url("Home-Images/Scrolling-Collage/engin-akyurt-XZvyT2u04i8-unsplash-gray.webp")
-}
-.bg7gray {
-    background-image: url("Home-Images/Scrolling-Collage/fineas-gavre-CE_1ZBQ__Ns-unsplash-gray.webp")
-}
-.bg8gray {
-    background-image: url("Home-Images/Scrolling-Collage/fulop-adam-Fhoto1Lallc-unsplash-gray.webp")
-}
-.bg9gray {
-    background-image: url("Home-Images/Scrolling-Collage/flowing-4712206-gray.webp")
-}
-.bg10gray {
-    background-image: url("Home-Images/Scrolling-Collage/gabriel-silverio-HibLL8rsiwc-unsplash-gray.webp")
-}
-.bg11gray {
-    background-image: url("Home-Images/Scrolling-Collage/woman-384133_1920-gray.webp")
-}
-.bg12gray {
-    background-image: url("Home-Images/Scrolling-Collage/ai-generated-8496231-gray.webp")
-}
-.bg13gray {
-    background-image: url("Home-Images/Scrolling-Collage/gabriel-silverio-K_b41GaWC5Y-unsplash-gray.webp")
-}
-.bg14gray {
-    background-image: url("Home-Images/Scrolling-Collage/jc-gellidon-mxIUF_b5XJ8-unsplash-gray.webp")
-}
-.bg15gray {
-    background-image: url("Home-Images/Scrolling-Collage/jessica-felicio-QS9ZX5UnS14-unsplash-gray.webp")
-}
-.bg16gray {
-    background-image: url("Home-Images/Scrolling-Collage/eyes-374920-gray.webp")
-}
-.bg17gray {
-    background-image: url("Home-Images/Scrolling-Collage/justin-essah-8bPw733XN-g-unsplash-gray.webp")
-}
-.bg18gray {
-    background-image: url("Home-Images/Scrolling-Collage/scarf-3350091_1280-gray.webp")
-}
-.bg19gray {
-    background-image: url("Home-Images/Scrolling-Collage/kareya-saleh-tLKOj6cNwe0-unsplash-gray.webp")
-}
-.bg20gray {
-    background-image: url("Home-Images/Scrolling-Collage/kimson-doan-HD8KlyWRYYM-unsplash-gray.webp")
-}
-.bg21gray {
-    background-image: url("Home-Images/Scrolling-Collage/kyle-winkle-8vWQD-LFXjU-unsplash-gray.webp")
-}
-.bg22gray {
-    background-image: url("Home-Images/Scrolling-Collage/rafaella-mendes-diniz-AoL-mVxprmk-unsplash-gray.webp")
-}
-.bg23gray {
-    background-image: url("Home-Images/Scrolling-Collage/manicure-8174106_1920-gray.webp")
-}
-.bg24gray {
-    background-image: url("Home-Images/Scrolling-Collage/blushing-2666403-gray.webp")
-}
-.bg25gray {
-    background-image: url("Home-Images/Scrolling-Collage/sergio-kian-emzc0ziwzYs-unsplash-gray.webp")
-}
-.bg26gray {
-    background-image: url("Home-Images/Scrolling-Collage/shayan-rostami-QHSxqBx_V80-unsplash-gray.webp")
-}
-.bg27gray {
-    background-image: url("Home-Images/Scrolling-Collage/beauty-5241620-gray.webp")
-}
-.bg28gray {
-    background-image: url("Home-Images/Scrolling-Collage/soheil-jalili-d2EajdJsw1k-unsplash-gray.webp")
-}
-.bg29gray {
-    background-image: url("Home-Images/Scrolling-Collage/vahid-kanani-EruGdZ9J8nA-unsplash-gray.webp")
-}
-.bg30gray {
-    background-image: url("Home-Images/Scrolling-Collage/pexels-rheza-aulia-1780651-3375210-gray.webp")
-}
-.bg31gray {
-    background-image: url("Home-Images/Scrolling-Collage/valerie-elash-XUT7V_md7sc-unsplash-gray.webp")
-}
-.bg32gray {
-    background-image: url("Home-Images/Scrolling-Collage/vinicius-amnx-amano-VFZF_pzTVBA-unsplash-gray.webp")
-}
-.bg33gray {
-    background-image: url("Home-Images/Scrolling-Collage/woman-5443384-gray.webp")
-} */
-
-
-/* .about-us-section {
-    display: flex;
-}
-.about-us-info > div:first-of-type {
-    display: flex;
-}
-.about-us-container {
-    background-color: black;
-    display: flex;
-    padding: 150px 1rem 1rem;
-}
-.about-us-info {
-    color: white;
-    width: 65%;
-}
-.about-us-info h1 {
-    font-size: 5rem;
-    margin-bottom: 3rem;
-}
-.about-us-text {
-    padding: 0 2rem 2rem 2rem;
-    line-height: 2rem;
-} */
-
-
-
-
-
-
-
-
 /* Services */
 .services-section {
     clear: both;    
@@ -1129,7 +900,7 @@ option {
 /* Stylists Section */
 .stylist-section {
     background-color: black;
-    padding: 5rem 0 5rem 0;
+    padding: 9rem 0 5rem 0;
 }
 /* .stylist-title-container {
     max-width: 1500px;
@@ -1143,11 +914,16 @@ option {
 } */
 .stylist-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     max-width: 1500px;
     margin: 0 auto;
     flex-wrap: wrap;
     
+}
+@media screen and (max-width: 1283px) {
+    .stylist-wrapper {
+        justify-content: center;
+    }
 }
 .stylist-comment-container {
     color: whitesmoke;
