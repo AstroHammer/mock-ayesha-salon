@@ -25,6 +25,9 @@ a {
 li {
     list-style-type: none;
 }
+img {
+    display: block;
+}
 /* Fonts */
 
 @font-face {
@@ -428,15 +431,12 @@ header {
 .promo-social-svg {
     width: 50px;
     height: 50px;
-    display: block;
 }
 .promo-social-svg:hover {
     filter: invert(0.4) sepia(1) saturate(14) hue-rotate(234deg) brightness(.7);
     transform: scale(1.2);
     transition: transform .2 linear;
 }
-
-
 .booking {
     margin: 0 20px;
 }
@@ -446,6 +446,7 @@ header {
 }
 .booking-link {
     background-color: #9C5288;
+    color: white;
     padding: 1rem 2rem 1rem 2rem;
     display: inline-block;
     width: 100%;
@@ -456,12 +457,10 @@ header {
     font-weight: bold;
     transition: background-color .2s linear, color .2s linear, transform .2s linear;
 }
-.booking-content a:hover {
-    background-color: whitesmoke;
+.booking-link:hover {
+    background-color: white;
     color:#9C5288;
     transition: background-color .2s linear, color .2s linear, transform .2s linear;
-}
-.booking-content a:hover {
     transform: scale(1.05);
 }
 .or-border {
@@ -474,6 +473,7 @@ header {
     padding: 0 30px;
     font-size: .9rem;
     font-family: "Playfair", sans-serif;
+    color: white;
 }
 .or-border::before, .or-border::after {
     content:'';
@@ -555,14 +555,19 @@ header {
         width: 40%;
     }
     .booking {
+        max-width: 800px;
         height: 50px;
         justify-content: space-around;
     }
     .promo-container {
-        width: 80%;
+        width: 800px;
+        max-width: 1200px;
+    }
+    .promo-content-socials {
+        max-width: 600px;
     }
     .promo-title {
-        font-size: .8rem;
+        font-size: clamp(.8rem, 3vw, 1.5rem);
     }
     .promo-social-svg {
         height: 40px;
@@ -1106,7 +1111,6 @@ option {
 .contact-svg {
     width: 30px;
     height: 30px;
-    display: block;
 }
 /* Contact Section */
 
