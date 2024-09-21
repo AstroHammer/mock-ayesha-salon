@@ -325,7 +325,7 @@ header {
     position: absolute;
     bottom: 0;
     width: 100%;
-    color: white;
+    /* color: white; */
     display: flex;
     justify-content: center;
 }
@@ -342,6 +342,7 @@ header {
     font-family: "Playfair", serif;
     padding-bottom: 5px;
     position: relative;
+    color: white;
 }
 .promo-title::after {
     content:'';
@@ -357,71 +358,85 @@ header {
     align-items: center;
 }
 .promo-content-socials {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     position: relative;
     margin: 0 1rem;
 }
-.top-promo-socials, .bottom-promo-socials {
+.border {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    transform-origin: center;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+}
+.border::before, .border::after {
+    content: '';
+    display: inline-block;
+    flex-grow: 1;
+}
+.horizontal {
+    width: 100px;
+    height: 1px;
+    bottom: 50%;
+}
+.vertical {
+    height: 100px;
+    width: 1px;
+    flex-direction: column;
+    top: 50%;
+}
+.promo-border-top::before, .promo-border-top::after {
+    border-top: 1px solid whitesmoke;
+}
+.promo-border-left::before, .promo-border-left::after {
+    border-left: 1px solid whitesmoke;
+}
+.horizontal::before {
+    margin-right: 10px;
+}
+.horizontal::after {
+    margin-left: 10px;
+}
+.vertical::before {
+    margin-bottom: 10px;
+}
+.vertical::after {
+    margin-top: 10px;
+}
+.top-half-container, .bottom-half-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.top-left {
+    margin-bottom: 8px;
+    margin-right: 8px;
+}
+.top-right {
+    margin-bottom: 8px;
+    margin-left: 8px;
+}
+.bottom-left {
+    margin-top: 8px;
+    margin-right: 8px;
+}
+.bottom-right {
+    margin-top: 8px;
+    margin-left: 8px;
 }
 .promo-social-svg {
     width: 50px;
     height: 50px;
     display: block;
 }
-.horizontal-promo {
-    width: 110px;
-    height: 1px;
-    position: absolute;
-    transform-origin: center;
-    left: 50%;
-    bottom: 50%;
-    transform: translate(-50%, -50%);
-}
-.vertical-promo {
-    height: 110px;
-    width: 1px;
-    flex-direction: column;
-    position: absolute;
-    transform-origin: center;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-.horizontal-promo::before, .horizontal-promo::after {
-    content: '';
-    display: inline-block;
-    border-top: 1px solid whitesmoke;
-    flex-grow: 1;
-}
-.vertical-promo::before, .vertical-promo::after {
-    content: '';
-    display: inline-block;
-    border-left: 1px solid whitesmoke;
-    flex-grow: 1;
-}
-.horizontal-promo::before {
-    margin-right: 10px;
-}
-.horizontal-promo::after {
-    margin-left: 10px;
-}
-.vertical-promo::before {
-    margin-bottom: 10px;
-}
-.vertical-promo::after {
-    margin-top: 10px;
-}
 .promo-social-svg:hover {
     filter: invert(0.4) sepia(1) saturate(14) hue-rotate(234deg) brightness(.7);
     transform: scale(1.2);
     transition: transform .2 linear;
 }
+
+
 .booking {
     margin: 0 20px;
 }
@@ -497,7 +512,7 @@ header {
         white-space: nowrap;
         height: 100%;
     }
-    .promo-content-socials .border::before, .promo-content-socials .border::after {
+    .promo-content-socials .horizontal, .promo-content-socials .vertical {
         display: none;
     }
     .promo-title {
@@ -507,34 +522,29 @@ header {
         margin: 1rem 0 0 0;
         width: 100%;
     }
-    .promo-content-socials > div {
+    .promo-social-svg-container {
         display: flex;
         width: 100%;
     }
-    .top-promo-socials {
+    .promo-socials {
         width: 50%;
         justify-content: space-around;
     }
-    .bottom-promo-socials {
-        width: 50%;
-        justify-content: space-around;
-    }
-    .top-promo-socials .top-left {
+    .promo-socials .top-left {
         margin: 0;
     }
-    .top-promo-socials .top-right {
+    .promo-socials .top-right {
         margin: 0;
     }
-    .bottom-promo-socials .bottom-left {
+    .promo-socials .bottom-left {
         margin: 0;
     }
-    .bottom-promo-socials .bottom-right {
+    .promo-socials .bottom-right {
         margin: 0;        
     }
     .promo-social-svg {
         width: clamp(20px, 8vw, 40px);
         height: clamp(20px, 8vw, 40px);
-        /* used to be 50px / 50px */
     }
     .or-border {
         display: none;
@@ -1087,94 +1097,19 @@ option {
     opacity: 1;
     transition: opacity .2s ease-out;
 }
-.border {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.horizontal {
-    width: 100px;
-    height: 1px;
-    position: absolute;
-    transform-origin: center;
-    left: 50%;
-    bottom: 50%;
-    transform: translate(-50%, -50%);
-}
-.vertical {
-    height: 100px;
-    width: 1px;
-    flex-direction: column;
-    position: absolute;
-    transform-origin: center;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-.horizontal::before {
-    margin-right: 10px;
-}
-.horizontal::after {
-    margin-left: 10px;
-}
-.vertical::before {
-    margin-bottom: 10px;
-}
-.vertical::after {
-    margin-top: 10px;
-}
-.horizontal::before, .horizontal::after {
-    content: '';
-    display: inline-block;
+.stylist-border-top::before, .stylist-border-top::after {
     border-top: 2px solid black;
-    flex-grow: 1;
 }
-.vertical::before, .vertical::after {
-    content: '';
-  display: inline-block;
+.stylist-border-left::before, .stylist-border-left::after {
   border-left: 2px solid black;
-  flex-grow: 1;
-}
-/* 
-relevance
-.stylist-contact-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    border: 5px solid red;
-} */
-.top-half-container, .bottom-half-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 .contact-svg {
     width: 30px;
     height: 30px;
-    display: inline-block;
-    line-height: 0;
+    display: block;
 }
-.top-left {
-    margin-bottom: 8px;
-    margin-right: 8px;
-}
-.top-right {
-    margin-bottom: 8px;
-    margin-left: 8px;
-}
-.bottom-left {
-    margin-top: 8px;
-    margin-right: 8px;
-}
-.bottom-right {
-    margin-top: 8px;
-    margin-left: 8px;
-}
-
 /* Contact Section */
+
 .wavy-bg-rel {
     position: relative;
     height: 100px;
