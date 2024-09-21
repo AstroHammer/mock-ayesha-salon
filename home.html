@@ -19,34 +19,28 @@
     <body>
         <header id="home">
             <div class="dark-bg"></div>
-            <div class="nav-container">
-                <nav class="wide-nav">
-                    <div class="logo-container">
-                        <h1 class="logo">Ayesha.</h1>
-                    </div>
-                    <ul class="nav-list">
-                        <li>
-                            <a href="#home">Home</a>
-                        </li>
-                        <li>
-                            <a href="#about-us">About Us</a>
-                        </li>
-                        <li>
-                            <a href="#services">Services</a>
-                        </li>
-                        <li>
-                            <a href="#stylists">Stylists</a>
-                        </li>
-                        <li>
-                            <a href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="mobile-nav-container">
-                <div class="logo-container">
-                    <h1 class="logo">Ayesha.</h1>
-                </div>
+            <nav class="wide-nav site-nav">
+                <h1 class="logo">Ayesha.</h1>
+                <ul class="nav-list">
+                    <li class="wide-nav-list-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="wide-nav-list-item">
+                        <a class="nav-link" href="#about-us">About Us</a>
+                    </li>
+                    <li class="wide-nav-list-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="wide-nav-list-item">
+                        <a class="nav-link" href="#stylists">Stylists</a>
+                    </li>
+                    <li class="wide-nav-list-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="mobile-nav-container site-nav">
+                <h1 class="logo">Ayesha.</h1>
                 <div class="mobile-nav-toggle-bg">
                     <button class="mobile-nav-toggle" role="button" aria-expanded="false" aria-label="menu">
                         <svg class="mobile-nav-svg menu-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff"><path d="M4 4a1 1 0 1 0 0 2h16a1 1 0 1 0 0-2H4zm0 7a1 1 0 1 0 0 2h16a1 1 0 1 0 0-2H4zm0 7a1 1 0 1 0 0 2h16a1 1 0 1 0 0-2H4z"/></svg>
@@ -55,15 +49,15 @@
                 </div>
                 <nav>
                     <ul class="mobile-nav" data-visible="false">
-                        <li><a href="#home">home</a></li>
-                        <li><a href="#about-us">about us</a></li>
-                        <li><a href="#services">services</a></li>
-                        <li><a href="#stylists">stylists</a></li>
-                        <li><a href="#contact">contact</a></li>
+                        <li class="mobile-nav-list-item"><a class="nav-link" href="#home">home</a></li>
+                        <li class="mobile-nav-list-item"><a class="nav-link" href="#about-us">about us</a></li>
+                        <li class="mobile-nav-list-item"><a class="nav-link" href="#services">services</a></li>
+                        <li class="mobile-nav-list-item"><a class="nav-link" href="#stylists">stylists</a></li>
+                        <li class="mobile-nav-list-item"><a class="nav-link" href="#contact">contact</a></li>
                     </ul>
                 </nav>
             </div>
-            <div class="slide">
+            <div class="slide slide-1">
                 <picture>
                     <source type="image/webp" srcset="Styles/Home-Images/main-model-wide.webp" media="(min-width: 2000px)" width="3440" height="1441">
                     <source type="image/png" srcset="Styles/Home-Images/main-model-wide.png" media="(min-width: 2000px)" width="3440" height="1441">
@@ -77,7 +71,7 @@
                     <img class="fading-img" src="Styles/Home-Images/main-model-mobile-portrait.png" alt="front page model" width="400" height="693">
                 </picture>
             </div>
-            <div class="slide">
+            <div class="slide slide-2">
                 <picture>
                     <source type="image/webp" srcset="Styles/Home-Images/left-side-image-wide.webp" media="(min-width: 2000px)" width="3440" height="1441">
                     <source type="image/png" srcset="Styles/Home-Images/left-side-image-wide.png" media="(min-width: 2000px)" width="3440" height="1441">
@@ -91,7 +85,7 @@
                     <img class="fading-img" src="Styles/Home-Images/left-side-image-mobile-portrait.png" alt="front page model" width="400" height="693">
                 </picture>
             </div>
-            <div class="slide">
+            <div class="slide slide-3">
                 <picture>
                     <source type="image/webp" srcset="Styles/Home-Images/curlyhair-wide.webp" media="(min-width: 2000px)" width="3440" height="1441">
                     <source type="image/png" srcset="Styles/Home-Images/curlyhair-wide.png" media="(min-width: 2000px)" width="3440" height="1441">
@@ -105,7 +99,7 @@
                     <img class="fading-img" src="Styles/Home-Images/curlyhair-mobile-portrait.png" alt="front page model" width="400" height="693">
                 </picture>
             </div>
-            <div class="slide">
+            <div class="slide slide-4">
                 <picture>
                     <source type="image/webp" srcset="Styles/Home-Images/grayscale-wide.webp" media="(min-width: 2000px)" width="3440" height="1441">
                     <source type="image/png" srcset="Styles/Home-Images/grayscale-wide.png" media="(min-width: 2000px)" width="3440" height="1441">
@@ -119,7 +113,7 @@
                     <img class="fading-img" src="Styles/Home-Images/grayscale-mobile-portrait.png" alt="front page model" width="400" height="693">
                 </picture>
             </div>
-            <div class="slide">
+            <div class="slide slide-5">
                 <picture>
                     <source type="image/webp" srcset="Styles/Home-Images/wethair-wide.webp" media="(min-width: 2000px)" width="3440" height="1441">
                     <source type="image/png" srcset="Styles/Home-Images/wethair-wide.png" media="(min-width: 2000px)" width="3440" height="1441">
@@ -133,7 +127,7 @@
                     <img class="fading-img" src="Styles/Home-Images/wethair-mobile-portrait.png" alt="front page model" width="400" height="693">
                 </picture>
             </div>
-            <div class="slide">
+            <div class="slide slide-6">
                 <picture>
                     <source type="image/webp" srcset="Styles/Home-Images/side-view-left-wide.webp" media="(min-width: 2000px)" width="3440" height="1441">
                     <source type="image/png" srcset="Styles/Home-Images/side-view-left-wide.png" media="(min-width: 2000px)" width="3440" height="1441">
@@ -234,10 +228,10 @@
                                             <div class="item-in bg1">
                                                 <a class="item-in-img-container bg1gray" href="">
                                                     <picture>
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/alexandru-zdrobau-BGz8vO3pK8k-unsplash.webp" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/alexandru-zdrobau-BGz8vO3pK8k-unsplash.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/alexandru-zdrobau-BGz8vO3pK8k-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/alexandru-zdrobau-BGz8vO3pK8k-unsplash-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/alexandru-zdrobau-BGz8vO3pK8k-unsplash.webp" media="(min-width: 800px), (min-height: 801px)" width="" height="500">
+                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/alexandru-zdrobau-BGz8vO3pK8k-unsplash.png" media="(min-width: 800px), (min-height: 801px)" width="" height="500">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/alexandru-zdrobau-BGz8vO3pK8k-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/alexandru-zdrobau-BGz8vO3pK8k-unsplash-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -251,8 +245,8 @@
                                                     <picture>
                                                         <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/eye-8329347.webp" media="(min-width: 800px), (min-height: 801px)">
                                                         <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/eye-8329347.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/eye-8329347-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/eye-8329347-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/eye-8329347-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/eye-8329347-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -264,10 +258,10 @@
                                             <div class="item-in bg3">
                                                 <a class="item-in-img-container bg3gray" href="">
                                                     <picture>
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/caique-nascimento-BOHyxqepP9Y-unsplash.webp" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/caique-nascimento-BOHyxqepP9Y-unsplash.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/caique-nascimento-BOHyxqepP9Y-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/caique-nascimento-BOHyxqepP9Y-unsplash-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/caique-nascimento-BOHyxqepP9Y-unsplash.webp" media="(min-width: 800px), (min-height: 801px)" height="500">
+                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/caique-nascimento-BOHyxqepP9Y-unsplash.png" media="(min-width: 800px), (min-height: 801px)" width="" height="500">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/caique-nascimento-BOHyxqepP9Y-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/caique-nascimento-BOHyxqepP9Y-unsplash-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -279,10 +273,10 @@
                                             <div class="item-in bg4">
                                                 <a class="item-in-img-container bg4gray" href="">
                                                     <picture>
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/dmitry-vechorko-o93EI2mOZ68-unsplash.webp" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/dmitry-vechorko-o93EI2mOZ68-unsplash.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/dmitry-vechorko-o93EI2mOZ68-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/dmitry-vechorko-o93EI2mOZ68-unsplash-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/dmitry-vechorko-o93EI2mOZ68-unsplash.webp" media="(min-width: 800px), (min-height: 801px)" height="500">
+                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/dmitry-vechorko-o93EI2mOZ68-unsplash.png" media="(min-width: 800px), (min-height: 801px)" width="" height="500">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/dmitry-vechorko-o93EI2mOZ68-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/dmitry-vechorko-o93EI2mOZ68-unsplash-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -296,8 +290,8 @@
                                                     <picture>
                                                         <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/fingernails-8252121_1920.webp" media="(min-width: 800px), (min-height: 801px)">
                                                         <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/fingernails-8252121_1920.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/fingernails-8252121_1920-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/fingernails-8252121_1920-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/fingernails-8252121_1920-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/fingernails-8252121_1920-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -309,10 +303,10 @@
                                             <div class="item-in bg6">
                                                 <a class="item-in-img-container bg6gray" href="">
                                                     <picture>
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/engin-akyurt-XZvyT2u04i8-unsplash.webp" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/engin-akyurt-XZvyT2u04i8-unsplash.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/engin-akyurt-XZvyT2u04i8-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/engin-akyurt-XZvyT2u04i8-unsplash-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/engin-akyurt-XZvyT2u04i8-unsplash.webp" media="(min-width: 800px), (min-height: 801px)" height="500">
+                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/engin-akyurt-XZvyT2u04i8-unsplash.png" media="(min-width: 800px), (min-height: 801px)" width="" height="500">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/engin-akyurt-XZvyT2u04i8-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/engin-akyurt-XZvyT2u04i8-unsplash-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -324,10 +318,10 @@
                                             <div class="item-in bg7">
                                                 <a class="item-in-img-container bg7gray" href="">
                                                     <picture>
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/fineas-gavre-CE_1ZBQ__Ns-unsplash.webp" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/fineas-gavre-CE_1ZBQ__Ns-unsplash.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/fineas-gavre-CE_1ZBQ__Ns-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/fineas-gavre-CE_1ZBQ__Ns-unsplash-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/fineas-gavre-CE_1ZBQ__Ns-unsplash.webp" media="(min-width: 800px), (min-height: 801px)" height="500">
+                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/fineas-gavre-CE_1ZBQ__Ns-unsplash.png" media="(min-width: 800px), (min-height: 801px)" width="" height="500">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/fineas-gavre-CE_1ZBQ__Ns-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/fineas-gavre-CE_1ZBQ__Ns-unsplash-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -339,10 +333,10 @@
                                             <div class="item-in bg8">
                                                 <a class="item-in-img-container bg8gray" href="">
                                                     <picture>
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/fulop-adam-Fhoto1Lallc-unsplash.webp" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/fulop-adam-Fhoto1Lallc-unsplash.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/fulop-adam-Fhoto1Lallc-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/fulop-adam-Fhoto1Lallc-unsplash-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/fulop-adam-Fhoto1Lallc-unsplash.webp" media="(min-width: 800px), (min-height: 801px)" height="500">
+                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/fulop-adam-Fhoto1Lallc-unsplash.png" media="(min-width: 800px), (min-height: 801px)" width="" height="500">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/fulop-adam-Fhoto1Lallc-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/fulop-adam-Fhoto1Lallc-unsplash-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -356,8 +350,8 @@
                                                     <picture>
                                                         <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/flowing-4712206.webp" media="(min-width: 800px), (min-height: 801px)">
                                                         <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/flowing-4712206.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/flowing-4712206-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/flowing-4712206-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/flowing-4712206-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/flowing-4712206-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -369,10 +363,10 @@
                                             <div class="item-in bg10">
                                                 <a class="item-in-img-container bg10gray" href="">
                                                     <picture>
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/gabriel-silverio-HibLL8rsiwc-unsplash.webp" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/gabriel-silverio-HibLL8rsiwc-unsplash.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/gabriel-silverio-HibLL8rsiwc-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/gabriel-silverio-HibLL8rsiwc-unsplash-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/gabriel-silverio-HibLL8rsiwc-unsplash.webp" media="(min-width: 800px), (min-height: 801px)" height="500">
+                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/gabriel-silverio-HibLL8rsiwc-unsplash.png" media="(min-width: 800px), (min-height: 801px)" width="" height="500">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/gabriel-silverio-HibLL8rsiwc-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/gabriel-silverio-HibLL8rsiwc-unsplash-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -386,8 +380,8 @@
                                                     <picture>
                                                         <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/woman-384133_1920.webp" media="(min-width: 800px), (min-height: 801px)">
                                                         <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/woman-384133_1920.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/woman-384133_1920-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/woman-384133_1920-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/woman-384133_1920-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/woman-384133_1920-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -401,8 +395,8 @@
                                                     <picture>
                                                         <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/ai-generated-8496231.webp" media="(min-width: 800px), (min-height: 801px)">
                                                         <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/ai-generated-8496231.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/ai-generated-8496231-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/ai-generated-8496231-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/ai-generated-8496231-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/ai-generated-8496231-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -414,10 +408,10 @@
                                             <div class="item-in bg13">
                                                 <a class="item-in-img-container bg13gray" href="">
                                                     <picture>
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/gabriel-silverio-K_b41GaWC5Y-unsplash.webp" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/gabriel-silverio-K_b41GaWC5Y-unsplash.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/gabriel-silverio-K_b41GaWC5Y-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/gabriel-silverio-K_b41GaWC5Y-unsplash-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/gabriel-silverio-K_b41GaWC5Y-unsplash.webp" media="(min-width: 800px), (min-height: 801px)" height="500">
+                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/gabriel-silverio-K_b41GaWC5Y-unsplash.png" media="(min-width: 800px), (min-height: 801px)" width="" height="500">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/gabriel-silverio-K_b41GaWC5Y-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/gabriel-silverio-K_b41GaWC5Y-unsplash-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -429,10 +423,10 @@
                                             <div class="item-in bg14">
                                                 <a class="item-in-img-container bg14gray" href="">
                                                     <picture>
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/jc-gellidon-mxIUF_b5XJ8-unsplash.webp" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/jc-gellidon-mxIUF_b5XJ8-unsplash.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/jc-gellidon-mxIUF_b5XJ8-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/jc-gellidon-mxIUF_b5XJ8-unsplash-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/jc-gellidon-mxIUF_b5XJ8-unsplash.webp" media="(min-width: 800px), (min-height: 801px)" height="500">
+                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/jc-gellidon-mxIUF_b5XJ8-unsplash.png" media="(min-width: 800px), (min-height: 801px)" width="" height="500">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/jc-gellidon-mxIUF_b5XJ8-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/jc-gellidon-mxIUF_b5XJ8-unsplash-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -444,10 +438,10 @@
                                             <div class="item-in bg15">
                                                 <a class="item-in-img-container bg15gray" href="">
                                                     <picture>
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/jessica-felicio-QS9ZX5UnS14-unsplash.webp" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/jessica-felicio-QS9ZX5UnS14-unsplash.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/jessica-felicio-QS9ZX5UnS14-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/jessica-felicio-QS9ZX5UnS14-unsplash-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/jessica-felicio-QS9ZX5UnS14-unsplash.webp" media="(min-width: 800px), (min-height: 801px)" height="500">
+                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/jessica-felicio-QS9ZX5UnS14-unsplash.png" media="(min-width: 800px), (min-height: 801px)" width="" height="500">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/jessica-felicio-QS9ZX5UnS14-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/jessica-felicio-QS9ZX5UnS14-unsplash-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -461,8 +455,8 @@
                                                     <picture>
                                                         <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/eyes-374920.webp" media="(min-width: 800px), (min-height: 801px)">
                                                         <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/eyes-374920.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/eyes-374920-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/eyes-374920-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/eyes-374920-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/eyes-374920-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -474,10 +468,10 @@
                                             <div class="item-in bg17">
                                                 <a class="item-in-img-container bg17gray" href="">
                                                     <picture>
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/justin-essah-8bPw733XN-g-unsplash.webp" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/justin-essah-8bPw733XN-g-unsplash.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/justin-essah-8bPw733XN-g-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/justin-essah-8bPw733XN-g-unsplash-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/justin-essah-8bPw733XN-g-unsplash.webp" media="(min-width: 800px), (min-height: 801px)" height="500">
+                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/justin-essah-8bPw733XN-g-unsplash.png" media="(min-width: 800px), (min-height: 801px)" width="" height="500">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/justin-essah-8bPw733XN-g-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/justin-essah-8bPw733XN-g-unsplash-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -495,8 +489,8 @@
                                                     <picture>
                                                         <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/scarf-3350091_1280.webp" media="(min-width: 800px), (min-height: 801px)">
                                                         <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/scarf-3350091_1280.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/scarf-3350091_1280-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/scarf-3350091_1280-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/scarf-3350091_1280-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/scarf-3350091_1280-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -508,10 +502,10 @@
                                             <div class="item-in bg19">
                                                 <a class="item-in-img-container bg19gray" href="">
                                                     <picture>
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/kareya-saleh-tLKOj6cNwe0-unsplash.webp" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/kareya-saleh-tLKOj6cNwe0-unsplash.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/kareya-saleh-tLKOj6cNwe0-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/kareya-saleh-tLKOj6cNwe0-unsplash-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/kareya-saleh-tLKOj6cNwe0-unsplash.webp" media="(min-width: 800px), (min-height: 801px)" height="500">
+                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/kareya-saleh-tLKOj6cNwe0-unsplash.png" media="(min-width: 800px), (min-height: 801px)" width="" height="500">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/kareya-saleh-tLKOj6cNwe0-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/kareya-saleh-tLKOj6cNwe0-unsplash-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -523,10 +517,10 @@
                                             <div class="item-in bg20">
                                                 <a class="item-in-img-container bg20gray" href="">
                                                     <picture>
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/kimson-doan-HD8KlyWRYYM-unsplash.webp" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/kimson-doan-HD8KlyWRYYM-unsplash.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/kimson-doan-HD8KlyWRYYM-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/kimson-doan-HD8KlyWRYYM-unsplash-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/kimson-doan-HD8KlyWRYYM-unsplash.webp" media="(min-width: 800px), (min-height: 801px)" height="500">
+                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/kimson-doan-HD8KlyWRYYM-unsplash.png" media="(min-width: 800px), (min-height: 801px)" width="" height="500">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/kimson-doan-HD8KlyWRYYM-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/kimson-doan-HD8KlyWRYYM-unsplash-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -538,10 +532,10 @@
                                             <div class="item-in bg21">
                                                 <a class="item-in-img-container bg21gray" href="">
                                                     <picture>
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/kyle-winkle-8vWQD-LFXjU-unsplash.webp" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/kyle-winkle-8vWQD-LFXjU-unsplash.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/kyle-winkle-8vWQD-LFXjU-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/kyle-winkle-8vWQD-LFXjU-unsplash-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/kyle-winkle-8vWQD-LFXjU-unsplash.webp" media="(min-width: 800px), (min-height: 801px)" height="500">
+                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/kyle-winkle-8vWQD-LFXjU-unsplash.png" media="(min-width: 800px), (min-height: 801px)" width="" height="500">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/kyle-winkle-8vWQD-LFXjU-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/kyle-winkle-8vWQD-LFXjU-unsplash-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -553,10 +547,10 @@
                                             <div class="item-in bg22">
                                                 <a class="item-in-img-container bg22gray" href="">
                                                     <picture>
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/rafaella-mendes-diniz-AoL-mVxprmk-unsplash.webp" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/rafaella-mendes-diniz-AoL-mVxprmk-unsplash.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/rafaella-mendes-diniz-AoL-mVxprmk-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/rafaella-mendes-diniz-AoL-mVxprmk-unsplash-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/rafaella-mendes-diniz-AoL-mVxprmk-unsplash.webp" media="(min-width: 800px), (min-height: 801px)" height="500">
+                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/rafaella-mendes-diniz-AoL-mVxprmk-unsplash.png" media="(min-width: 800px), (min-height: 801px)" width="" height="500">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/rafaella-mendes-diniz-AoL-mVxprmk-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/rafaella-mendes-diniz-AoL-mVxprmk-unsplash-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -570,8 +564,8 @@
                                                     <picture>
                                                         <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/manicure-8174106_1920.webp" media="(min-width: 800px), (min-height: 801px)">
                                                         <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/manicure-8174106_1920.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/manicure-8174106_1920-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/manicure-8174106_1920-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/manicure-8174106_1920-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/manicure-8174106_1920-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -585,8 +579,8 @@
                                                     <picture>
                                                         <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/blushing-2666403.webp" media="(min-width: 800px), (min-height: 801px)">
                                                         <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/blushing-2666403.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/blushing-2666403-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/blushing-2666403-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/blushing-2666403-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/blushing-2666403-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -598,10 +592,10 @@
                                             <div class="item-in bg25">
                                                 <a class="item-in-img-container bg25gray" href="">
                                                     <picture>
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/sergio-kian-emzc0ziwzYs-unsplash.webp" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/sergio-kian-emzc0ziwzYs-unsplash.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/sergio-kian-emzc0ziwzYs-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/sergio-kian-emzc0ziwzYs-unsplash-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/sergio-kian-emzc0ziwzYs-unsplash.webp" media="(min-width: 800px), (min-height: 801px)" height="500">
+                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/sergio-kian-emzc0ziwzYs-unsplash.png" media="(min-width: 800px), (min-height: 801px)" width="" height="500">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/sergio-kian-emzc0ziwzYs-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/sergio-kian-emzc0ziwzYs-unsplash-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -613,10 +607,10 @@
                                             <div class="item-in bg26">
                                                 <a class="item-in-img-container bg26gray" href="">
                                                     <picture>
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/shayan-rostami-QHSxqBx_V80-unsplash.webp" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/shayan-rostami-QHSxqBx_V80-unsplash.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/shayan-rostami-QHSxqBx_V80-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/shayan-rostami-QHSxqBx_V80-unsplash-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/shayan-rostami-QHSxqBx_V80-unsplash.webp" media="(min-width: 800px), (min-height: 801px)" height="500">
+                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/shayan-rostami-QHSxqBx_V80-unsplash.png" media="(min-width: 800px), (min-height: 801px)" width="" height="500">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/shayan-rostami-QHSxqBx_V80-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/shayan-rostami-QHSxqBx_V80-unsplash-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -630,8 +624,8 @@
                                                     <picture>
                                                         <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/beauty-5241620.webp" media="(min-width: 800px), (min-height: 801px)">
                                                         <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/beauty-5241620.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/beauty-5241620-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/beauty-5241620-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/beauty-5241620-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/beauty-5241620-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -643,10 +637,10 @@
                                             <div class="item-in bg28">
                                                 <a class="item-in-img-container bg28gray" href="">
                                                     <picture>
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/soheil-jalili-d2EajdJsw1k-unsplash.webp" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/soheil-jalili-d2EajdJsw1k-unsplash.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/soheil-jalili-d2EajdJsw1k-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/soheil-jalili-d2EajdJsw1k-unsplash-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/soheil-jalili-d2EajdJsw1k-unsplash.webp" media="(min-width: 800px), (min-height: 801px)" height="500">
+                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/soheil-jalili-d2EajdJsw1k-unsplash.png" media="(min-width: 800px), (min-height: 801px)" width="" height="500">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/soheil-jalili-d2EajdJsw1k-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/soheil-jalili-d2EajdJsw1k-unsplash-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -658,10 +652,10 @@
                                             <div class="item-in bg29">
                                                 <a class="item-in-img-container bg29gray" href="">
                                                     <picture>
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/vahid-kanani-EruGdZ9J8nA-unsplash.webp" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/vahid-kanani-EruGdZ9J8nA-unsplash.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/vahid-kanani-EruGdZ9J8nA-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/vahid-kanani-EruGdZ9J8nA-unsplash-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/vahid-kanani-EruGdZ9J8nA-unsplash.webp" media="(min-width: 800px), (min-height: 801px)" height="500">
+                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/vahid-kanani-EruGdZ9J8nA-unsplash.png" media="(min-width: 800px), (min-height: 801px)" width="" height="500">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/vahid-kanani-EruGdZ9J8nA-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/vahid-kanani-EruGdZ9J8nA-unsplash-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -675,8 +669,8 @@
                                                     <picture>
                                                         <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/pexels-rheza-aulia-1780651-3375210.webp" media="(min-width: 800px), (min-height: 801px)">
                                                         <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/pexels-rheza-aulia-1780651-3375210.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/pexels-rheza-aulia-1780651-3375210-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/pexels-rheza-aulia-1780651-3375210-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/pexels-rheza-aulia-1780651-3375210-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/pexels-rheza-aulia-1780651-3375210-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -688,10 +682,10 @@
                                             <div class="item-in bg31">
                                                 <a class="item-in-img-container bg31gray" href="">
                                                     <picture>
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/valerie-elash-XUT7V_md7sc-unsplash.webp" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/valerie-elash-XUT7V_md7sc-unsplash.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/valerie-elash-XUT7V_md7sc-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/valerie-elash-XUT7V_md7sc-unsplash-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/valerie-elash-XUT7V_md7sc-unsplash.webp" media="(min-width: 800px), (min-height: 801px)" height="500">
+                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/valerie-elash-XUT7V_md7sc-unsplash.png" media="(min-width: 800px), (min-height: 801px)" width="" height="500">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/valerie-elash-XUT7V_md7sc-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/valerie-elash-XUT7V_md7sc-unsplash-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -703,10 +697,10 @@
                                             <div class="item-in bg32">
                                                 <a class="item-in-img-container bg32gray" href="">
                                                     <picture>
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/vinicius-amnx-amano-VFZF_pzTVBA-unsplash.webp" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/vinicius-amnx-amano-VFZF_pzTVBA-unsplash.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/vinicius-amnx-amano-VFZF_pzTVBA-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/vinicius-amnx-amano-VFZF_pzTVBA-unsplash-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/vinicius-amnx-amano-VFZF_pzTVBA-unsplash.webp" media="(min-width: 800px), (min-height: 801px)" height="500">
+                                                        <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/vinicius-amnx-amano-VFZF_pzTVBA-unsplash.png" media="(min-width: 800px), (min-height: 801px)" width="" height="500">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/vinicius-amnx-amano-VFZF_pzTVBA-unsplash-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/vinicius-amnx-amano-VFZF_pzTVBA-unsplash-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -720,8 +714,8 @@
                                                     <picture>
                                                         <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/woman-5443384.webp" media="(min-width: 800px), (min-height: 801px)">
                                                         <source type="image/png" srcset="Styles/Home-Images/Scrolling-Collage/woman-5443384.png" media="(min-width: 800px), (min-height: 801px)">
-                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/woman-5443384-mobile.webp" media="(min-width: 200px), (min-height: 200px)">
-                                                        <img src="Styles/Home-Images/Scrolling-Collage/woman-5443384-mobile.png" alt="lookbook-collage-image">
+                                                        <source type="image/webp" srcset="Styles/Home-Images/Scrolling-Collage/woman-5443384-mobile.webp" media="(min-width: 200px), (min-height: 200px)" width="" height="250">
+                                                        <img src="Styles/Home-Images/Scrolling-Collage/woman-5443384-mobile.png" alt="lookbook-collage-image" width="" height="250">
                                                     </picture>
                                                 </a>
                                             </div>
@@ -1975,7 +1969,6 @@
                             </section>
                         </div>
                     </section>
-                    <!-- <div class="separation-border vertical-footer-border"></div> -->
                     <section class="our-partners-info org-info">
                         <h2>Our Partners</h2>
                         <div>
@@ -2069,26 +2062,3 @@
         <script async src="main.js"></script>
     </body>
 </html>
-
-
-
-
-
-
-
-
-                    <!-- <div class="about-us-info">
-                        <h1>
-                            About Us
-                        </h1>
-                        <div>
-                            <div class="about-us-image-container">
-                                <img class="about-us-image" src="Styles/Home-Images/about-us-adam-winger-ZsUbK9zSgMo-unsplash.jpg" alt="">
-                            </div>
-                            <div class="about-us-text">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla reprehenderit non, alias pariatur tempora consequatur aut dolore sequi eligendi quaerat accusantium enim explicabo doloribus. Debitis?</p>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, autem dolorum. Mollitia deserunt accusantium fugit dolores nesciunt, voluptatum cum esse!</p>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae fugit voluptates dolorum illo dignissimos at tempora ab earum sapiente eos vero distinctio, maxime quas laboriosam quibusdam nemo, totam quaerat ut, temporibus nulla sint minima? Accusantium velit obcaecati labore fuga? Harum?</p>
-                            </div>
-                        </div>
-                    </div> -->

@@ -107,10 +107,12 @@ window.addEventListener('resize', resizeCollage);
 
 function resizeCollage() {
     let sizeOfCollage = scrollSection.offsetWidth;
+    console.log(sizeOfCollage);
     
     scrollParent.style.height = sizeOfCollage + 'px';
 }
 resizeCollage();
+
 // getting container to translate left once we've hit a certain point
 window.addEventListener('scroll', () => {
     transform(stickySection);
