@@ -154,7 +154,7 @@ function activateCollage() {
         let itemChilds = div.children;
     
         for (let i = 0; i < itemChilds.length; i++) {
-            let ogWidth = itemChilds[i].getBoundingClientRect().width;
+            let ogWidth = itemChilds[i].clientWidth;
             let itemWidth = Math.ceil(ogWidth);
     
             setSlidePosition(itemChilds[i], itemWidth);
