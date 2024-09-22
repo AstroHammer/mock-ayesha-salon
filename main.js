@@ -96,34 +96,34 @@ function addAnimation() {
     })
 }
 
-// //Script for Image Collage
-// const stickySection = document.querySelector('.contents-wrap');
-// const scrollSection = stickySection.querySelector('.contents');
-// const scrollParent = document.querySelector('.lookbook-collage');
-// const collageGrid = document.querySelector('.size-determiner');
+//Script for Image Collage
+const stickySection = document.querySelector('.contents-wrap');
+const scrollSection = stickySection.querySelector('.contents');
+const scrollParent = document.querySelector('.lookbook-collage');
+const collageGrid = document.querySelector('.size-determiner');
 
-// // seting responsive for horizontal scroller
-// window.addEventListener('resize', resizeCollage);
+// seting responsive for horizontal scroller
+window.addEventListener('resize', resizeCollage);
 
-// function resizeCollage() {
-//     let sizeOfCollage = scrollSection.offsetWidth;
-//     console.log(sizeOfCollage);
+function resizeCollage() {
+    let sizeOfCollage = scrollSection.offsetWidth;
+    console.log(sizeOfCollage);
     
-//     scrollParent.style.height = sizeOfCollage + 'px';
-// }
-// resizeCollage();
+    scrollParent.style.height = sizeOfCollage + 'px';
+}
+resizeCollage();
 
-// // getting container to translate left once we've hit a certain point
-// window.addEventListener('scroll', () => {
-//     transform(stickySection);
-// })
+// getting container to translate left once we've hit a certain point
+window.addEventListener('scroll', () => {
+    transform(stickySection);
+})
 
-// function transform(stickySection) {
-//     const offsetTop = stickySection.parentElement.offsetTop;
-//     let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
-//     percentage = percentage < 0 ? 0 : percentage;
-//     scrollSection.style.transform = `translate3d(${-(percentage)}vh, 0, 0)`;
-// }
+function transform(stickySection) {
+    const offsetTop = stickySection.parentElement.offsetTop;
+    let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
+    percentage = percentage < 0 ? 0 : percentage;
+    scrollSection.style.transform = `translate3d(${-(percentage)}vh, 0, 0)`;
+}
 
 // //Creating observers and handling translate slides
 
