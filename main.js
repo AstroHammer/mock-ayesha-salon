@@ -76,25 +76,25 @@ smallAccordionButtons.forEach(accordionButton => {
 
 //Logo carousel in Footer
 
-const scrollers = document.querySelectorAll('.carousel');
+// const scrollers = document.querySelectorAll('.carousel');
 
-if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    addAnimation();
-}
-function addAnimation() {
-    scrollers.forEach(scroller => {
-        scroller.setAttribute('data-animated', true);
+// if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+//     addAnimation();
+// }
+// function addAnimation() {
+//     scrollers.forEach(scroller => {
+//         scroller.setAttribute('data-animated', true);
 
-        const innerScroller = scroller.querySelector('.inner-scroller');
-        const scrollerContent = Array.from(innerScroller.children);
+//         const innerScroller = scroller.querySelector('.inner-scroller');
+//         const scrollerContent = Array.from(innerScroller.children);
 
-        scrollerContent.forEach(item => {
-            const duplicatedItem = item.cloneNode(true);
-            duplicatedItem.setAttribute('aria-hidden', true);
-            innerScroller.appendChild(duplicatedItem);
-        })
-    })
-}
+//         scrollerContent.forEach(item => {
+//             const duplicatedItem = item.cloneNode(true);
+//             duplicatedItem.setAttribute('aria-hidden', true);
+//             innerScroller.appendChild(duplicatedItem);
+//         })
+//     })
+// }
 
 // //Script for Image Collage
 // const stickySection = document.querySelector('.contents-wrap');
