@@ -76,202 +76,202 @@ smallAccordionButtons.forEach(accordionButton => {
 
 //Logo carousel in Footer
 
-// const scrollers = document.querySelectorAll('.carousel');
+const scrollers = document.querySelectorAll('.carousel');
 
-// if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-//     addAnimation();
-// }
-// function addAnimation() {
-//     scrollers.forEach(scroller => {
-//         scroller.setAttribute('data-animated', true);
+if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    addAnimation();
+}
+function addAnimation() {
+    scrollers.forEach(scroller => {
+        scroller.setAttribute('data-animated', true);
 
-//         const innerScroller = scroller.querySelector('.inner-scroller');
-//         const scrollerContent = Array.from(innerScroller.children);
+        const innerScroller = scroller.querySelector('.inner-scroller');
+        const scrollerContent = Array.from(innerScroller.children);
 
-//         scrollerContent.forEach(item => {
-//             const duplicatedItem = item.cloneNode(true);
-//             duplicatedItem.setAttribute('aria-hidden', true);
-//             innerScroller.appendChild(duplicatedItem);
-//         })
-//     })
-// }
+        scrollerContent.forEach(item => {
+            const duplicatedItem = item.cloneNode(true);
+            duplicatedItem.setAttribute('aria-hidden', true);
+            innerScroller.appendChild(duplicatedItem);
+        })
+    })
+}
 
-// //Script for Image Collage
-// const stickySection = document.querySelector('.contents-wrap');
-// const scrollSection = stickySection.querySelector('.contents');
-// const scrollParent = document.querySelector('.lookbook-collage');
-// const collageGrid = document.querySelector('.size-determiner');
+//Script for Image Collage
+const stickySection = document.querySelector('.contents-wrap');
+const scrollSection = stickySection.querySelector('.contents');
+const scrollParent = document.querySelector('.lookbook-collage');
+const collageGrid = document.querySelector('.size-determiner');
 
-// // seting responsive for horizontal scroller
-// window.addEventListener('resize', resizeCollage);
+// seting responsive for horizontal scroller
+window.addEventListener('resize', resizeCollage);
 
-// function resizeCollage() {
-//     let sizeOfCollage = scrollSection.offsetWidth;
-//     console.log(sizeOfCollage);
+function resizeCollage() {
+    let sizeOfCollage = scrollSection.offsetWidth;
+    console.log(sizeOfCollage);
     
-//     scrollParent.style.height = sizeOfCollage + 'px';
-// }
-// resizeCollage();
+    scrollParent.style.height = sizeOfCollage + 'px';
+}
+resizeCollage();
 
-// // getting container to translate left once we've hit a certain point
-// window.addEventListener('scroll', () => {
-//     transform(stickySection);
-// })
+// getting container to translate left once we've hit a certain point
+window.addEventListener('scroll', () => {
+    transform(stickySection);
+})
 
-// function transform(stickySection) {
-//     const offsetTop = stickySection.parentElement.offsetTop;
-//     let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
-//     percentage = percentage < 0 ? 0 : percentage;
-//     scrollSection.style.transform = `translate3d(${-(percentage)}vh, 0, 0)`;
-// }
+function transform(stickySection) {
+    const offsetTop = stickySection.parentElement.offsetTop;
+    let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
+    percentage = percentage < 0 ? 0 : percentage;
+    scrollSection.style.transform = `translate3d(${-(percentage)}vh, 0, 0)`;
+}
 
-// //Creating observers and handling translate slides
+//Creating observers and handling translate slides
 
 
-// let item = document.querySelectorAll('.item');
-// let slideContainer = document.querySelector('.contents-wrap');
-// createSlideObserver();
-// function createSlideObserver() {
-//     let observerOne;
-//     let optionsOne = {
-//         root: null,
-//         rootMargin: '0px',
-//         threshold: .6
-//     };
-//     observerOne = new IntersectionObserver(primeCollage, optionsOne);
-//     observerOne.observe(slideContainer);
-// }
-// function primeCollage(entries, observer) {
-//     entries.forEach((entry) => {
-//         if (entry.isIntersecting) {
-//             activateCollage();
-//             observer.unobserve(slideContainer);
-//         }
-//     })
-// }
-// function activateCollage() {
-//     item.forEach(div => {
-//         let itemChilds = div.children;
+let item = document.querySelectorAll('.item');
+let slideContainer = document.querySelector('.contents-wrap');
+createSlideObserver();
+function createSlideObserver() {
+    let observerOne;
+    let optionsOne = {
+        root: null,
+        rootMargin: '0px',
+        threshold: .6
+    };
+    observerOne = new IntersectionObserver(primeCollage, optionsOne);
+    observerOne.observe(slideContainer);
+}
+function primeCollage(entries, observer) {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            activateCollage();
+            observer.unobserve(slideContainer);
+        }
+    })
+}
+function activateCollage() {
+    item.forEach(div => {
+        let itemChilds = div.children;
     
-//         for (let i = 0; i < itemChilds.length; i++) {
-//             let ogWidth = itemChilds[i].getBoundingClientRect().width;
-//             let itemWidth = Math.ceil(ogWidth);
+        for (let i = 0; i < itemChilds.length; i++) {
+            let ogWidth = itemChilds[i].getBoundingClientRect().width;
+            let itemWidth = Math.ceil(ogWidth);
     
-//             setSlidePosition(itemChilds[i], itemWidth);
-//             activateTranslate(itemChilds[i], div, itemWidth);
-//         }
-//     })
-//     function setSlidePosition(itemChilds, itemWidth) {
-//         itemChilds.style.transform = `translateX(${itemWidth}px)`;
-//     }
-//     function activateTranslate(itemChilds, div, itemWidth) {
-//         createItemObserver();
-//         function createItemObserver() {
-//             let observerTwo;
-//             let optionsTwo = {
-//                 root: null,
-//                 rootMargin: '0px',
-//                 threshold: .1,
-//             };
-//             observerTwo = new IntersectionObserver(handleTranslate, optionsTwo);
-//             observerTwo.observe(div);
-//         }
-//         function handleTranslate(entries, observer) {
-//             entries.forEach((entry) => {
-//                 if (entry.isIntersecting) {
-//                     if (itemChilds.classList.contains('pre-slide-bg')) {
-//                         activateFirstSlide(itemChilds, itemWidth);
-//                         observer.unobserve(div);
-//                     } else {
-//                         activateSecondSlide(itemChilds, itemWidth);
-//                         observer.unobserve(div);
-//                     }
-//                 }
-//             })
-//         }
-//     }
-//     function activateFirstSlide(itemChilds, itemWidth) {
-//         itemChilds.style.opacity = '.2';
-//         itemChilds.style.transition = 'transform .8s cubic-bezier(.6,0,.3,1)';
-//         itemChilds.style.transform = `translateX(${-itemWidth + itemWidth}px)`;
-//     }
-//     function activateSecondSlide(itemChilds, itemWidth) {
-//         itemChilds.style.opacity = '1';
-//         itemChilds.style.transition = 'transform .8s .8s cubic-bezier(.6,0,.3,1)';
-//         itemChilds.style.transform = `translateX(${-itemWidth + itemWidth}px)`;
-//     }
-// }
+            setSlidePosition(itemChilds[i], itemWidth);
+            activateTranslate(itemChilds[i], div, itemWidth);
+        }
+    })
+    function setSlidePosition(itemChilds, itemWidth) {
+        itemChilds.style.transform = `translateX(${itemWidth}px)`;
+    }
+    function activateTranslate(itemChilds, div, itemWidth) {
+        createItemObserver();
+        function createItemObserver() {
+            let observerTwo;
+            let optionsTwo = {
+                root: null,
+                rootMargin: '0px',
+                threshold: .1,
+            };
+            observerTwo = new IntersectionObserver(handleTranslate, optionsTwo);
+            observerTwo.observe(div);
+        }
+        function handleTranslate(entries, observer) {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    if (itemChilds.classList.contains('pre-slide-bg')) {
+                        activateFirstSlide(itemChilds, itemWidth);
+                        observer.unobserve(div);
+                    } else {
+                        activateSecondSlide(itemChilds, itemWidth);
+                        observer.unobserve(div);
+                    }
+                }
+            })
+        }
+    }
+    function activateFirstSlide(itemChilds, itemWidth) {
+        itemChilds.style.opacity = '.2';
+        itemChilds.style.transition = 'transform .8s cubic-bezier(.6,0,.3,1)';
+        itemChilds.style.transform = `translateX(${-itemWidth + itemWidth}px)`;
+    }
+    function activateSecondSlide(itemChilds, itemWidth) {
+        itemChilds.style.opacity = '1';
+        itemChilds.style.transition = 'transform .8s .8s cubic-bezier(.6,0,.3,1)';
+        itemChilds.style.transform = `translateX(${-itemWidth + itemWidth}px)`;
+    }
+}
 
 //Script for Service Cost Alterator
-// let testing = document.querySelectorAll('.skill-level-menu');
+let testing = document.querySelectorAll('.skill-level-menu');
 
-// testing.forEach(menu => {
-//     menu.addEventListener('click', () => {
-//         for (i = 0; i < testing.length; i++) {
-//             testing[i].classList.remove('menu-entered');
-//         }
-//         menu.classList.add('menu-entered');
-//         let testEl = menu.children;
-//         identifyMenuOptionsSelected(testEl, menu);
-//     })
-// })
-// function identifyMenuOptionsSelected(testEl, menu) {
-//     menu.addEventListener('change', () => {
-//         selectedOption = menu.options[menu.selectedIndex];
-//         if (selectedOption.parentElement.classList.contains('menu-entered')) {
-//             for (i = 0; i < testEl.length; i++) {
-//                 testEl[i].removeAttribute('selected');
-//             }
-//             selectedOption.setAttribute('selected', '');
-//             selectedOptionValue = menu.options[menu.selectedIndex].text;
-//             targetTotalDivs(selectedOptionValue, menu);
-//         }
-//     })
-// }
-// function targetTotalDivs(selectedOptionValue, menu) {
-//     let boopie = menu.parentElement.nextElementSibling.children;
+testing.forEach(menu => {
+    menu.addEventListener('click', () => {
+        for (i = 0; i < testing.length; i++) {
+            testing[i].classList.remove('menu-entered');
+        }
+        menu.classList.add('menu-entered');
+        let testEl = menu.children;
+        identifyMenuOptionsSelected(testEl, menu);
+    })
+})
+function identifyMenuOptionsSelected(testEl, menu) {
+    menu.addEventListener('change', () => {
+        selectedOption = menu.options[menu.selectedIndex];
+        if (selectedOption.parentElement.classList.contains('menu-entered')) {
+            for (i = 0; i < testEl.length; i++) {
+                testEl[i].removeAttribute('selected');
+            }
+            selectedOption.setAttribute('selected', '');
+            selectedOptionValue = menu.options[menu.selectedIndex].text;
+            targetTotalDivs(selectedOptionValue, menu);
+        }
+    })
+}
+function targetTotalDivs(selectedOptionValue, menu) {
+    let boopie = menu.parentElement.nextElementSibling.children;
 
-//     for (i = 0; i < boopie.length; i++) {
-//         let flexEnd = boopie[i].children;
-//         for (j = 0; j < flexEnd.length; j++) {
-//             if (flexEnd[j].classList.contains('flex-end')) {
-//                 let targetFlexEnd = flexEnd[j];
-//                 determinePrice(targetFlexEnd, selectedOptionValue);
-//             }
-//         }
-//     }
-// }
-// //determining the increase of the price based on level here
-// function determinePrice(targetFlexEnd, selectedOptionValue) {
-//     for (k = 1; k <= 4; k++) {
-//         if (selectedOptionValue == 'Level' + ' ' + `${k}`) {
-//             determineOptionPrices(targetFlexEnd);
+    for (i = 0; i < boopie.length; i++) {
+        let flexEnd = boopie[i].children;
+        for (j = 0; j < flexEnd.length; j++) {
+            if (flexEnd[j].classList.contains('flex-end')) {
+                let targetFlexEnd = flexEnd[j];
+                determinePrice(targetFlexEnd, selectedOptionValue);
+            }
+        }
+    }
+}
+//determining the increase of the price based on level here
+function determinePrice(targetFlexEnd, selectedOptionValue) {
+    for (k = 1; k <= 4; k++) {
+        if (selectedOptionValue == 'Level' + ' ' + `${k}`) {
+            determineOptionPrices(targetFlexEnd);
 
-//             let returnValue = determineOptionPrices(targetFlexEnd);
+            let returnValue = determineOptionPrices(targetFlexEnd);
 
-//             if (targetFlexEnd.classList.contains('two-price')) {
-//                 let fullPrice = returnValue[0] * k;
-//                 let partialPrice = returnValue[1] * k;
-//                 if (targetFlexEnd.classList.contains('minimum-price')) {
-//                     let price = '$' + `${fullPrice}` + '+' + ' ' + '/' + ' ' + '$' + `${partialPrice}` + '+';
-//                     applyPrices(price, targetFlexEnd);
-//                 } else {
-//                     let price = '$' + `${fullPrice}` + ' ' + '/' + ' ' + '$' + `${partialPrice}`;
-//                     applyPrices(price, targetFlexEnd);
-//                 }
-//             } else {
-//                 if (targetFlexEnd.classList.contains('minimum-price')) {
-//                     returnValue = '$' + `${returnValue * k}` + '+';
-//                     applyPrices(returnValue, targetFlexEnd);
-//                 } else {
-//                     returnValue = '$' + `${returnValue * k}`;
-//                     applyPrices(returnValue, targetFlexEnd);
-//                 }
-//             }
-//         }
-//     }
+            if (targetFlexEnd.classList.contains('two-price')) {
+                let fullPrice = returnValue[0] * k;
+                let partialPrice = returnValue[1] * k;
+                if (targetFlexEnd.classList.contains('minimum-price')) {
+                    let price = '$' + `${fullPrice}` + '+' + ' ' + '/' + ' ' + '$' + `${partialPrice}` + '+';
+                    applyPrices(price, targetFlexEnd);
+                } else {
+                    let price = '$' + `${fullPrice}` + ' ' + '/' + ' ' + '$' + `${partialPrice}`;
+                    applyPrices(price, targetFlexEnd);
+                }
+            } else {
+                if (targetFlexEnd.classList.contains('minimum-price')) {
+                    returnValue = '$' + `${returnValue * k}` + '+';
+                    applyPrices(returnValue, targetFlexEnd);
+                } else {
+                    returnValue = '$' + `${returnValue * k}`;
+                    applyPrices(returnValue, targetFlexEnd);
+                }
+            }
+        }
+    }
     
-// }
+}
 //determining base price here
 function determineOptionPrices(targetFlexEnd) {
     if (targetFlexEnd.classList.contains('highlight-price')) {
