@@ -128,79 +128,79 @@ function addAnimation() {
 // //Creating observers and handling translate slides
 
 
-let item = document.querySelectorAll('.item');
-let slideContainer = document.querySelector('.contents-wrap');
-createSlideObserver();
-function createSlideObserver() {
-    let observerOne;
-    let optionsOne = {
-        root: null,
-        rootMargin: '0px',
-        threshold: .6
-    };
-    observerOne = new IntersectionObserver(primeCollage, optionsOne);
-    observerOne.observe(slideContainer);
-}
-function primeCollage(entries, observer) {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            activateCollage();
-            observer.unobserve(slideContainer);
-        }
-    })
-}
-function activateCollage() {
-    item.forEach(div => {
-        let itemChilds = div.children;
+// let item = document.querySelectorAll('.item');
+// let slideContainer = document.querySelector('.contents-wrap');
+// createSlideObserver();
+// function createSlideObserver() {
+//     let observerOne;
+//     let optionsOne = {
+//         root: null,
+//         rootMargin: '0px',
+//         threshold: .6
+//     };
+//     observerOne = new IntersectionObserver(primeCollage, optionsOne);
+//     observerOne.observe(slideContainer);
+// }
+// function primeCollage(entries, observer) {
+//     entries.forEach((entry) => {
+//         if (entry.isIntersecting) {
+//             activateCollage();
+//             observer.unobserve(slideContainer);
+//         }
+//     })
+// }
+// function activateCollage() {
+//     item.forEach(div => {
+//         let itemChilds = div.children;
     
-        for (let i = 0; i < itemChilds.length; i++) {
-            let ogWidth = itemChilds[i].clientWidth;
-            let itemWidth = Math.ceil(ogWidth);
+//         for (let i = 0; i < itemChilds.length; i++) {
+//             let ogWidth = itemChilds[i].getBoundingClientRect().width;
+//             let itemWidth = Math.ceil(ogWidth);
     
-            setSlidePosition(itemChilds[i], itemWidth);
-            activateTranslate(itemChilds[i], div, itemWidth);
-        }
-    })
-    function setSlidePosition(itemChilds, itemWidth) {
-        itemChilds.style.transform = `translateX(${itemWidth}px)`;
-    }
-    function activateTranslate(itemChilds, div, itemWidth) {
-        createItemObserver();
-        function createItemObserver() {
-            let observerTwo;
-            let optionsTwo = {
-                root: null,
-                rootMargin: '0px',
-                threshold: .1,
-            };
-            observerTwo = new IntersectionObserver(handleTranslate, optionsTwo);
-            observerTwo.observe(div);
-        }
-        function handleTranslate(entries, observer) {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    if (itemChilds.classList.contains('pre-slide-bg')) {
-                        activateFirstSlide(itemChilds, itemWidth);
-                        observer.unobserve(div);
-                    } else {
-                        activateSecondSlide(itemChilds, itemWidth);
-                        observer.unobserve(div);
-                    }
-                }
-            })
-        }
-    }
-    function activateFirstSlide(itemChilds, itemWidth) {
-        itemChilds.style.opacity = '.2';
-        itemChilds.style.transition = 'transform .8s cubic-bezier(.6,0,.3,1)';
-        itemChilds.style.transform = `translateX(${-itemWidth + itemWidth}px)`;
-    }
-    function activateSecondSlide(itemChilds, itemWidth) {
-        itemChilds.style.opacity = '1';
-        itemChilds.style.transition = 'transform .8s .8s cubic-bezier(.6,0,.3,1)';
-        itemChilds.style.transform = `translateX(${-itemWidth + itemWidth}px)`;
-    }
-}
+//             setSlidePosition(itemChilds[i], itemWidth);
+//             activateTranslate(itemChilds[i], div, itemWidth);
+//         }
+//     })
+//     function setSlidePosition(itemChilds, itemWidth) {
+//         itemChilds.style.transform = `translateX(${itemWidth}px)`;
+//     }
+//     function activateTranslate(itemChilds, div, itemWidth) {
+//         createItemObserver();
+//         function createItemObserver() {
+//             let observerTwo;
+//             let optionsTwo = {
+//                 root: null,
+//                 rootMargin: '0px',
+//                 threshold: .1,
+//             };
+//             observerTwo = new IntersectionObserver(handleTranslate, optionsTwo);
+//             observerTwo.observe(div);
+//         }
+//         function handleTranslate(entries, observer) {
+//             entries.forEach((entry) => {
+//                 if (entry.isIntersecting) {
+//                     if (itemChilds.classList.contains('pre-slide-bg')) {
+//                         activateFirstSlide(itemChilds, itemWidth);
+//                         observer.unobserve(div);
+//                     } else {
+//                         activateSecondSlide(itemChilds, itemWidth);
+//                         observer.unobserve(div);
+//                     }
+//                 }
+//             })
+//         }
+//     }
+//     function activateFirstSlide(itemChilds, itemWidth) {
+//         itemChilds.style.opacity = '.2';
+//         itemChilds.style.transition = 'transform .8s cubic-bezier(.6,0,.3,1)';
+//         itemChilds.style.transform = `translateX(${-itemWidth + itemWidth}px)`;
+//     }
+//     function activateSecondSlide(itemChilds, itemWidth) {
+//         itemChilds.style.opacity = '1';
+//         itemChilds.style.transition = 'transform .8s .8s cubic-bezier(.6,0,.3,1)';
+//         itemChilds.style.transform = `translateX(${-itemWidth + itemWidth}px)`;
+//     }
+// }
 
 //Script for Service Cost Alterator
 // let testing = document.querySelectorAll('.skill-level-menu');
