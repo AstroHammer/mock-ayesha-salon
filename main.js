@@ -76,25 +76,25 @@ smallAccordionButtons.forEach(accordionButton => {
 
 //Logo carousel in Footer
 
-// const scrollers = document.querySelectorAll('.carousel');
+const scrollers = document.querySelectorAll('.carousel');
 
-// if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-//     addAnimation();
-// }
-// function addAnimation() {
-//     scrollers.forEach(scroller => {
-//         scroller.setAttribute('data-animated', true);
+if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    addAnimation();
+}
+function addAnimation() {
+    scrollers.forEach(scroller => {
+        scroller.setAttribute('data-animated', true);
 
-//         const innerScroller = scroller.querySelector('.inner-scroller');
-//         const scrollerContent = Array.from(innerScroller.children);
+        const innerScroller = scroller.querySelector('.inner-scroller');
+        const scrollerContent = Array.from(innerScroller.children);
 
-//         scrollerContent.forEach(item => {
-//             const duplicatedItem = item.cloneNode(true);
-//             duplicatedItem.setAttribute('aria-hidden', true);
-//             innerScroller.appendChild(duplicatedItem);
-//         })
-//     })
-// }
+        scrollerContent.forEach(item => {
+            const duplicatedItem = item.cloneNode(true);
+            duplicatedItem.setAttribute('aria-hidden', true);
+            innerScroller.appendChild(duplicatedItem);
+        })
+    })
+}
 
 // //Script for Image Collage
 // const stickySection = document.querySelector('.contents-wrap');
@@ -203,75 +203,75 @@ smallAccordionButtons.forEach(accordionButton => {
 // }
 
 //Script for Service Cost Alterator
-let testing = document.querySelectorAll('.skill-level-menu');
+// let testing = document.querySelectorAll('.skill-level-menu');
 
-testing.forEach(menu => {
-    menu.addEventListener('click', () => {
-        for (i = 0; i < testing.length; i++) {
-            testing[i].classList.remove('menu-entered');
-        }
-        menu.classList.add('menu-entered');
-        let testEl = menu.children;
-        identifyMenuOptionsSelected(testEl, menu);
-    })
-})
-function identifyMenuOptionsSelected(testEl, menu) {
-    menu.addEventListener('change', () => {
-        selectedOption = menu.options[menu.selectedIndex];
-        if (selectedOption.parentElement.classList.contains('menu-entered')) {
-            for (i = 0; i < testEl.length; i++) {
-                testEl[i].removeAttribute('selected');
-            }
-            selectedOption.setAttribute('selected', '');
-            selectedOptionValue = menu.options[menu.selectedIndex].text;
-            targetTotalDivs(selectedOptionValue, menu);
-        }
-    })
-}
-function targetTotalDivs(selectedOptionValue, menu) {
-    let boopie = menu.parentElement.nextElementSibling.children;
+// testing.forEach(menu => {
+//     menu.addEventListener('click', () => {
+//         for (i = 0; i < testing.length; i++) {
+//             testing[i].classList.remove('menu-entered');
+//         }
+//         menu.classList.add('menu-entered');
+//         let testEl = menu.children;
+//         identifyMenuOptionsSelected(testEl, menu);
+//     })
+// })
+// function identifyMenuOptionsSelected(testEl, menu) {
+//     menu.addEventListener('change', () => {
+//         selectedOption = menu.options[menu.selectedIndex];
+//         if (selectedOption.parentElement.classList.contains('menu-entered')) {
+//             for (i = 0; i < testEl.length; i++) {
+//                 testEl[i].removeAttribute('selected');
+//             }
+//             selectedOption.setAttribute('selected', '');
+//             selectedOptionValue = menu.options[menu.selectedIndex].text;
+//             targetTotalDivs(selectedOptionValue, menu);
+//         }
+//     })
+// }
+// function targetTotalDivs(selectedOptionValue, menu) {
+//     let boopie = menu.parentElement.nextElementSibling.children;
 
-    for (i = 0; i < boopie.length; i++) {
-        let flexEnd = boopie[i].children;
-        for (j = 0; j < flexEnd.length; j++) {
-            if (flexEnd[j].classList.contains('flex-end')) {
-                let targetFlexEnd = flexEnd[j];
-                determinePrice(targetFlexEnd, selectedOptionValue);
-            }
-        }
-    }
-}
-//determining the increase of the price based on level here
-function determinePrice(targetFlexEnd, selectedOptionValue) {
-    for (k = 1; k <= 4; k++) {
-        if (selectedOptionValue == 'Level' + ' ' + `${k}`) {
-            determineOptionPrices(targetFlexEnd);
+//     for (i = 0; i < boopie.length; i++) {
+//         let flexEnd = boopie[i].children;
+//         for (j = 0; j < flexEnd.length; j++) {
+//             if (flexEnd[j].classList.contains('flex-end')) {
+//                 let targetFlexEnd = flexEnd[j];
+//                 determinePrice(targetFlexEnd, selectedOptionValue);
+//             }
+//         }
+//     }
+// }
+// //determining the increase of the price based on level here
+// function determinePrice(targetFlexEnd, selectedOptionValue) {
+//     for (k = 1; k <= 4; k++) {
+//         if (selectedOptionValue == 'Level' + ' ' + `${k}`) {
+//             determineOptionPrices(targetFlexEnd);
 
-            let returnValue = determineOptionPrices(targetFlexEnd);
+//             let returnValue = determineOptionPrices(targetFlexEnd);
 
-            if (targetFlexEnd.classList.contains('two-price')) {
-                let fullPrice = returnValue[0] * k;
-                let partialPrice = returnValue[1] * k;
-                if (targetFlexEnd.classList.contains('minimum-price')) {
-                    let price = '$' + `${fullPrice}` + '+' + ' ' + '/' + ' ' + '$' + `${partialPrice}` + '+';
-                    applyPrices(price, targetFlexEnd);
-                } else {
-                    let price = '$' + `${fullPrice}` + ' ' + '/' + ' ' + '$' + `${partialPrice}`;
-                    applyPrices(price, targetFlexEnd);
-                }
-            } else {
-                if (targetFlexEnd.classList.contains('minimum-price')) {
-                    returnValue = '$' + `${returnValue * k}` + '+';
-                    applyPrices(returnValue, targetFlexEnd);
-                } else {
-                    returnValue = '$' + `${returnValue * k}`;
-                    applyPrices(returnValue, targetFlexEnd);
-                }
-            }
-        }
-    }
+//             if (targetFlexEnd.classList.contains('two-price')) {
+//                 let fullPrice = returnValue[0] * k;
+//                 let partialPrice = returnValue[1] * k;
+//                 if (targetFlexEnd.classList.contains('minimum-price')) {
+//                     let price = '$' + `${fullPrice}` + '+' + ' ' + '/' + ' ' + '$' + `${partialPrice}` + '+';
+//                     applyPrices(price, targetFlexEnd);
+//                 } else {
+//                     let price = '$' + `${fullPrice}` + ' ' + '/' + ' ' + '$' + `${partialPrice}`;
+//                     applyPrices(price, targetFlexEnd);
+//                 }
+//             } else {
+//                 if (targetFlexEnd.classList.contains('minimum-price')) {
+//                     returnValue = '$' + `${returnValue * k}` + '+';
+//                     applyPrices(returnValue, targetFlexEnd);
+//                 } else {
+//                     returnValue = '$' + `${returnValue * k}`;
+//                     applyPrices(returnValue, targetFlexEnd);
+//                 }
+//             }
+//         }
+//     }
     
-}
+// }
 //determining base price here
 function determineOptionPrices(targetFlexEnd) {
     if (targetFlexEnd.classList.contains('highlight-price')) {
