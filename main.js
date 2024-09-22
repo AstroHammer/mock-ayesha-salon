@@ -99,7 +99,7 @@ function addAnimation() {
 //Script for Image Collage
 const stickySection = document.querySelector('.contents-wrap');
 const scrollSection = stickySection.querySelector('.contents');
-const scrollParent = document.querySelector('.testing');
+const scrollParent = document.querySelector('.lookbook-collage');
 const collageGrid = document.querySelector('.size-determiner');
 
 // seting responsive for horizontal scroller

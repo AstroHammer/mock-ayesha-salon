@@ -5,7 +5,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-.group::before, .group::after {
+/* .group::before, .group::after {
     content: "";
     display: table;
 }
@@ -14,7 +14,7 @@
 }
 .group {
     zoom: 1;
-}
+} */
 body {
     background-color: black;
 }
@@ -583,19 +583,20 @@ header {
     }
 }
 /* Bubble Banner */
-
-.bubbles-container {
-    background-color: black;
+.bubbles-wrapper {
+    box-shadow: inset 0 0 15px 5px #B9929F;
 }
-.bubbles {
+.bubbles-container {
     position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 50px 0;
-    box-shadow: inset 0 0 15px 5px #B9929F;
+    max-width: 1600px;
+    margin: 0 auto;
 }
-.intro-sum {
+
+.bubble {
     width: clamp(12rem, 45vw, 16rem);
     height: clamp(12rem, 45vw, 16rem);
     text-align: center;
@@ -611,17 +612,17 @@ header {
     align-items: center;
     justify-content: center;
 }
-.intro-sum h2 {
+.bubble .bubble-title {
     text-transform: uppercase;
     font-size: clamp(.7rem, 2vw, 1rem);
     margin-top: 10px;
     font-family: "Playfair", serif;
 }
-.intro-sum-icon {
+.bubble-icon {
     width: clamp(2rem, 6vw, 2.5rem);
     height: clamp(2rem, 6vw, 2.5rem);
 }
-.intro-sum p {
+.bubble .bubble-text {
     margin-top: 5px;
     font-size: clamp(.7rem, 2vw, 1rem);
     font-family: "PlayFair", serif;
@@ -629,9 +630,10 @@ header {
 }
 /* About Us Section */
 
-.testing {
+.lookbook-collage {
     margin: 10rem 0;
-    
+    height: 9390px;
+    /* whole page recalcs and laysout because the "highest" section has no height upon loading until javascript gives it height. could be huge culprit for longtasks */
 }
 .contents-wrap {
     height: 100vh;
@@ -644,25 +646,13 @@ header {
 .contents {
     position: absolute;
     height: 100%;
-    
-    will-change: transform;
-}
-.content {
-    height: 100%;
-}
-.flow-grid {
-    height: 100%;
-    overflow-x: scroll;
     overflow: hidden;
     scroll-behavior: smooth;
+    will-change: transform;
 }
 .flow-grid-row {
     height: 50%;
     width: max-content;
-}
-.flow-grid-row-inner {
-    height: 100%;
-    background-color: black;
 }
 .item {
     float: left;
@@ -690,26 +680,23 @@ header {
     width: auto;
     display: inline-block;
     height: 100%;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: -0.5% -0.5%;
-    transition: opacity .1s linear;
+    filter: grayscale();
+    transition: filter .2s linear;
 }
-.item-in-img-container img {
+.item-in-img {
     min-width: 0;
     width: auto;
     height: 100%;
-    opacity: 1;
     display: block;
-    filter: grayscale();
 }
 .item-in-img-container:hover {
     filter: none;
-    transition: opacity .1s linear;
+    transition: filter .2s linear;
 }
 /* Services */
+
 .services-section {
-    clear: both;    
+    /* clear: both;     */
 }
 .accordion-wrapper {
     background-color: black;
@@ -723,15 +710,7 @@ header {
     box-shadow: 0px 0px 10px 5px #B9929F;
     font-family: "Playfair", serif;
 }
-
 .accordion-title-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    height: 300px;
-    position: relative;
-    
-}
-.accordion-title {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -742,19 +721,21 @@ header {
     justify-content: center;
     align-items: center;
     box-shadow: inset 0 0 75px 60px rgba(0, 0, 0, .5);
-    /* inset 0 5px 5px 5px rgba(0, 0, 0, 1), inset 0 -5px 5px 5px rgba(0, 0, 0, 1)  */
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 300px;
 }
-.accordion-title h1 {
+.accordion-title {
     font-size: 10rem;
     color: rgba(0, 0, 0, .5);
 }
-.hair-title {
+.hair-bg {
     background-image: url('/Styles/Home-Images/Services-Images/close-up-horse-mane.webp');
 }
-.skin-title {
+.skin-bg {
     background-image: url('/Styles/Home-Images/Services-Images/front-view-young-woman-posing-with-roses.webp');
 }
-.body-title {
+.body-bg {
     background-image: url('/Styles/Home-Images/Services-Images/massage-5578598.webp');
 }
 
