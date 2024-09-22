@@ -243,7 +243,7 @@ function targetTotalDivs(selectedOptionValue, menu) {
 }
 //determining the increase of the price based on level here
 function determinePrice(targetFlexEnd, selectedOptionValue) {
-    for (k = 1; k <= 8; k++) {
+    for (k = 1; k <= 4; k++) {
         if (selectedOptionValue == 'Level' + ' ' + `${k}`) {
             determineOptionPrices(targetFlexEnd);
 

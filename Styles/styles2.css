@@ -704,6 +704,13 @@ header {
     font-family: "Playfair", serif;
 }
 .accordion-container {
+    /* max-width: 960px;
+    margin: 60px auto;
+    padding: 20px 30px;
+    box-shadow: 0px 0px 10px 5px #B9929F;
+    font-family: "Playfair", serif; */
+}
+.accordion {
     max-width: 960px;
     margin: 60px auto;
     padding: 20px 30px;
@@ -833,7 +840,6 @@ select:hover {
     border-color: #9C5288;
     transition: border .2s linear;
     cursor: pointer;
-
 }
 option {
     font-size: .8rem;
@@ -870,7 +876,7 @@ option {
     padding-left: 10px;
 }
 @media screen and (max-width: 980px) {
-    .accordion-container {
+    .accordion {
         margin: 60px 1rem;
     }
 }
