@@ -38,35 +38,15 @@ function changeNavToggle(entries, observer) {
 } 
 
 
-//Services Accordion Boxes
+//Service and FAQ Accordions
 
-const accordionButtons = document.querySelectorAll('.accordion-item-btn');
+const accordionButtons = document.querySelectorAll('.accordion-button');
 
 accordionButtons.forEach(accordionButton => {
     accordionButton.addEventListener('click', event => {
         accordionButton.classList.toggle('active');
         const accordionItemBody = accordionButton.parentElement.nextElementSibling;
         if (accordionButton.classList.contains('active')) {
-            accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + 'px';
-            if (accordionItemBody.style.maxHeight > "500px") {
-                accordionItemBody.style.transitionDuration = ".4s";
-            }
-            
-        } else {
-            accordionItemBody.style.maxHeight = 0;
-        }
-    })
-})
-
-//Single Item Accordions for FAQ
-
-const smallAccordionButtons = document.querySelectorAll('.single-cordion-item-btn');
-
-smallAccordionButtons.forEach(accordionButton => {
-    accordionButton.addEventListener('click', event => {
-        accordionButton.classList.toggle('active-2');
-        const accordionItemBody = accordionButton.parentElement.nextElementSibling;
-        if (accordionButton.classList.contains('active-2')) {
             accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + 'px';
         } else {
             accordionItemBody.style.maxHeight = 0;
