@@ -380,3 +380,25 @@ function determineOptionPrices(targetFlexEnd) {
 function applyPrices(returnValue, targetFlexEnd) {
     targetFlexEnd.innerHTML = returnValue;
 }
+
+
+//load second stylesheet
+function loadStyle(src) {
+    return new Promise(function (resolve, reject) {
+        let link = document.createElement('link');
+        link.href = src;
+        link.rel = 'stylesheet';
+
+        link.onload = () => resolve(link);
+        link.onerror = () => reject(new Error(`Style load error for ${src}`));
+
+        document.head.append(link);
+    });
+}
+
+window.onload = function () {
+    loadStyle("Styles/styles3.css")
+        .then(() => {
+            console.log('All styles are loaded!');
+        }).catch(console.error);
+}
