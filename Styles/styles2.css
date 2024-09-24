@@ -24,6 +24,38 @@ img {
 svg {
     display: block;
 }
+/* Fonts */
+
+@font-face {
+    font-family: "Dancing-Script";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+000-5FF;
+    src: 
+    local("Dancing-Script"),
+    url("Fonts/DancingScript-VariableFont_wght-subset.woff") format('woff');
+}
+@font-face {
+    font-family:"Playfair";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+000-5FF;
+    src: 
+    local("Playfair"), 
+    url("Fonts/PlayfairDisplay-VariableFont_wght-subset.woff") format('woff');
+}
+@font-face {
+    font-family: "Caveat";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+000-5FF;
+    src: 
+    local("Caveat"),
+    url("Fonts/Caveat-VariableFont_wght-subset.woff") format('woff');
+}
 /* HEADER */
 
 header {
