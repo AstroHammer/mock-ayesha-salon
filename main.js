@@ -104,7 +104,7 @@ function transform(stickySection) {
     percentage = percentage < 0 ? 0 : percentage;
     scrollSection.style.transform = `translate3d(${-(percentage)}vh, 0, 0)`;
 }
-
+transform(stickySection);
 //Creating observers and handling translate slides
 
 
