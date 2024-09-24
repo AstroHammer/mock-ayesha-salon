@@ -13,8 +13,693 @@
         <link rel="preload" as="image" href="Styles/Home-Images/grayscale-mobile-portrait.webp" type="image/webp">
         <link rel="preload" as="image" href="Styles/Home-Images/wethair-mobile-portrait.webp" type="image/webp">
         <link rel="preload" as="image" href="Styles/Home-Images/side-view-left-mobile-portrait.webp" type="image/webp"> -->
-        <link rel="stylesheet" href="/Styles/styles2.css">
-        <link rel="stylesheet" href="/Styles/styles3.css" media="print" onload="this.media='all'">
+        <!-- <link rel="stylesheet" href="/Styles/styles2.css"> -->
+        <!-- <link rel="stylesheet" href="/Styles/styles3.css" media="print" onload="this.media='all'"> -->
+
+        <style>
+            /* Defaults */
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: black;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        a:focus {
+            outline: 2px solid purple;
+        }
+        li {
+            list-style-type: none;
+        }
+        img {
+            display: block;
+        }
+        svg {
+            display: block;
+        }
+        /* Fonts */
+
+        @font-face {
+            font-family: "Dancing-Script";
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+            unicode-range: U+000-5FF;
+            src: 
+            local("Dancing-Script"),
+            url("Fonts/DancingScript-VariableFont_wght-subset.woff") format('woff');
+        }
+        @font-face {
+            font-family:"Playfair";
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+            unicode-range: U+000-5FF;
+            src: 
+            local("Playfair"), 
+            url("Fonts/PlayfairDisplay-VariableFont_wght-subset.woff") format('woff');
+        }
+        @font-face {
+            font-family: "Caveat";
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+            unicode-range: U+000-5FF;
+            src: 
+            local("Caveat"),
+            url("Fonts/Caveat-VariableFont_wght-subset.woff") format('woff');
+        }
+        /* HEADER */
+
+        header {
+            position: relative;
+            height: 100svh;
+            overflow: hidden;
+        }
+        .dark-bg {
+            position: absolute;
+            inset: 0;
+            background-color: black;
+            height: 100%;
+            width: 100%;
+        }
+        .site-nav {
+            display: flex;
+            position: absolute;
+            z-index: 2;
+            background-color: transparent;
+            align-items: center;
+            width: 100%;
+        }
+        .wide-nav {
+            top: 0;
+            z-index: 2;
+            background-color: transparent;
+            justify-content: space-between;
+        }
+        .logo {
+            font-family: "Dancing-Script", serif;
+            font-size: clamp(2rem, 10vw, 5rem);
+            color: whitesmoke;
+            font-weight: 700;
+            margin: 4rem;
+        }
+        .nav-list {
+            padding-block: 2rem;
+            padding-inline: clamp(2rem, 5vw , 10rem);
+            gap: clamp(2rem, 5vw, 10rem);
+            background-color: rgba(0, 0, 0, .5);
+            box-shadow: 0px 0px 10px 5px #B9929F;
+            border-radius: 5px 0 0 5px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .wide-nav-list-item {
+            font-size: .9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            flex-shrink: 0;
+            font-family: "Playfair", serif;
+        }
+        .nav-link {
+            color: white;
+            position: relative;
+        }
+        .mobile-nav-container {
+            top: 3vh;
+            justify-content: center;
+        }
+        .mobile-nav-toggle-bg {
+            z-index: 9999;
+            position: absolute;
+            right: 2rem;
+            width: clamp(2rem, 5vw, 2.4rem);
+            aspect-ratio: 1;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .5s linear;
+        }
+        .mobile-nav-toggle {
+            position: relative;
+            border: none;
+            background-color: transparent;
+            width: 80%;
+            height: 80%;
+            cursor: pointer;
+        }
+        .mobile-nav-svg {
+            display: block;
+            position: absolute;
+            inset: 0;
+        }
+        .close-menu-svg {
+            display: none;
+        }
+        .mobile-nav-toggle[aria-expanded="true"] .close-menu-svg {
+            display: block;
+        }
+        .mobile-nav-toggle[aria-expanded="true"] .menu-svg {
+            display: none;
+        }
+        .mobile-nav {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            inset: 0 0 0 30%;
+            padding: min(15vh, 5rem) 1rem min(5vh, 3rem) 1rem;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgba(156, 82, 136, .6);
+            backdrop-filter: blur(.5rem);
+            z-index: 999;
+            transform: translateX(100%);
+        }
+        .mobile-nav::after {
+            content: '';
+            position: absolute;
+            height: 50px;
+            left: 0;
+            right: 0;
+            bottom: -50px;
+            background-color: rgba(156, 82, 136, .6);
+            backdrop-filter: blur(.5rem);
+            z-index: 999;
+        }
+        .mobile-nav[data-visible="true"] {
+            transform: translateX(0%);
+            transition: transform .3s ease-in;
+        }
+        .mobile-nav-list-item {
+            font-size: 2rem;
+            font-family: "Playfair", sarif;
+            font-variant: small-caps;
+        }
+        .nav-link:hover::before {
+            left: 50%;
+        }
+        .nav-link:hover::after {
+            right: 50%;
+        }
+        .nav-link:hover::before, .nav-link:hover::after {
+            position: absolute;
+            content: '';
+            height: 1px;
+            border-bottom: solid 1px white;
+            width: 0;
+            bottom: 0;
+            animation: underlineAnimate .2s linear forwards
+        }
+        @keyframes underlineAnimate {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 60%;
+            }
+        }
+        @media screen and (max-width: 1200px) {
+            .wide-nav {
+                display: block;
+                width: 90%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .logo {
+                text-align: center;
+                margin: 0 0 1.5rem 0;
+            }
+            .nav-list {
+                border-radius: 0; 
+                justify-content: space-between
+            }
+        }
+        @media screen and (width < 650px) {
+            .wide-nav {
+                display: none;
+            }
+            .logo {
+                margin: 0;
+            }
+        }
+        @media screen and (width > 650px) {
+            .mobile-nav-container {
+                display: none;
+            }
+        }
+        @media screen and (height < 500px) {
+            .mobile-nav-container {
+                display: flex;
+            }
+            .wide-nav {
+                display: none;
+            }
+        }
+        .follow-nav {
+            position: fixed;
+            width: clamp(2.4rem, 5vw, 2.8rem);
+            background-color: #9C5288;
+            transition: all .5s linear;
+        }
+        .slide {
+            position: absolute;
+            inset: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            animation: fade-zoom 36s infinite;
+        }
+        .fading-img {
+            object-fit: cover;
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-position: center;
+        }
+        .slide-1 {
+            animation-delay: 0s;
+        }
+        .slide-1 .fading-img {
+            object-position: right top;
+        }
+        .slide-2 {
+            animation-delay: 6s;
+        }
+        .slide-2 .fading-img {
+            object-position: left top;
+        }
+        .slide-3 {
+            animation-delay: 12s;
+        }
+        .slide-4 {
+            animation-delay: 18s;
+        }
+        .slide-5 {
+            animation-delay: 24s;
+        }
+        .slide-6 {
+            animation-delay: 30s;
+        }
+        .slide-6 .fading-img {
+            object-position: left top;
+        }
+        @keyframes fade-zoom {
+            0% {
+                opacity: 0;
+                transform: scale(100%);
+            }
+            10% {
+                opacity: .5;
+            }
+            25% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+                transform: scale(130%);
+            }
+        }
+        /* Booking Tab */
+
+        .promo-wrapper {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            /* color: white; */
+            display: flex;
+            justify-content: center;
+        }
+        .promo-container {
+            border-radius: 30px 30px 0 0;
+            background-color: rgba(0, 0, 0, .5);
+            padding: 1rem 2rem;
+            box-shadow: 0px 0px 10px 5px #B9929F;
+        }
+        .promo-title {
+            text-align: center;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 2rem;
+            font-family: "Playfair", serif;
+            padding-bottom: 5px;
+            position: relative;
+            color: white;
+        }
+        .promo-title::after {
+            content:'';
+            position: absolute;
+            width: clamp(8rem, 20vw, 12rem);
+            border-bottom: 1px solid white;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .promo-content {
+            display: flex;
+            align-items: center;
+        }
+        .promo-content-socials {
+            position: relative;
+            margin: 0 1rem;
+        }
+        .border {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            transform-origin: center;
+            left: 50%;
+            transform: translate(-50%, -50%);  
+        }
+        .border::before, .border::after {
+            content: '';
+            display: inline-block;
+            flex-grow: 1;
+        }
+        .horizontal {
+            width: 100px;
+            height: 1px;
+            bottom: 50%;
+        }
+        .vertical {
+            height: 100px;
+            width: 1px;
+            flex-direction: column;
+            top: 50%;
+        }
+        .promo-border-top::before, .promo-border-top::after {
+            border-top: 1px solid whitesmoke;
+        }
+        .promo-border-left::before, .promo-border-left::after {
+            border-left: 1px solid whitesmoke;
+        }
+        .horizontal::before {
+            margin-right: 10px;
+        }
+        .horizontal::after {
+            margin-left: 10px;
+        }
+        .vertical::before {
+            margin-bottom: 10px;
+        }
+        .vertical::after {
+            margin-top: 10px;
+        }
+        .top-half-container, .bottom-half-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .top-left {
+            margin-bottom: 8px;
+            margin-right: 8px;
+        }
+        .top-right {
+            margin-bottom: 8px;
+            margin-left: 8px;
+        }
+        .bottom-left {
+            margin-top: 8px;
+            margin-right: 8px;
+        }
+        .bottom-right {
+            margin-top: 8px;
+            margin-left: 8px;
+        }
+        .promo-social-svg {
+            width: 50px;
+            height: 50px;
+        }
+        .promo-social-svg:hover {
+            filter: invert(0.4) sepia(1) saturate(14) hue-rotate(234deg) brightness(.7);
+            transform: scale(1.2);
+            transition: transform .2 linear;
+        }
+        .booking {
+            margin: 0 20px;
+        }
+        .booking-content {
+            width: 100%;   
+            text-align: center;
+        }
+        .booking-link {
+            background-color: #9C5288;
+            color: white;
+            padding: 1rem 2rem 1rem 2rem;
+            display: inline-block;
+            width: 100%;
+            font-size: clamp(.7rem, 3vw, 1.1rem);
+            text-transform: uppercase;
+            border-radius: 5px;
+            font-family: "Caveat", serif;
+            font-weight: bold;
+            transition: background-color .2s linear, color .2s linear, transform .2s linear;
+        }
+        .booking-link:hover {
+            background-color: white;
+            color:#9C5288;
+            transition: background-color .2s linear, color .2s linear, transform .2s linear;
+            transform: scale(1.05);
+        }
+        .or-border {
+            display: flex;
+            margin: 15px 0;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+            text-transform: uppercase;
+            padding: 0 30px;
+            font-size: .9rem;
+            font-family: "Playfair", sans-serif;
+            color: white;
+        }
+        .or-border::before, .or-border::after {
+            content:'';
+            display: inline-block;
+            border-top: 1px solid white;
+            flex-grow: 1;
+        }
+        @media screen and (max-width: 650px), (height < 500px) {
+            .promo-content {
+                flex-direction: column-reverse;
+            }
+            .promo-container {
+                width: 100%;
+            }
+            .booking {
+                display: flex;
+                align-items: center;
+                margin: 0;
+                width: 100%;
+                height: clamp(45px, 10vw, 150px);
+            }
+            .booking-content {
+                height: 100%;
+                width: 50%;
+            }
+            .book-online {
+                padding-right: 10px;
+            }
+            .call-us {
+                padding-left: 10px;
+            }
+            .booking-link {
+                display:flex;
+                align-items:center;
+                justify-content: center;
+                white-space: nowrap;
+                height: 100%;
+            }
+            .promo-content-socials .horizontal, .promo-content-socials .vertical {
+                display: none;
+            }
+            .promo-title {
+                margin-bottom: 1rem;
+            }
+            .promo-content-socials {
+                margin: 1rem 0 0 0;
+                width: 100%;
+            }
+            .promo-social-svg-container {
+                display: flex;
+                width: 100%;
+            }
+            .promo-socials {
+                width: 50%;
+                justify-content: space-around;
+            }
+            .promo-socials .top-left {
+                margin: 0;
+            }
+            .promo-socials .top-right {
+                margin: 0;
+            }
+            .promo-socials .bottom-left {
+                margin: 0;
+            }
+            .promo-socials .bottom-right {
+                margin: 0;        
+            }
+            .promo-social-svg {
+                width: clamp(20px, 8vw, 40px);
+                height: clamp(20px, 8vw, 40px);
+            }
+            .or-border {
+                display: none;
+            }
+        }
+        @media screen and (width > 650px) and (height < 500px) {
+            .booking-content {
+                width: 40%;
+            }
+            .booking {
+                max-width: 800px;
+                height: 50px;
+                justify-content: space-around;
+            }
+            .promo-container {
+                width: 800px;
+                max-width: 1200px;
+            }
+            .promo-content-socials {
+                max-width: 600px;
+            }
+            .promo-title {
+                font-size: clamp(.8rem, 3vw, 1.5rem);
+            }
+            .promo-social-svg {
+                height: 40px;
+                width: 40px;
+            }
+            .booking-link {
+                font-size: .8rem;
+            }
+        }
+        @media screen and (height < 360px) {
+            header {
+                height: 360px;
+            }
+        }
+        /* Bubble Banner */
+        .bubbles-wrapper {
+            box-shadow: inset 0 0 15px 5px #B9929F;
+        }
+        .bubbles-container {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 50px 0;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .bubble {
+            width: clamp(12rem, 45vw, 16rem);
+            height: clamp(12rem, 45vw, 16rem);
+            text-align: center;
+            border-radius: 50%;
+            padding: 1rem;
+            top: -11rem;
+            box-shadow: 0 0 20px 5px #B9929F;
+            color: white;
+            background-color: black;
+            margin: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .bubble .bubble-title {
+            text-transform: uppercase;
+            font-size: clamp(.7rem, 2vw, 1rem);
+            margin-top: 10px;
+            font-family: "Playfair", serif;
+        }
+        .bubble-icon {
+            width: clamp(2rem, 6vw, 2.5rem);
+            height: clamp(2rem, 6vw, 2.5rem);
+        }
+        .bubble .bubble-text {
+            margin-top: 5px;
+            font-size: clamp(.7rem, 2vw, 1rem);
+            font-family: "PlayFair", serif;
+            line-height: 18px;
+        }
+        /* About Us Section */
+
+        .lookbook-collage {
+            margin: 10rem 0;
+            height: 9390px;
+            /* whole page recalcs and laysout because the "highest" section has no height upon loading until javascript gives it height. could be huge culprit for longtasks */
+        }
+        .contents-wrap {
+            height: 100vh;
+            width: 100%;
+            background-color: black;
+            position: sticky;
+            top: 0;
+            overflow: hidden;
+        }
+        .contents {
+            position: absolute;
+            height: 100%;
+            overflow: hidden;
+            scroll-behavior: smooth;
+            will-change: transform;
+        }
+        .flow-grid-row {
+            height: 50%;
+            width: max-content;
+        }
+        .item {
+            float: left;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        .item-in {
+            background-repeat: no-repeat;
+            height: 100%;
+            width: auto;
+            background-size: 100%;
+            background-position: -0.5% -0.5%;
+            opacity: 0;
+        }
+        .pre-slide-bg {
+            height: 100%;
+            width: auto;
+            position: absolute;
+            inset: 0;
+            background-color: #c5c5c5;
+            opacity: 0;
+        }
+        .item-in-img-container {
+            width: auto;
+            display: inline-block;
+            height: 100%;
+            filter: grayscale();
+            transition: filter .2s linear;
+        }
+        .item-in-img {
+            min-width: 0;
+            width: auto;
+            height: 100%;
+        }
+        .item-in-img-container:hover {
+            filter: none;
+            transition: filter .2s linear;
+        }
+        </style>
+        <link rel="stylesheet" href="/Styles/styles3.css">
         <title>Ayesha Home</title>
     </head>
     <body>
