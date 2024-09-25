@@ -714,6 +714,7 @@ header {
     margin: 60px auto;
     padding: 20px 30px;
     box-shadow: 0px 0px 10px 5px #B9929F;
+    -webkit-box-shadow: 0px 0px 10px 5px #B9929F;
     font-family: "Playfair", serif;
 }
 .accordion-item-header {
