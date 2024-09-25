@@ -102,6 +102,10 @@ function transform(stickySection) {
     const offsetTop = stickySection.parentElement.offsetTop;
     let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
     percentage = percentage < 0 ? 0 : percentage;
+    scrollSection.style.webkitTransform = `translate3d(${-(percentage)}vh, 0, 0)`;
+    scrollSection.style.msTransform = `translate3d(${-(percentage)}vh, 0, 0)`;
+    scrollSection.style.OTransform = `translate3d(${-(percentage)}vh, 0, 0)`;
+    scrollSection.style.MozTransform = `translate3d(${-(percentage)}vh, 0, 0)`;
     scrollSection.style.transform = `translate3d(${-(percentage)}vh, 0, 0)`;
 }
 transform(stickySection);
@@ -173,11 +177,19 @@ function activateCollage() {
     function activateFirstSlide(itemChilds, itemWidth) {
         itemChilds.style.opacity = '.2';
         itemChilds.style.transition = 'transform .8s cubic-bezier(.6,0,.3,1)';
+        itemChilds.style.msTransform = `translateX(${-itemWidth + itemWidth}px)`;
+        itemChilds.style.webkitTransform = `translateX(${-itemWidth + itemWidth}px)`;
+        itemChilds.style.MozTransform = `translateX(${-itemWidth + itemWidth}px)`;
+        itemChilds.style.OTransform = `translateX(${-itemWidth + itemWidth}px)`;
         itemChilds.style.transform = `translateX(${-itemWidth + itemWidth}px)`;
     }
     function activateSecondSlide(itemChilds, itemWidth) {
         itemChilds.style.opacity = '1';
         itemChilds.style.transition = 'transform .8s .8s cubic-bezier(.6,0,.3,1)';
+        itemChilds.style.msTransform = `translateX(${-itemWidth + itemWidth}px)`;
+        itemChilds.style.webkitTransform = `translateX(${-itemWidth + itemWidth}px)`;
+        itemChilds.style.MozTransform = `translateX(${-itemWidth + itemWidth}px)`;
+        itemChilds.style.OTransform = `translateX(${-itemWidth + itemWidth}px)`;
         itemChilds.style.transform = `translateX(${-itemWidth + itemWidth}px)`;
     }
 }
