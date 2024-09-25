@@ -102,11 +102,16 @@ function transform(stickySection) {
     const offsetTop = stickySection.parentElement.offsetTop;
     let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
     percentage = percentage < 0 ? 0 : percentage;
-    scrollSection.style.webkitTransform = `translate3d(${-(percentage)}vh, 0, 0)`;
-    scrollSection.style.msTransform = `translate3d(${-(percentage)}vh, 0, 0)`;
-    scrollSection.style.OTransform = `translate3d(${-(percentage)}vh, 0, 0)`;
-    scrollSection.style.MozTransform = `translate3d(${-(percentage)}vh, 0, 0)`;
-    scrollSection.style.transform = `translate3d(${-(percentage)}vh, 0, 0)`;
+    // scrollSection.style.webkitTransform = `translate3d(${-(percentage)}vh, 0, 0)`;
+    // scrollSection.style.msTransform = `translate3d(${-(percentage)}vh, 0, 0)`;
+    // scrollSection.style.OTransform = `translate3d(${-(percentage)}vh, 0, 0)`;
+    // scrollSection.style.MozTransform = `translate3d(${-(percentage)}vh, 0, 0)`;
+    // scrollSection.style.transform = `translate3d(${-(percentage)}vh, 0, 0)`;
+    scrollSection.style.webkitTransform = `translateX(${-(percentage)}vh)`;
+    scrollSection.style.msTransform = `translateX(${-(percentage)}vh)`;
+    scrollSection.style.OTransform = `translateX(${-(percentage)}vh)`;
+    scrollSection.style.MozTransform = `translateX(${-(percentage)}vh)`;
+    scrollSection.style.transform = `translateX(${-(percentage)}vh)`;
 }
 transform(stickySection);
 //Creating observers and handling translate slides
