@@ -37,7 +37,6 @@ function changeNavToggle(entries, observer) {
     })
 } 
 
-
 //Service and FAQ Accordions
 
 const accordionButtons = document.querySelectorAll('.accordion-button');
@@ -87,8 +86,6 @@ window.addEventListener('resize', resizeCollage);
 
 function resizeCollage() {
     let sizeOfCollage = scrollSection.offsetWidth;
-    console.log(sizeOfCollage);
-    
     scrollParent.style.height = sizeOfCollage + 1000 + 'px';
 }
 resizeCollage();

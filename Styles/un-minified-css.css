@@ -684,7 +684,6 @@ header {
 .accordion-title-container {
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
     background-position: center;
     height: 100%;
     width: 100%;
@@ -700,14 +699,41 @@ header {
     font-size: 10rem;
     color: rgba(0, 0, 0, .5);
 }
-.hair-bg {
-    background-image: url('/Styles/Home-Images/Services-Images/close-up-horse-mane.webp');
+@media screen and (width < 850px) {
+    .hair-bg {
+        background-image: url('/Styles/Home-Images/Services-Images/close-up-horse-mane.webp');
+    }
+    .skin-bg {
+        background-image: url('/Styles/Home-Images/Services-Images/front-view-young-woman-posing-with-roses.webp');
+        background-position: 50% 40%;
+    }
+    .body-bg {
+        background-image: url('/Styles/Home-Images/Services-Images/massage-5578598.webp');
+    }
 }
-.skin-bg {
-    background-image: url('/Styles/Home-Images/Services-Images/front-view-young-woman-posing-with-roses.webp');
+@media screen and (width >= 850px) and (width < 1500px) {
+    .hair-bg {
+        background-image: url('/Styles/Home-Images/Services-Images/close-up-horse-mane-medium.webp');
+    }
+    .skin-bg {
+        background-image: url('/Styles/Home-Images/Services-Images/front-view-young-woman-posing-with-roses-medium.webp');
+        background-position: 50% 40%;
+    }
+    .body-bg {
+        background-image: url('/Styles/Home-Images/Services-Images/massage-5578598-medium.webp');
+    }
 }
-.body-bg {
-    background-image: url('/Styles/Home-Images/Services-Images/massage-5578598.webp');
+@media screen and (width >= 1500px) {
+    .hair-bg {
+        background-image: url('/Styles/Home-Images/Services-Images/close-up-horse-mane-large.webp');
+    }
+    .skin-bg {
+        background-image: url('/Styles/Home-Images/Services-Images/front-view-young-woman-posing-with-roses-large.webp');
+        background-position: 50% 40%;
+    }
+    .body-bg {
+        background-image: url('/Styles/Home-Images/Services-Images/massage-5578598-large.webp');
+    }
 }
 .accordion {
     max-width: 960px;
