@@ -694,10 +694,17 @@ header {
     max-width: 1400px;
     margin: 0 auto;
     height: 300px;
+    position: relative;
+    overflow: hidden;
 }
 .accordion-title {
     font-size: 10rem;
     color: rgba(0, 0, 0, .5);
+    position: absolute;
+}
+.parallax-img {
+    max-width: 100%;
+    height: auto;
 }
 @media screen and (width < 850px) {
     .hair-bg {

@@ -37,6 +37,13 @@ function changeNavToggle(entries, observer) {
     })
 } 
 
+// Image Parallax Services
+
+const images = document.querySelectorAll('.parallax-img');
+new simpleParallax(images, {
+    customWrapper: ".accordion-title-container"
+});
+
 //Service and FAQ Accordions
 
 const accordionButtons = document.querySelectorAll('.accordion-button');
